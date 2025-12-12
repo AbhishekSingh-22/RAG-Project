@@ -2,3 +2,8 @@ myvenv/
 venv/
 
 .env
+
+data/
+loadedDocs/
+
+pointsToNote.md
