@@ -1,0 +1,56 @@
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Camera Speaker Volume].
+4
+Adjust the volume as desired and then tap [OK].
+Image brightness
+You can adjust the overall brightness of the camera image.
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Settings] ® [Video Settings].
+4
+Tap [Brightness].
+5
+Tap 
+ or 
+ to decrease or increase the image brightness.
+Image resolution
+You can adjust the resolution (size) of camera images. This setting affects both live images and recorded
+images.
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Settings] ® [Video Settings].
+4
+Tap [Camera Resolution].
+5
+Select the desired setting and then tap [OK].
+Frame rate
+You can adjust the speed at which images from the camera are refreshed.
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Settings] ® [Video Settings].
+4
+Tap [Frame Rate].
+5
+Select the desired setting and then tap [OK].
+Note:
+R Higher frame rates mean images are refreshed faster and moving subjects are displayed more
+smoothly, however, images displayed on your mobile device may be delayed and sound may cut out
+or be delayed when talking to the camera, especially over a slow or congested network connection.
+R Lower frame rates mean images are refreshed less often and moving subjects may appear “choppy”,
+however, images displayed on your mobile device will be less delayed and sound may be more
+consistent when talking to the camera over a slow or congested network connection.
+166
+Using an HD camera

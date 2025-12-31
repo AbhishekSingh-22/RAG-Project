@@ -1,0 +1,39 @@
+R OK Google, start <mode name>.
+R OK Google, activate <mode name>.
+Stopping modes command example:
+R OK Google, stop <mode name>.
+R OK Google, activate Basic Mode. (front door cameras and outdoor cameras only)
+R OK Google, activate Basic. (shelf cameras, floor cameras, and window cameras only)
+R OK Google, deactivate <mode name>.
+Enabling/disabling the privacy mode (shelf cameras and floor cameras only)
+The privacy mode of cameras can be enabled and disabled.
+Enabling privacy mode voice command example:
+R OK Google, turn on privacy mode of <camera name>.
+Disabling privacy mode voice command example:
+R OK Google, turn off privacy mode of <camera name>.
+Checking the temperature of cameras (shelf cameras and floor cameras only)
+You can check the temperature of the area surrounding the camera.
+Checking the temperature voice command example:
+R OK Google, what’s the temperature of <camera name>.
+Adjusting the lighting of cameras (floor cameras only)
+You can adjust the lighting of the camera.
+Adjusting the lighting voice command example:
+R OK Google, turn on <camera name + light>.
+R OK Google, set <camera name + light> to xx %.
+R OK Google, brighten <camera name + light>.
+R OK Google, dim <camera name + light>.
+R OK Google, turn off <camera name + light>.
+System settings and maintenance
+Country/region settings
+You can select the country and region where you use your devices.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Mobile Device Settings] ® [Country / Region].
+3
+Select the desired country/region and then tap [OK].
+Event logs
+You can view and delete event logs that contain information about sensor detections, device errors, etc.
+40
+Getting started with the HomeHawk!

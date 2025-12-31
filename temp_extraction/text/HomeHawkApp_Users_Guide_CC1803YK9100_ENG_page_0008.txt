@@ -1,0 +1,26 @@
+Devices for use without access points
+Floor camera (KX-HNC850, KX-HNC855)
+Overview: Floor camera (KX-HNC850, KX-HNC855)
+Setup: Floor camera setup (overview)
+Features: Floor camera features (overview)
+Shelf camera (KX-HNC810, KX-HNC815)
+Overview: Shelf camera (KX-HNC810, KX-HNC815)
+Registration: Shelf camera setup (overview)
+Features: Shelf camera features (overview)
+Window camera (KX-HNC500, KX-HNC505)
+Overview: Window camera (KX-HNC500, KX-HNC505)
+Registration: Window camera setup (overview)
+Features: Window camera features (overview)
+HD camera (KX-HNC800, KX-HNC805, KX-HN1003)
+Overview: HD Camera (KX-HNC800, KX-HNC805, KX-HN1003)
+Registration: HD camera setup (overview)
+Features: HD camera main features (overview)
+Maximum number of devices that can be registered
+The maximum number of devices that can be registered to each type of device are listed below.
+R Number of devices that can be registered to a mobile device:
+– Shelf cameras, floor cameras, and window cameras: 32
+– HD cameras: 32
+R Number of devices that can be registered to a floor camera, shelf camera, or HD camera:
+– Mobile devices: 8
+8
+Getting started with the HomeHawk!

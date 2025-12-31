@@ -1,0 +1,52 @@
+Temperature sensor
+You can configure the camera to send notifications if the camera’s ambient temperature is too cold or too
+hot.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Detection] ® [Temperature Alert Range].
+4
+Select the desired temperature for the lower threshold of the acceptable temperature range.
+5
+Select the desired temperature for the upper threshold of the acceptable temperature range, and
+then tap [OK].
+Temperature units
+You can change the units displayed for the temperature.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [System] ® [Temperature Units].
+4
+Select whether the temperature is displayed and specified in Fahrenheit or Celsius, and then tap
+[OK].
+Sound sensitivity
+You can configure the sound sensitivity used for sound detection.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Detection] ® [Sound Sensitivity].
+4
+Select the desired setting, and then tap [OK].
+– [High]: The microphone is very sensitive to sound, i.e., even a small sound will trigger the
+notification.
+– [Normal]: The microphone is moderately sensitive to sound.
+– [Low]: The microphone is only slightly sensitive to sound, i.e., a large sound is required to trigger
+the notification.
+Camera SD cards
+SD card capacity and total recording time
+The following recording times apply when images from one camera are recorded. All times are
+approximate.
+– 4 GB card: 4 hours
+– 8 GB card: 9 hours
+– 16 GB card: 18 hours
+83
+Using a shelf, floor, and window camera

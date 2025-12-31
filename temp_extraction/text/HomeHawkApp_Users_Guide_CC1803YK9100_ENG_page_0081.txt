@@ -1,0 +1,45 @@
+Adjusting the lighting
+You can adjust the brightness of the camera’s light and configure the light to turn on automatically
+according to a schedule or when motion is detected, etc.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Lighting].
+R Each setting is explained in this section.
+Using a schedule
+You can enable the schedule so that the light is turned on and off at specified times and you can also
+specify the light to turn on and off at random times when you are away from home on a vacation, etc.
+Slide the [Use a Schedule] switch to the "on" position to enable the schedule.
+R Slide 
+ to specify the start time.
+R Slide 
+ to specify the end time.
+R [Vacation Randomizer]: Turns the light on and off at random times within an hour of the times
+specified in the schedule.
+Turning on lights after detecting motion
+You can enable the light to turn on if motion is detected when it is dark.
+Slide the [Motion Sensor] switch to the "on" position to enable the use of motion detection to turn on the
+light.
+R [Duration]: Determines how the long the light will be lit after motion is detected.
+Adjusting the brightness of the light
+You can adjust the brightness level for when the light is turned on through a schedule or motion detection.
+Slide the [Brightness] slider to the desired level.
+Battery status
+When backup batteries are used with the camera, you can check the status of the batteries.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [System].
+R [Battery Status]: Displays the status of the batteries.
+Note:
+R When inserting or replacing batteries, disconnect the AC adaptor from the wall outlet before inserting
+or replacing the batteries. If batteries are inserted or replaced with the AC adaptor connected to a wall
+outlet, the battery status may not be updated or may be incorrect.
+81
+Using a shelf, floor, and window camera

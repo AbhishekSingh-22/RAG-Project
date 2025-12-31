@@ -1,0 +1,51 @@
+4
+Tap [OK].
+Note:
+R Floor cameras:
+Refer to  “Registering floor cameras”, Page 33 if you want to register your camera again.
+R Shelf cameras:
+Refer to  “Registering shelf cameras”, Page 33 if you want to register your camera again.
+R Window cameras:
+Refer to  “Registering window cameras”, Page 33 if you want to register your camera again.
+Deregistering access points
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Deregistration] ® [Access Point].
+3
+Select the device that you want to deregister.
+R A dialog is displayed asking whether you want to deregister the device.
+4
+Tap [OK].
+Note:
+R Refer to  “Registering access points”, Page 33 if you want to register your access point again.
+Deregistering front door camera/outdoor cameras
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Deregistration] ® [Camera(s)].
+3
+Select the device that you want to deregister.
+R A dialog is displayed asking whether you want to deregister the device.
+4
+Tap [OK].
+Note:
+R Refer to  “Registering front door cameras and outdoor cameras”, Page 34 if you want to register your
+front door camera or outdoor camera again.
+Deregistering HD cameras
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Deregistration] ® [Indoor HD Camera].
+3
+Select the device that you want to deregister.
+R A dialog is displayed asking whether you want to deregister the device.
+4
+Tap [OK].
+Note:
+R Refer to  “Registering HD cameras”, Page 34 if you want to register your HD camera again.
+42
+Getting started with the HomeHawk!

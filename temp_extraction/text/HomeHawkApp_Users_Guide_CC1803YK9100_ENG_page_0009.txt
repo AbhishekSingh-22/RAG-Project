@@ -1,0 +1,6 @@
+Access point (KX-HNB700, KX-HNB705)
+R Joins front door cameras and outdoor cameras together
+R Connects to your wireless router with an Ethernet cable
+R Supports SD card connection for recording video and audio from cameras
+9
+Getting started with the HomeHawk!

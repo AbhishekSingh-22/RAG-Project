@@ -1,0 +1,57 @@
+The recording list displays all recordings for the specified dates and filters can be used to specify the
+recordings that you want to display.
+A
+C
+F
+H
+I
+B
+A
+D
+G
+J
+L
+E
+K
+M
+A
+: Displays recorded images for the
+previous date
+: Displays recorded images for the next
+date
+B
+Displays the selected date and you can tap
+here to select a date
+C
+[Select]: Used to select multiple recordings
+for deleting or protecting
+D
+Selects the camera when there are multiple
+cameras registered
+E
+Shows the camera’s name
+F
+Goes to rapid playback
+( “Rapid playback”, Page 57)
+G
+Displays a thumbnail image for the recording
+H
+Shows information about the type of recording
+– [Manual]: Recordings that were recorded
+manually.
+– [Motion]: Recordings that were recorded
+when a motion sensor was triggered.
+I
+Shows the time when the recording was
+made and its duration
+J
+Indicates that a recording is protected
+K
+Indicates recordings were recorded with the
+sound muted by the recording settings
+L
+Displays the recorded images in a list
+M
+Displays the recorded images in a timeline
+55
+Using a shelf, floor, and window camera

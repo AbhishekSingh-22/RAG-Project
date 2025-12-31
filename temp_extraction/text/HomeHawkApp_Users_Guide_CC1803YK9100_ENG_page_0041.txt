@@ -1,0 +1,60 @@
+Viewing event logs
+1
+From the [HomeHawk] app home screen, tap 
+.
+2
+Tap [Event Log].
+3
+Select the desired device.
+R Front door cameras and outdoor cameras only:
+Select [All Cameras] to view event logs from all the cameras.
+4
+Select a date.
+R A list of all event logs recorded on the selected date is displayed.
+Deleting event logs
+1
+From the [HomeHawk] app home screen, tap 
+.
+2
+Tap [Event Log].
+3
+Select the desired device.
+R Front door cameras and outdoor cameras only:
+Select [All Cameras] to view event logs from all the cameras.
+4
+Tap 
+ ® [OK].
+R All event logs for the selected device are deleted.
+Deregistering devices
+Deregistering mobile devices
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Deregistration] ® [Mobile Device].
+3
+Select the desired device.
+R A list of mobile devices registered to the selected device is displayed.
+4
+Select the mobile device that you want to deregister.
+R A dialog is displayed asking whether you want to deregister the device.
+5
+Tap [OK].
+Note:
+R Refer to the following if you want to register your mobile device again.
+– Access points:  “Registering your mobile device to additional access points”, Page 142
+– Floor cameras:  “Registering other mobile devices to the floor camera”, Page 69
+– Shelf cameras:  “Registering other mobile devices to the shelf camera”, Page 47
+– Window cameras:  “Registering other mobile devices to the window camera”, Page 92
+– HD cameras:  “Registering other mobile devices to the HD camera”, Page 174
+Deregistering floor cameras, shelf cameras, and window cameras
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Deregistration] ® [Camera(s)].
+3
+Select the device that you want to deregister.
+R A dialog is displayed asking whether you want to deregister the device.
+41
+Getting started with the HomeHawk!

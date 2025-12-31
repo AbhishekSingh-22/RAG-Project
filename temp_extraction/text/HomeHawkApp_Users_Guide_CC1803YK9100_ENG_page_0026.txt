@@ -1,0 +1,39 @@
+Displaying the settings menu
+Tap 
+ to display the settings menu. Note that the settings menu is not available on all screens.
+Selecting devices
+You can select the desired device (cameras, access points, etc.) when viewing recorded images,
+configuring settings, etc.
+If there are multiple devices registered to your mobile device, you can select devices by tapping 
+.
+Accessing from multiple mobile devices
+There are certain limitations when multiple mobile devices are connected to your devices at the same
+time, as explained below.
+Shelf camera, floor camera, and window camera features:
+Viewing camera images
+Up to 4 mobile devices, including 2 connected while away from home (i.e., connecting while away from a
+different network) can view images from cameras.
+Playing images
+Only 1 mobile device can play images. Subsequent mobile devices are blocked from playing images
+while images are being played on another mobile device.
+Changing settings
+Only 1 mobile device can change settings. Subsequent mobile devices are blocked from changing
+settings while settings are being changed by another mobile device.
+Front door camera and outdoor camera features:
+Viewing camera images
+Up to 4 mobile devices, including 2 connected while away from home (i.e., connecting while away from a
+different network) can view images from a maximum of 2 cameras.
+Recording camera images
+Images from up to 2 cameras can be recorded. If you attempt to record images from a 3rd camera, the
+recording for the 1st camera will stop, and recording for the 3rd camera will start.
+Playing images
+Only 1 mobile device can play images. Subsequent mobile devices are blocked from playing images
+while images are being played on another mobile device.
+Changing settings
+Only 1 mobile device can change settings. Subsequent mobile devices are blocked from changing
+settings while settings are being changed by another mobile device.
+Note:
+R Information for HD cameras
+See  “Accessing the HD camera from multiple devices”, Page 152.
+26
+Getting started with the HomeHawk!

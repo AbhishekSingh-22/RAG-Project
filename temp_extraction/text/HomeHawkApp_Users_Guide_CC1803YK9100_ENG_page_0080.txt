@@ -1,0 +1,64 @@
+Erasing multiple images
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Recording List].
+2
+Select the desired camera.
+3
+Tap 
+, 
+, or the displayed date to select a recording date.
+4
+Tap [Select].
+5
+Select the desired recordings.
+R Tap 
+/
+ displayed next to the date to select or deselect all images shown in the list.
+6
+When finished, tap [Delete] ® [OK].
+Protecting recordings
+You can protect recordings so that they cannot be erased.
+Protecting individual images
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Recording List].
+2
+Select the desired camera.
+3
+Tap 
+, 
+, or the displayed date to select a recording date.
+4
+Select the desired recording.
+5
+Tap 
+.
+R Tap 
+ to remove the protection.
+R
+ is displayed in the thumbnail of images to indicate that the image is protected.
+Protecting multiple images
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Recording List].
+2
+Select the desired camera.
+3
+Tap 
+, 
+, or the displayed date to select a recording date.
+4
+Tap [Select] ® 
+.
+5
+Select the desired recordings.
+R
+ is displayed in the thumbnail of images to indicate that the image is protected.
+R Tap 
+/
+ displayed next to the date to select or deselect all images shown in the list.
+6
+When finished, tap [Protect].
+80
+Using a shelf, floor, and window camera

@@ -1,0 +1,56 @@
+To access the camera image/recording list screen, tap the desired camera from the [HomeHawk] app
+home screen ( “Front door camera and outdoor camera home screen”, Page 24).
+E
+F
+C
+A
+D
+B
+H
+I
+J
+G
+K
+A
+L
+A
+Used to switch between available cameras
+B
+Shows the camera’s name
+C
+Shows the access point’s name
+D
+Shows the battery level
+( “Camera battery level”, Page 135)
+E
+Shows the live camera image
+F
+Indicates that by tapping the camera image
+(E) or this icon (F), the camera image can
+be enlarged and the live camera image
+screen ( “Viewing the live camera image
+screen”, Page 125) can be accessed
+G
+Takes snapshots
+( “Taking snapshots”, Page 127)
+H
+Starts/stops recording
+( “Recording camera images (manual
+recording)”, Page 127)
+I
+Enables talking with the camera
+( “Talking to the camera”, Page 128)
+J
+Turns sound on/off
+( “Turning the camera audio on and off”,
+Page 126)
+K
+Displays a recording list of all images of the
+selected camera
+( “Viewing the recording list screen”,
+Page 128)
+L
+Shows today’s recorded image list for the
+selected camera
+124
+Using a front door camera and outdoor camera

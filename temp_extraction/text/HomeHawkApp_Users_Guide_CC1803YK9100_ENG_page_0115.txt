@@ -1,0 +1,55 @@
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [System] ® [Bit Rate].
+4
+Select the desired setting and then tap [OK].
+Note:
+R This setting is only available when Amazon Echo Show ( “Amazon Alexa features (overview)”,
+Page 35) or Google Home ( “Google Home features (overview)”, Page 38) settings are enabled.
+Time adjustment
+You can manually or automatically adjust the time of your devices to match the mobile device.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [System] ® [Time Adjustment].
+4
+To manually adjust the time:
+Tap [Update Time].
+To automatically adjust the time:
+Tap the name of the displayed mobile device, select the mobile device to match the time with, and
+then tap [OK].
+Displaying device information
+You can display device information, such as firmware versions and MAC addresses, and select whether
+or not to upload logs.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [System] ® [System Info].
+– [Camera Log Upload]: Determines whether or not logs are uploaded.
+Notification settings
+You can select which types of status notifications are displayed, and which are not.
+Important:
+R In order to receive notifications, your mobile device must be connected to the Internet. If your mobile
+device is not connected to a wireless network, a mobile network connection is required.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Notification Settings].
+4
+Select the desired settings.
+R All cameras:
+115
+Using a shelf, floor, and window camera

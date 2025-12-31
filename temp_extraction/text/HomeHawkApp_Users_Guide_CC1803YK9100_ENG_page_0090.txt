@@ -1,0 +1,36 @@
+Window camera setup
+Window camera setup (overview)
+There are 3 basic steps you need to perform in order to connect to the camera from your mobile device.
+1
+Download the app
+Download the [HomeHawk] app to your mobile device.
+See  “Downloading the [HomeHawk] app (overview)”, Page 20.
+2
+Set up the camera
+Use the [HomeHawk] app to configure the camera to connect to your wireless router, and then
+register your mobile device to the camera.
+See  “Window camera initial setup”, Page 90.
+3
+Register additional mobile devices (optional)
+You can register additional mobile devices to the camera, for a total of 8.
+See  “Registering other mobile devices to the window camera”, Page 92.
+Window camera initial setup
+Before you begin
+Confirm the following before you begin.
+– Make sure you have installed the [HomeHawk] app on your mobile device
+– Make sure your wireless router and the camera are turned on
+– Make sure your mobile device is connected to your wireless router
+– Make sure your mobile device can connect to the Internet
+Note:
+R If you have completed this procedure and want to register another mobile device to the camera, see
+“Registering other mobile devices to the window camera”, Page 92.
+R If you experience trouble while performing this procedure, refer to the information in  “Initial setup by
+WPS”, Page 190 and  “Initial setup by Bluetooth”, Page 191.
+Initial setup
+1
+Start the [HomeHawk] app by tapping its icon (shown below).
+R The end-user license agreement is displayed the first time you start the app.
+R Confirm all of the displayed permission screens and agree as necessary.
+R Select your country or region if displayed, and then tap [Next].
+90
+Using a shelf, floor, and window camera

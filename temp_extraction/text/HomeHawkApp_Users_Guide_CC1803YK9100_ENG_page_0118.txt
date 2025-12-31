@@ -1,0 +1,24 @@
+top of the home screen. In this case, we recommend deleting unused SSIDs from the home wireless
+network SSID list.
+Deleting wireless routers
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Home Wireless Network SSID].
+4
+Select the wireless router that you want to delete and then tap [Delete].
+Updating the wireless network SSID information
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Home Wireless Network SSID].
+4
+Tap [Update] to update the information.
+118
+Using a shelf, floor, and window camera

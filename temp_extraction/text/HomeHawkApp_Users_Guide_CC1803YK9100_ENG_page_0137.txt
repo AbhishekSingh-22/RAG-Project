@@ -1,0 +1,55 @@
+Recording settings
+Recording with sound
+You can select whether audio is recorded when recording camera images.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Recording Settings].
+4
+Slide the [Recording with Sound] switch to the desired position.
+R When this switch is turned off, audio is not recorded when recording camera images.
+Adjusting the time stamp
+You can change the time format and position of the time stamp that is displayed when viewing camera
+images or recording. You can also turn the time stamp off.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Recording Settings] ® [Time Stamp].
+4
+Select the desired setting and then tap [OK].
+– [Position]: Determines the position of the time stamp. To turn the time stamp off, select [OFF].
+– [24-Hour Format]: Determines whether the time stamp is displayed in 24-hour format or 12-hour
+format. Enable this setting to use 24-hour format time.
+Using night vision
+If there is not adequate light to illuminate the subject, such as at night, the camera switches to night
+vision mode depending on the settings.
+The following settings can be selected for the night vision.
+– [Color]: Lights white LEDs so that images can be displayed in color. Has shorter visibility range than
+[Monochrome].
+– [Monochrome]: Lights infrared LEDs so that images can be seen in the dark. Has longer visibility
+range than [Color].
+– [OFF]: Turns off night vision mode.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Night Vision].
+4
+Select the desired setting and then tap [OK].
+Video settings
+Changing the camera resolution
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+137
+Using a front door camera and outdoor camera

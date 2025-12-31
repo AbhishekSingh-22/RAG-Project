@@ -1,0 +1,52 @@
+Maintenance reminder (window cameras only)
+You can determine whether the maintenance reminders are sent to your mobile device or not.
+A maintenance reminder is sent to remind you to reattach the camera to the window periodically to
+prevent the camera from falling.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [System] and select the desired camera.
+4
+Slide the [Maintenance Reminder] switch to the desired setting.
+Updating firmware
+You can use this feature to check for a newer version of the camera firmware (i.e., system software). If a
+newer version is found, you can update the firmware.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [System] ® [Firmware Update].
+R The camera will connect to the Internet and check for a newer version of its firmware.
+4
+Follow the on-screen instructions.
+Resetting camera settings
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [System] ® [Reset Camera Settings].
+4
+Select the desired setting.
+– [Reset All Settings]: Resets all camera settings, including network settings.
+– [Reset Camera Settings]: Resets all camera settings, except network settings.
+– [Reset Network Settings]: Resets network settings only.
+5
+Follow the on-screen instructions.
+Note:
+R A camera can also be reset manually by pressing buttons on the camera.
+To reset all camera settings: Press and hold the RESET button for about 10 seconds using an object
+with a thin tip.
+Bit rate settings for Amazon Echo Show and Google Home
+You can select the bit rate to be used when transmitting data for Amazon Echo Show or Google Home
+Chromecast.
+If you cannot display camera images on Amazon Echo Show or via Google Home Chromecast, or if
+images are not displayed smoothly, try using a lower bit rate setting.
+114
+Using a shelf, floor, and window camera

@@ -1,0 +1,48 @@
+No sound is heard in camera recordings
+R If 
+ is displayed next to the recording in the recording list, the system is configured to not record
+audio when recording camera images.
+→Change the [Recording with Sound] setting ( “Recording with sound”, Page 137).
+R The volume is turned down on your mobile device.
+→Adjust the volume of your mobile device.
+Colors in camera images appear different from normal
+R The camera is aimed at a dark location, or it is nighttime.
+→If there is not adequate light to illuminate the subject, such as at night, the camera switches to night
+vision mode depending on the settings ( “Using night vision”, Page 137). In this case, colors may
+appear different from normal.
+Colors in front door camera images appear washed out
+R Lighting conditions are poor or inconsistent.
+→Adjust the camera’s brightness ( “Changing the brightness”, Page 138).
+→Place the camera in a different location or position.
+Condensation forms on the camera
+R Extreme temperature changes are causing condensation to form.
+→Wipe the outer surface of the camera with a soft dry cloth.
+→Use the camera in a location that does not have extreme temperature changes.
+There is a long delay when talking to the camera while away from home
+R Your mobile device’s network connection is slow or congested.
+→Wait for network traffic to decrease.
+→Lower the [Frame Rate] setting ( “Changing the frame rate”, Page 138).
+Images are poor at night when the camera is installed in front of a window
+R Night vision mode is causing images to have poor quality.
+→Turn off night vision mode ( “Using night vision”, Page 137).
+LEDs light at night
+R Night vision mode is enabled and automatically turns on LEDs at night.
+→Turn off night vision mode or set it to [Monochrome] ( “Using night vision”, Page 137).
+Note:
+R Turning off night vision mode will reduce the visibility of images at night.
+Camera images are not displayed at first while away from home, and are displayed after some
+time passes
+R Your mobile device’s network connection is slow or congested.
+→Wait for network traffic to decrease.
+→Lower the [Frame Rate] setting ( “Changing the frame rate”, Page 138).
+I have to wait a long time before camera images are displayed while away from home
+R There is too much traffic on your home network or on the mobile device’s network.
+→Wait for network traffic to decrease.
+Camera images are not displayed, and [Loading...] is displayed for a long period when I try to
+view camera images while away from home
+R The protocol used for communication is not compatible with your network.
+→Set the [Remote Access Mode] setting to [TCP] ( “Remote access mode settings”, Page 35).
+The camera’s sensor is triggered too easily
+R The camera’s motion detection features are too sensitive.
+192
+Troubleshooting

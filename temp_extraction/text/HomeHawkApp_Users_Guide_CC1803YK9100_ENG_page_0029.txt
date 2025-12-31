@@ -1,0 +1,47 @@
+Meaning of symbols used in this section
+Indicator off
+Indicator lit
+Indicator blinking slowly
+Indicator blinking
+Indicator blinking quickly
+Indicator blinking very quickly
+Indicator blinking slowly in two colors
+Indicator blinking in two colors
+Access point LED indicator
+Off
+No power, or LED indicator is turned off *1
+Green
+Power is on (normal operations)*1, or registration completed for the
+camera or mobile device
+ 
+Registration mode, updating
+ 
+Obtaining an IP address, or accessing a microSD card*1
+Green or yellow
+(amber)
+(alternating)
+or
+Starting up*2
+Red
+Registration failed
+Yellow (amber)
+Power on until start up completed
+IP address is not obtained, or Ethernet cable is not connected to the
+router
+*1
+You can configure the access point so that its LED indicator does not light in most states. See
+“Status LED”, Page 140.
+*2
+It may take some time for the access point to finish starting up.
+Front door camera and outdoor camera LED indicator
+Off
+R No power
+R More than 5 seconds have passed since turning on the power when
+the camera is not registered to the access point
+R LED indicator is turned off*1
+Green
+Registration successfully completed or signal level is strong*3
+ 
+Registration mode, updating
+29
+Getting started with the HomeHawk!

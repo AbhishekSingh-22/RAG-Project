@@ -1,0 +1,49 @@
+→Reduce the sensitivity of the camera’s sensors, see  “Motion sensitivity”, Page 139.
+R The camera’s detection area is too large.
+→Limit the detection area so that the camera ignores motion in unneeded areas of the camera’s
+image, i.e., reduce the camera’s detection area ( “Detection area”, Page 139).
+R The camera’s settings are not suited to the environment.
+→Review the information in the Installation Guide included with your camera about sensor features
+and installation environment.
+→Front door cameras and outdoor cameras can detect motion visually (i.e., when an area of the
+camera’s image changes brightness). For this reason, false detections may occur in the following
+locations.
+False detections caused by predictable movement in a specific area of the camera image
+– Areas where fixed objects move in the wind, such as tree branches or hanging laundry
+– Areas where animals move in a limited area, such as birds in a nest or small animals close to the
+ground
+– Areas where brightness significantly, such as when shadows form in the afternoon, lights turn on
+at night, or vehicles pass by at night with their headlights or brake lights on
+You can prevent these false detections by adjusting the position of the camera, by limiting the
+detection area so that the camera ignores motion in unneeded areas of the camera’s image
+( “Detection area”, Page 139) or lowering the sensitivity of sensors ( “Motion sensitivity”, Page 139).
+False detections caused by unpredictable movement in any area of the camera image
+– Areas where birds or flying insects move in front of the camera
+– Areas where rain, snow, hail, or tree leaves fall in front of the camera
+You can prevent these false detections by adjusting the position of the camera or lowering the
+sensitivity of sensors ( “Motion sensitivity”, Page 139).
+[Ambient temperature is (too high) or (too low), camera operation will be interrupted.] is displayed
+R The camera is used in an environment with a temperature that exceeds -20 °C or 50 °C (-4 °F to
+122 °F).
+→Use the camera in an environment with temperatures within -20 °C to 50 °C (-4 °F to 122 °F).
+HD camera sensor features
+Refer to the following after checking the general troubleshooting information described in  “General
+information”, Page 176.
+Notifications are not received
+R The desired notification type is not enabled.
+→Enable the desired notification type ( “[Notification Settings]”, Page 170).
+R The camera’s date and time setting is incorrect.
+→Adjust the date and time setting ( “HD camera device profiles”, Page 171).
+Sensor detections are not displayed in the sensor history
+R The desired feature is not enabled.
+→Make sure the desired feature is enabled and configured as desired ( “Temperature sensor”,
+Page 164,  “Sound sensor”, Page 164).
+R The camera’s date and time setting is incorrect.
+→Adjust the date and time setting ( “HD camera device profiles”, Page 171).
+Colors in camera images appear different from normal
+R The camera is aimed at a dark location, or it is nighttime.
+→If there is not adequate light to illuminate the subject, such as at night, the camera switches to night
+vision mode depending on the settings ( “Night vision mode”, Page 167). In this case, colors may
+appear different from normal.
+193
+Troubleshooting

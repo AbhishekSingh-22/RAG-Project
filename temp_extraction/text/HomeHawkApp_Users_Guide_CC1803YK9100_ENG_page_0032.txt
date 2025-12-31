@@ -1,0 +1,55 @@
+R Camera is out of range of your wireless router*2
+R Wireless LAN connection failed
+Yellow
+Not registered to your wireless router (usually for initial setup), or signal
+level is good*2
+Initial setup is being performed using WPS on your router
+Blue
+Registration to your wireless router successfully completed or camera is
+on*1
+White
+Privacy mode is on*1
+Accessing microSD card (when privacy mode is on)
+*1
+You can configure the camera so that its LED indicator does not light in most states. See  “Status”,
+Page 109.
+*2
+The signal level (strong, good, weak, out of range) is shown after pressing the SETUP button for 3
+seconds. You can also check the signal level from  “Camera signal strength”, Page 109.
+*3
+Lights for 3 seconds after registration is successfully completed or failed.
+Window camera LED indicator
+Off
+R No power
+R LED indicator is turned off*1
+Green
+Registration successfully completed*3 or signal level is strong*2
+ 
+Registration mode, updating
+Camera is searching for your wireless router
+Red
+R Registration failed*3
+R Accessing microSD card (when using 24/7 recording)
+R Signal level is weak*2
+R Streaming data*1 or detecting motion*1
+R Accessing microSD card (when not using 24/7 recording)
+R Device error (fan error)
+R Camera is out of range of your wireless router*2
+R Wireless LAN connection failed
+Yellow
+Not registered to your wireless router (usually for initial setup), or signal
+level is good*2
+Initial setup is being performed using WPS on your router
+Blue
+Registration to your wireless router successfully completed or camera is
+on*1
+*1
+You can configure the camera so that its LED indicator does not light in most states. See  “Status”,
+Page 109.
+*2
+The signal level (strong, good, weak, out of range) is shown after pressing the SETUP button for 3
+seconds. You can also check the signal level from  “Camera signal strength”, Page 109.
+*3
+Lights for 3 seconds after registration is successfully completed or failed.
+32
+Getting started with the HomeHawk!

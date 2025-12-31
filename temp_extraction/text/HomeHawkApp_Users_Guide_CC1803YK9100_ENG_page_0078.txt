@@ -1,0 +1,37 @@
+Playing back recordings
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Recording List].
+2
+Select the desired camera.
+3
+Tap 
+, 
+, or the displayed date to select a recording date.
+R A list of all recordings recorded on the selected date is displayed.
+R Tap 
+ to display recordings in a timeline. Tap 
+ to display recordings in a list.
+4
+Select a recording.
+R The selected recording starts playing in the playback screen.
+Note:
+R When connected away from home, 
+ or 
+ is displayed on the playback screen. See
+“Connection mode when away from home”, Page 24 for more information.
+R Recorded images can also be played back from the camera image/recording list screen ( “Viewing the
+camera image/recording list screen”, Page 71).
+Normal playback
+The normal playback screen allows you play back recording and perform other operations.
+B
+A
+C
+D
+F
+H
+G
+I
+E
+78
+Using a shelf, floor, and window camera

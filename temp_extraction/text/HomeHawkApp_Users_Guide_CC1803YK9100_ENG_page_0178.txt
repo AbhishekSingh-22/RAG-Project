@@ -1,0 +1,39 @@
+Note:
+R Mobile devices must be turned on in order to match the time.
+→Shelf cameras, floor cameras, and window cameras:
+“Time adjustment”, Page 115
+→Access points, shelf cameras, and floor cameras:
+“Time adjustment”, Page 143
+→HD cameras:
+“HD camera device profiles”, Page 171
+Information on Disposal in other Countries outside the European Union
+These symbols are only valid in the European Union. If you wish to discard these items, please contact
+your local authorities or dealer and ask for the correct method of disposal.
+Note for the battery removal procedure (front door cameras and outdoor cameras only)
+Refer to the “Battery removal procedure” in the Installation Guide supplied with the product.
+Messages
+The following messages may be displayed in the Notifications Center (for iPhone, iPad) and the status
+bar (for Android devices).
+[Recording Error (No SD Card)] is displayed
+R There is no SD card inserted in the access point, shelf camera, or floor camera.
+→Insert a memory card in the device.
+[Recording Error (Memory full)] is displayed
+R There is no space in the SD card.
+→Shelf cameras, floor cameras, and window cameras:
+Insert a new SD memory card into the camera or enable overwrite recording ( “Recording settings”,
+Page 110).
+→Access points:
+Insert a new SD memory card into the access point or enable overwrite recording ( “Recording
+settings”, Page 137).
+[Recording Error (SD card error)] is displayed
+R There is a problem with the SD card.
+→Check the SD card.
+[Access Point update failed] is displayed
+R An error occurred while updating the access point.
+→Check all connections to the access point and try again.
+[Fan error] is displayed (window cameras only)
+R A problem occurred with the fan in the window camera.
+→Unplug the camera and then plug it in again.
+If the message is still displayed, contact an authorized service center.
+178
+Troubleshooting

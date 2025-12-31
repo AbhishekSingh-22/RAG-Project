@@ -1,0 +1,54 @@
+4
+Tap [Select] ® 
+.
+5
+Select the desired recordings.
+R
+ is displayed in the thumbnail of images to indicate that the image is protected.
+R Tap 
+/
+ displayed next to the date to select or deselect all images shown in the list.
+6
+When finished, tap [Protect].
+Mode settings
+Mode settings (overview)
+Modes allow the access points and their connected front door cameras and outdoor cameras to operate
+according to pre-determined settings when motion is detected. The same mode is used for all front door
+cameras and outdoor cameras connected to the same access point. You can use preset modes, or
+create your own modes. Each mode answers the following questions.
+1
+What sounds are made?
+– Example: Beeps, announcements, etc.
+2
+Which cameras record images and for how long?
+3
+Are cameras combined together for pre-recording?
+– Example: 2 cameras can be linked together so that if 1 camera detects motion, the other camera
+starts pre-recording. (Images are temporarily stored, and if motion is detected later, images are
+then saved on the access point’s SD card.)
+4
+Are notifications sent to mobile devices when motion is detected?
+Note:
+R Modes cannot be used with HD cameras.
+Examples
+Here are some examples of how you can use modes.
+I want to know when a package arrives
+1
+What sounds: No sounds are made
+2
+Which cameras: Camera 1 and Camera 2 record images for 1 minute
+3
+Are cameras combined: Yes
+4
+Are notifications sent: Yes
+I want to sound a voice alert if a suspicious person approaches my front door
+1
+What sounds: An announcement is played
+2
+Which cameras: Camera 1 and Camera 2 record images for 2 minutes
+3
+Are cameras combined: Yes
+4
+Are notifications sent: Yes
+132
+Using a front door camera and outdoor camera

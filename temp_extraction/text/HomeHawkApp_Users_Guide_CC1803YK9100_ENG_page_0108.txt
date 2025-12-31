@@ -1,0 +1,29 @@
+– [Send Notifications]
+R [All Motion]: Sends notifications for all types of motion detection (objects and people).
+R [Person Only]: Only sends notifications when motion is detected for people.
+R [OFF]: Disables notifications.
+Editing modes
+1
+Access the mode screen ( “Accessing the mode screen”, Page 107).
+2
+Tap [Edit], and then tap 
+ next to the desired mode.
+3
+Edit the desired settings.
+4
+When finished, tap [Done].
+Deleting created modes
+1
+Access the mode screen ( “Accessing the mode screen”, Page 107).
+2
+Tap [Edit], and then tap 
+ next to the desired mode.
+3
+Tap 
+.
+4
+Tap [OK].
+Note:
+R Preset modes cannot be deleted.
+108
+Using a shelf, floor, and window camera

@@ -1,0 +1,39 @@
+Window camera features
+General issues
+Refer to the following after checking the general troubleshooting information described in  “General
+information”, Page 176.
+The camera’s LED indicator is blinking in red.
+R The camera is out of range of your wireless router.
+→Confirm that your wireless router is powered on and wired correctly, and then move the camera
+closer to your wireless router.
+R A fan error occurred.
+→Unplug the camera and then plug it in again.
+If the problem is not resolved, contact an authorized service center.
+Colors in camera images appear different from normal
+R The camera is aimed at a dark location, or it is nighttime.
+→If there is not adequate light to illuminate the subject, such as at night, the camera switches to night
+vision mode. In this case, colors may appear different from normal.
+Camera images are not displayed at first while away from home, and are displayed after some
+time passes
+R Your mobile device’s network connection is slow or congested.
+→Wait for network traffic to decrease.
+→Lower the [Frame Rate] setting ( “Changing the frame rate”, Page 112).
+I have to wait a long time before camera images are displayed while away from home
+R There is too much traffic on your home network or on the mobile device’s network.
+→Wait for network traffic to decrease.
+Camera images are not displayed, and [Loading...] is displayed for a long period when I try to
+view camera images while away from home
+R The protocol used for communication is not compatible with your network.
+→Set the [Remote Access Mode] setting to [TCP] ( “Remote access mode settings”, Page 35).
+The camera’s sensor is triggered too easily
+R The camera’s motion detection features are too sensitive.
+→Reduce the sensitivity of the camera’s sensors, see  “Motion sensitivity”, Page 104.
+R The camera’s detection area is too large.
+→Limit the detection area so that the camera ignores motion in unneeded areas of the camera’s
+image, i.e., reduce the camera’s detection area ( “Detection area”, Page 103).
+R Unwanted detections are made (from cars, etc.)
+→Set the mode [Send Notifications] setting to [Person Only] ( “Once motion is detected”, Page 107).
+A watermark is displayed on images
+R A watermark is displayed on live and recorded images. It cannot be turned off.
+189
+Troubleshooting

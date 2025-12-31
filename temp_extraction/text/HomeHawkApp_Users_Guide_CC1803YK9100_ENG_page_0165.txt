@@ -1,0 +1,49 @@
+– [Low]: The microphone is only slightly sensitive to sound, i.e., a large sound is required to trigger
+the notification.
+Note:
+R The camera’s microphone will not detect sound while a mobile device user is talking to the camera
+( “Talking to the HD camera”, Page 155).
+R In order to receive sound alert notifications, make sure the [Sound Detection Alert] notification setting
+is enabled. See  “[Notification Settings]”, Page 170.
+Motion detection
+The camera can detect motion by recognizing changes in the brightness of areas that are visible to the
+camera. You can adjust the settings that determine how the camera detects motion.
+Image sensor sensitivity
+You can adjust the sensitivity of the camera’s motion detection features.
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Settings] ® [Sensor Settings] ® [Motion Sensitivity].
+4
+Select the desired setting.
+– [High]: The image sensor is very sensitive to changes, i.e., even a small change will trigger the
+sensor.
+– [Normal]: The image sensor is moderately sensitive to changes.
+– [Low]: The image sensor is somewhat sensitive to changes.
+– [Very Low]: The image sensor is only slightly sensitive to changes, i.e., a large change is required
+to trigger the sensor.
+– [OFF]: The image sensor is disabled.
+5
+Tap [OK].
+Detection area
+You can select which areas of the camera image are monitored for motion detection. This allows you to
+ignore motion in certain areas of the camera’s image.
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Settings] ® [Sensor Settings] ® [Set Detection Area].
+4
+Tap the desired areas of the camera image.
+R Gray areas of the camera image indicate areas for which image detection is disabled.
+R Tap [Reset] to enable image detection for all areas of the camera image.
+5
+Tap [OK].
+Image, sound, and recording settings
+HD camera speaker volume
+Allows you to adjust the camera’s speaker volume.
+165
+Using an HD camera

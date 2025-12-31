@@ -1,0 +1,60 @@
+5
+Tap [Schedule].
+6
+Under [Timer], set each item.
+– [Start Time]: Determines when camera recording starts.
+– [Recording Duration]: Determines the length of the recording. The maximum setting is
+15 minutes.
+7
+Under [Repeat], set each item.
+– [Days]: Determines the days on which the scenario can record images.
+8
+When finished, tap [OK].
+Note:
+R If the conditions of this scenario (day and time) overlap with another scenario that is configured to
+record images from the same camera, an error is displayed. The nature of the error is also displayed
+on the scenario’s configuration screen.
+Creating a scenario that uses a sensor as the trigger
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Smart Recording].
+R A list of existing scenarios is displayed.
+4
+Tap 
+.
+5
+Select the sensor that you want to use to trigger the smart recording scenario.
+6
+Under [Timer], set each item.
+– [Recording Duration]: Determines the length of the recording. The maximum setting is
+15 minutes.
+7
+Under [Trigger Period], set each item.
+– [All Day]: Enables the scenario for all day, i.e., images will be recorded whenever the sensor is
+triggered.
+– [Start Time]: Determines the start time of the scenario. If the sensor is triggered before this time,
+images will not be recorded.
+– [End Time]: Determines the end time of the scenario. If the sensor is triggered after this time,
+images will not be recorded.
+8
+Under [Repeat], set each item.
+– [Days]: Determines the days on which the scenario can record images.
+9
+When finished, tap [OK].
+Note:
+R If the conditions of this scenario (day and time) overlap with another scenario that is configured to
+record images from the same camera, an error is displayed. The nature of the error is also displayed
+on the scenario’s configuration screen.
+Turning smart recording scenarios on and off
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Smart Recording].
+R A list of existing scenarios is displayed.
+162
+Using an HD camera

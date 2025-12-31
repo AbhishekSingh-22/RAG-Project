@@ -1,0 +1,57 @@
+7
+When prompted, enter a name for the camera and mobile device, and then tap [OK].
+R The camera name setting is used by your mobile device to identify the camera. This is useful when
+you have multiple cameras.
+R The mobile device name setting is used to identify your mobile device. This is useful when
+performing certain operations, such as deregistering.
+8
+When [Congrats!] is displayed, tap [Explore HomeHawk].
+R A screen explaining how to insert an SD card into the camera is displayed.
+If you will use an SD card to record images, follow the on-screen instructions and insert an SD
+card into the camera.
+R A screen asking you to set the home position of geo-fencing ( “Automatic Mode Switching”,
+Page 87) is displayed, tap [Set Current pos as Home] ® [OK].
+R The app’s home screen is displayed when initial setup is completed.
+Basic Setup
+1
+Enter the password for the wireless network and then tap [Next].
+2
+Depending on the type of mobile device that you use, proceed as follows.
+Android users:
+Go to step 3.
+iOS 11.0 and later users:
+Tap [Join].
+iOS 10.x users:
+Change your mobile device’s wireless network setting temporarily so that it connects to the camera
+directly.
+R Open your mobile device’s [Settings] app, tap [Wi-Fi], select “Pansonic_Camera”, enter
+“12345678” as the password, and then tap [Join].
+Note:
+R Your mobile device starts searching for the camera.
+R When [Linking] is displayed, wait for up to about 3 minutes until the camera is connected to your
+wireless network and mobile device.
+3
+Press the SETUP button on the camera for about 2 seconds until the camera beeps.
+R The camera’s LED indicator starts blinking in green.
+4
+When prompted, create a login password for the camera, and then tap [Next].
+5
+When prompted, enter a name for the camera and mobile device, and then tap [OK].
+R The camera name setting is used by your mobile device to identify the camera. This is useful when
+you have multiple cameras.
+R The mobile device name setting is used to identify your mobile device. This is useful when
+performing certain operations, such as deregistering.
+6
+When [Congrats!] is displayed, tap [Explore HomeHawk].
+R A screen explaining how to insert an SD card into the camera is displayed.
+If you will use an SD card to record images, follow the on-screen instructions and insert an SD
+card into the camera.
+R A screen asking you to set the home position of geo-fencing ( “Automatic Mode Switching”,
+Page 87) is displayed, tap [Set Current pos as Home] ® [OK].
+R The app’s home screen is displayed when initial setup is completed.
+Registering other mobile devices to the floor camera
+Confirm the following before you begin.
+– Make sure you have installed the [HomeHawk] app on your mobile device
+– Make sure your wireless router and the camera are turned on
+69
+Using a shelf, floor, and window camera

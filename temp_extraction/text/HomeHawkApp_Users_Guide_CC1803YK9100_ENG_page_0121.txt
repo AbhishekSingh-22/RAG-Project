@@ -1,0 +1,39 @@
+Confirm the following before you begin.
+– Make sure you have completed the initial setup procedure ( “Initial setup”, Page 119)
+– Make sure your mobile device can connect to the Internet
+– Make sure your wireless router and the access point are turned on
+– Make sure your mobile device and the access point are connected to the same wireless router
+1
+Start the [HomeHawk] app by tapping its icon (shown below).
+R The end-user license agreement is displayed the first time you start the app.
+R Confirm all of the displayed permission screens and agree as necessary.
+R Select your country or region if displayed, and then tap [Next].
+2
+Tap [FRONT DOOR Camera Kit ( + OUTDOOR Cameras )].
+3
+Tap [Connect to Existing].
+4
+Follow the on-screen instructions and confirm the access point’s LED indicator’s color.
+R If the access point’s LED indicator lights in green, tap the green lit icon, and then go to step 5.
+R If the access point’s LED indicator blinks in yellow (amber), tap the yellow (amber) blinking icon,
+and then connect the Ethernet cable between the access point and router. Next, follow the
+on-screen instructions, wait for a while, and then check the color of the LED lights again.
+R If the access point’s LED indicator blinks in green, tap the blinking green icon, check if DHCP
+(Dynamic Host Configuration Protocol) is operating for the router (refer to the operating
+instructions included with your router or contact your Internet service provider), and then tap
+[Done].
+5
+When prompted, press the SETUP button on the access point.
+6
+When prompted, enter the password used to log in to the access point and then tap [Next].
+7
+When prompted, enter a name for your mobile device, and then tap [OK].
+R The mobile device name setting is used by the access point and other system users to identify
+your mobile device. This is useful when performing certain operations, such as deregistering.
+8
+Follow the on-screen instructions and tap [Next].
+9
+When [Congrats!] is displayed, tap [Explore HomeHawk].
+R The app’s home screen is displayed when initial setup is completed.
+121
+Using a front door camera and outdoor camera

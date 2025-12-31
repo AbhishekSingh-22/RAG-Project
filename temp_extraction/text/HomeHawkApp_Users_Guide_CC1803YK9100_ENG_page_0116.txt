@@ -1,0 +1,51 @@
+– [Recording Error]: Determines whether a notification is displayed when a recording error
+occurs.
+– [Mode Change]: Determines whether a notification is displayed when a mode is changed.
+R Shelf cameras and floor cameras only:
+– [Sound Detection]: Determines whether a notification is displayed when sound is detected.
+– [Temperature Detection]: Determines whether a notification is displayed when the temperature
+is detected outside of the specified ranges.
+– [Privacy Mode Change]: Determines whether a notification is displayed when the privacy
+mode is changed.
+Login settings
+Configuring automatic login
+You can specify whether or not you must enter a login password in order to connect to your devices while
+away from home.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Login Settings].
+4
+Next to [Automatic Login], slide the switch to the desired position.
+To disable automatic login:
+Slide the switch to the off position.
+To enable automatic login:
+Slide the switch to the on position, enter the password and then tap [OK].
+R To display the characters that you have entered, tap 
+.
+Changing the login password
+You can change the login password used in order to connect to your devices while away from home.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Login Settings] ® [Change Login Password].
+4
+Enter the new password.
+R To display the characters that you have entered, tap 
+.
+5
+Tap [OK].
+Note:
+R The login password can only be changed when you are at home (when your mobile device is
+connected to the same wireless router as the camera).
+Network features
+Changing IP settings
+Typically these settings should not be changed.
+116
+Using a shelf, floor, and window camera

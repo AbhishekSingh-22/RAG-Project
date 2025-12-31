@@ -1,0 +1,42 @@
+The camera’s LED indicator is lit in yellow.
+R The camera is not in WPS mode because the SETUP button was not pressed for long enough.
+→Follow the on-screen instructions, and press and hold the SETUP button on the camera until the
+LED indicator starts blinking (about 5 seconds).
+Initial setup by Bluetooth
+Initial setup can't be completed
+The camera’s LED indicator is blinking in red.
+If you have trouble during the initial setup check the following causes/solutions first and then turn off the
+camera and restart it.
+R The wireless network password may be incorrect.
+→Enter the correct password for the wireless network.
+R The DHCP function of your wireless router may be disabled.
+→Enable the wireless router’s DHCP settings. For details, refer to your wireless router’s manual.
+R The address filter function of your wireless router may be enabled.
+→Register the MAC address of the camera to the address filter setting of the wireless router. Refer to
+your wireless router’s manual.
+The camera’s LED indicator is lit in blue.
+R A network clash has occurred because you have 2 wireless routers at home that are using the same
+channel or channels of a close frequency.
+→Unplug all the wireless routers and plug them in again.
+If the situation still does not improve, refer to your wireless router’s manual for information on how to
+change the router channel of your wireless network.
+R The "Isolation" function on the wireless router is enabled.
+Sometimes when the "Isolation" function is enabled, the camera will not be able to communicate with
+your mobile device via your wireless router.
+→Disable the "Isolation" function on your wireless router. For details, refer to your wireless router’s
+manual.
+Front door camera and outdoor camera features
+Refer to the following after checking the general troubleshooting information described in  “General
+information”, Page 176.
+[Camera update failed] is displayed
+R An error occurred while updating the camera.
+→Fully charge the camera and try again.
+I fully charged the camera (the charging LED indicator is lit in red), but its operation time seems
+to be shorter than usual
+R The temperature of the location where the camera is being used is too low.
+→Use the camera in a location with a higher temperature.
+The camera will not charge (the charging LED indicator blinks quickly in red)
+R You are charging the camera in a location outside of the camera’s specified charging temperatures.
+→Charge the camera in a location with a temperature between 5 °C and 40 °C (41 °F and 104 °F).
+191
+Troubleshooting

@@ -1,0 +1,42 @@
+2
+Tap [FRONT DOOR Camera Kit ( + OUTDOOR Cameras )].
+3
+Tap [Add New Camera].
+4
+Follow the on-screen instructions, plug in the access point, and then tap [Next].
+5
+Follow the on-screen instructions, connect the access point to the wireless router, and then tap
+[Next].
+6
+Follow the on-screen instructions and then tap [Next].
+7
+Follow the on-screen instructions and confirm the access point’s LED indicator’s color.
+R If the access point’s LED indicator lights in green, tap the green lit icon, and then go to step 8.
+R If the access point’s LED indicator blinks in yellow (amber), tap the yellow (amber) blinking icon,
+and then connect the Ethernet cable between the access point and router. Next, follow the
+on-screen instructions, wait for a while, and then check the color of the LED lights again.
+R If the access point’s LED indicator blinks in green, tap the blinking green icon, check if DHCP
+(Dynamic Host Configuration Protocol) is operating for the router (refer to the operating
+instructions included with your router or contact your Internet service provider), and then tap
+[Done].
+8
+When prompted, press the SETUP button on the access point.
+9
+When prompted, set the password that will be used to log in to the access point and then tap [Next].
+10 When prompted, enter a name for the access point*1 and for your mobile device and then tap [OK].
+R The access point name setting is used by your mobile device to identify the access point. This is
+useful when you have multiple access points.
+R The mobile device name setting is used by the access point and other system users to identify
+your mobile device. This is useful when performing certain operations, such as deregistering.
+11 Follow the on-screen instructions and tap [Next].
+12 When [Congrats!] is displayed, tap [Explore HomeHawk].
+R The app’s home screen is displayed when initial setup is completed.
+*1
+A name can only be entered for the access point the first time initial setup is performed. See
+“Changing the name of cameras”, Page 140 or information on how to change the name for the
+access point.
+Registering other mobile devices to the access point
+In order to access the access point and its connected devices from a mobile device, you must first
+register the mobile device to the access point. You can register up to 8 mobile devices to an access point.
+120
+Using a front door camera and outdoor camera

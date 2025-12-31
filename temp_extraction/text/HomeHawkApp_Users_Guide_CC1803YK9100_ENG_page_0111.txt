@@ -1,0 +1,55 @@
+Recording to SD cards
+You can specify whether to allow recorded camera images to be erased automatically by new images
+when the SD card is full, and check the remaining capacity of the SD card.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Recording Settings].
+4
+Select the desired setting.
+– [Overwrite Recording]: Determines whether recorded camera images are erased automatically
+by new images when the SD card is full.
+– [microSD Card]: Displays the currently used capacity and the maximum capacity of the SD card,
+the current number of recorded files, and the maximum number of files that can be recorded.
+R A maximum of 65,535 files can be recorded. If 65,535 files are recorded, additional files cannot
+be recorded even if there is free capacity in the SD card.
+Formatting SD cards (window cameras only)
+You can format SD cards inserted into the window camera.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Recording Settings].
+4
+Tap [Format microSD Card] ® [OK].
+Using night vision (shelf cameras and floor cameras only)
+If there is not adequate light to illuminate the subject, such as at night, the camera switches to night
+vision mode depending on the settings.
+The following settings can be selected for the night vision.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Night Vision].
+4
+Select the desired setting and then tap [OK].
+Shelf camera:
+– [ON]: Lights infrared LEDs so that images can be seen in the dark.
+– [OFF]: Turns off night vision mode.
+Floor camera:
+– [Color]: Turns on the light so that images can be displayed in color. Has shorter visibility range
+than [Monochrome].
+R When recording is started after a detection is made or if viewing live images from a mobile
+device, the light will turn on if it is dark so that the images can be viewed or recorded in color.
+– [Monochrome]: Lights infrared LEDs so that images can be seen in the dark. Has longer visibility
+range than [Color].
+– [OFF]: Turns off night vision mode.
+111
+Using a shelf, floor, and window camera

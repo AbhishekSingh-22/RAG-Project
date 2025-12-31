@@ -1,0 +1,57 @@
+Setting
+[Silent Mode]
+[Protection Mode]
+1st camera
+2nd or later
+camera
+1st camera
+2nd or later
+camera
+Play Sound
+[OFF]
+[OFF]
+[Announcement
+]
+[OFF]
+*1
+Refer to  “Sync”, Page 134 for more information.
+Creating new modes
+You can create new modes to operate your devices when an event occurs such as motion is detected.
+1
+Access the mode screen ( “Accessing the mode screen”, Page 133).
+2
+Tap 
+.
+3
+Change the settings as required.
+R Each setting is explained in this section.
+4
+When finished, tap [Create].
+Mode name
+When creating a new mode, you can set the name used for the mode. This helps you to identify the
+mode from other modes used on your mobile device.
+– To enter a name: Tap the text field and enter the text.
+Start Recording
+You can enable and disable recording, and also specify the recording duration for each camera.
+– To enable/disable recording: Slide the switch next to each camera name to the desired position.
+– To select a recording duration: Tap the time displayed next to [Duration], and then tap [Done].
+Sync
+You can coordinate cameras so that when 1 camera detects motion, the other camera starts
+pre-recording. (Images are temporarily stored, and if motion is detected later, images are then saved on
+the access point’s SD card.)
+– To enable/disable camera coordination: Slide the [Sync] switch to the desired position.
+Note:
+R Sync is only available when 2 or more front door cameras or outdoor cameras are registered to the
+access point.
+[Send Notifications]
+Push notifications are displayed on your mobile device when motion is detected.
+– To enable/disable push notifications: Slide the switch to the desired position.
+Note:
+R After recording has started for a camera, motion detection notifications from that camera are not sent
+to mobile devices. However, motion detection notifications from other cameras are sent.
+[Play Sound]
+You can specify what sounds a camera will automatically make when motion is detected. This can be
+used to warn suspicious people approaching your house that they have been detected and that there are
+cameras that can record images of them.
+134
+Using a front door camera and outdoor camera

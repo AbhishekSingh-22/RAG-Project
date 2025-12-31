@@ -1,0 +1,46 @@
+Erasing HD camera recordings
+1
+View live images from the desired camera.
+2
+Tap [Videos].
+3
+To erase recordings recorded on one specific date
+Select the desired recording date.
+To erase recordings recorded on multiple dates
+Continue to the next step.
+4
+Open the options menu (see  “Displaying the options menu”, Page 151).
+5
+To erase all recordings
+Tap [Delete All].
+To erase selected recordings
+Tap [Delete Selected Contents], and then select the dates or recordings that you want to erase.
+6
+Tap [OK].
+Note:
+R You can also erase a recording during playback by tapping 
+ ® [OK].
+HD camera SD cards
+SD card capacity and total recording time
+All times are approximate.
+– 4 GB card: 4 hours
+– 8 GB card: 9 hours
+– 16 GB card: 18 hours
+– 32 GB card: 36 hours
+– 64 GB card: 72 hours
+– 128 GB card: 145 hours
+Note:
+R The times listed here are calculated theoretically. Actual recording time may vary.
+R The times listed here apply during the following conditions.
+– [Camera Resolution] is set to [HD (1280x720)] ( “Image resolution”, Page 166)
+– [Frame Rate] is set to [25 fps] ( “Frame rate”, Page 166)
+R The file system and other information is stored on the SD card, therefore the card’s actual available
+capacity will be less than the card’s noted capacity.
+SD card formatting
+Before inserting an SD card into the camera, format the SD card using your computer and the SD
+formatting tool available from the web page listed below.
+{{"www.sdcard.org/downloads/formatter_4/"|tolink("http://www.sdcard.org/downloads/formatter_4/")}}
+Note:
+R All data stored on the SD card will be erased when it is formatted.
+158
+Using an HD camera

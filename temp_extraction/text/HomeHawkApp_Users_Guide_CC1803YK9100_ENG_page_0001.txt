@@ -1,0 +1,3 @@
+User’s Guide
+Text entity: en_us_201005
+Model No.     

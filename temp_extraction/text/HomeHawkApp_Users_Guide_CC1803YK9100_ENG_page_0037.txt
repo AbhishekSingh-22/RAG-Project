@@ -1,0 +1,35 @@
+Using Amazon Alexa to control devices
+Once you have enabled the “Panasonic HomeHawk” skill and linked your devices to your Amazon Echo
+Show, you can use Amazon Alexa to control your devices. Devices are controlled by talking to Amazon
+Alexa and using the voice commands specified in the enabled “Panasonic HomeHawk” skill.
+Note:
+R Available features and voice commands are subject to change without notice. Refer to the information
+provided with the “Panasonic HomeHawk” skill for available features and voice commands.
+Displaying live images from a camera (all cameras except HD cameras)
+Live images from a camera connected to your devices can be displayed and turned off (hidden).
+Displaying images voice command example:
+R Alexa, show <camera name>.
+Hiding images voice command example:
+R Alexa, hide <camera name>.
+Note:
+R Images stop being displayed after about 1 minute if no operations are performed.
+Enabling/disabling the privacy mode (shelf cameras and floor cameras only)
+The privacy mode of cameras can be enabled and disabled.
+Enabling privacy mode voice command example:
+R Alexa, turn on privacy mode of <camera name>.
+Disabling privacy mode voice command example:
+R Alexa, turn off privacy mode of <camera name>.
+Checking the temperature of cameras (shelf cameras and floor cameras only)
+You can check the temperature of the area surrounding the camera.
+Checking the temperature voice command example:
+R Alexa, what’s the temperature of <camera name>.
+Adjusting the lighting of cameras (floor cameras only)
+You can adjust the lighting of the camera.
+Adjusting the lighting voice command example:
+R Alexa, turn on <camera name + light>.
+R Alexa, set <camera name + light> to xx %.
+R Alexa, brighten <camera name + light>.
+R Alexa, dim <camera name + light>.
+R Alexa, turn off <camera name + light>.
+37
+Getting started with the HomeHawk!

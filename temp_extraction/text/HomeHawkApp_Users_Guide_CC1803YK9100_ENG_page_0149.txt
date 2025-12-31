@@ -1,0 +1,56 @@
+Setting up the HD camera
+Before you begin
+In this procedure, the camera will enter “temporary access point mode”. In this mode, you can use your
+mobile device’s wireless network feature to connect directly to the camera, and then use your mobile
+device to change the camera’s wireless settings so that the camera can connect to your wireless router.
+Confirm the following before you begin.
+– Make sure you have installed the [HomeHawk] app on your mobile device
+– Make sure the camera is located within range of your wireless router
+– Make sure your mobile device is connected to your wireless router
+– Make sure your mobile device can connect to the Internet
+– Make sure you know the wireless network name (SSID) and password assigned to your wireless router
+Initial setup for iPhone, iPad
+Important:
+R If other HD cameras are already registered to your mobile device and you want to set up another HD
+camera, see  “Adding another HD camera”, Page 174.
+1
+Plug in the camera and wait about 1 minute for the camera’s LED to light in green.
+R If the LED does not light in green, or if you experience trouble during this procedure, use the
+camera’s reset button to reset the camera ( “Using the camera’s reset button”, Page 173) and
+then repeat this procedure.
+2
+Start the [HomeHawk] app.
+R The end-user license agreement is displayed the first time you start the app.
+3
+Follow the on-screen instructions.
+4
+Tap [Indoor HD Camera].
+5
+Tap [Set up the HD Camera].
+6
+When prompted, press the SETUP button on the back of the camera, and then tap [Next].
+R The LED indicator blinks in green.
+7
+iOS 11.0 or later users:
+Tap [Join] and then continue from step 9.
+iOS 10.x users:
+Change your mobile device’s wireless network setting temporarily so that it connects to the camera
+directly.
+R Open your mobile device’s [Settings] app, tap [Wi-Fi], select “KX-HNC800_Panasonic”, enter
+“00000000” as the password, and then tap [Join].
+R If more than one item named “KX-HNC800_Panasonic” is displayed, turn off the power for the
+other cameras and only operate 1 camera at a time.
+8
+Start the [HomeHawk] app again.
+9
+If necessary, enter the password required to connect to your wireless router and then tap [Next].
+R The camera and your mobile device connect to your wireless router.
+R If prompted, follow the on-screen instructions and connect your mobile device to your wireless
+router, start the app again, and then tap [Add This Mobile Device].
+R If you enter the wrong password, an error is displayed. Repeat the initial setup procedure from the
+beginning.
+10 When prompted, press the SETUP button on the back of the camera.
+R The camera registers your mobile device.
+11 When prompted, set the password that will be used to connect to the camera and then tap [Next].
+149
+Using an HD camera

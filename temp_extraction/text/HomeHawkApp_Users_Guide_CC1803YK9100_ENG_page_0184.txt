@@ -1,0 +1,45 @@
+If the situation still does not improve, refer to your wireless router’s manual for information on how to
+change the router channel of your wireless network.
+Initial setup by Basic Setup
+Initial setup can't be completed
+The camera’s LED indicator is blinking in red.
+If you have trouble during the initial setup check the following causes/solutions first and then turn off the
+camera and restart it.
+R The wireless network password may be incorrect.
+→Enter the correct password for the wireless network.
+R The DHCP function of your wireless router may be disabled.
+→Enable the wireless router’s DHCP settings. For details, refer to your wireless router’s manual.
+R Your mobile device's location information feature is disabled, or access to the location information is
+denied to the [HomeHawk] app.
+→To obtain the SSID of your home's wireless network, access to your mobile device's location
+information is required. On your mobile device, enable the location information feature and allow
+access to the location information for the [HomeHawk] app.
+R The address filter function of your wireless router may be enabled.
+→Register the MAC address of the camera to the address filter setting of the wireless router. Refer to
+your wireless router’s manual.
+The camera’s LED indicator is lit in blue.
+R Your mobile device is connected to another network.
+→Connect your mobile device to the same wireless network that was used to set up the camera and
+try to add the mobile device again.
+R A network clash has occurred because you have 2 wireless routers at home that are using the same
+channel or channels of a close frequency.
+→Unplug all the wireless routers and plug them in again.
+If the situation still does not improve, refer to your wireless router’s manual for information on how to
+change the router channel of your wireless network.
+R The "Isolation" function on the wireless router is enabled.
+Sometimes when the "Isolation" function is enabled, the camera will not be able to communicate with
+your mobile device via your wireless router.
+→Disable the "Isolation" function on your wireless router. For details, refer to your wireless router’s
+manual.
+The camera’s LED indicator is blinking quickly in green.
+The camera is searching for your wireless router. Check the following causes/solutions first and wait until
+the LED indicator is lit in blue. Then restart the [HomeHawk] app.
+R The camera and wireless router are too far away.
+→Move the camera and wireless router closer together.
+R A network clash has occurred because you have 2 wireless routers at home that are using the same
+channel or channels of a close frequency.
+→Unplug all the wireless routers and plug them in again.
+If the situation still does not improve, refer to your wireless router’s manual for information on how to
+change the router channel of your wireless network.
+184
+Troubleshooting

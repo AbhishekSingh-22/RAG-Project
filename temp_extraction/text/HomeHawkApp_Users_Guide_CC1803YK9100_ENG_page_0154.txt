@@ -1,0 +1,48 @@
+Important:
+R Some mobile devices may become hot when viewing HD camera images continuously for long periods
+of time. If your mobile device becomes too hot, stop viewing HD camera images and wait for the
+mobile device to cool down.
+Turning the camera audio on and off
+Slide the switch to the desired position while viewing live images from a single camera.
+: Camera audio will be heard
+: Camera audio will not be heard
+Zooming in and out
+Pinch in and out on the camera image while viewing live images from a single camera. While zoomed in,
+you can swipe your finger on the camera image to display a different area of the image.
+Using night vision
+If there is not adequate light to illuminate the subject, such as at night, the camera switches to night
+vision mode depending on the settings ( “Night vision mode”, Page 167). When night vision mode is
+active, colors may appear different from normal.
+HD camera viewing options
+The following items are available in the options menu (see  “Displaying the options menu”, Page 151)
+while viewing live images from a single camera.
+– [Settings]
+Allows you to adjust settings for the selected camera.
+– [Smart Recording]
+Allows you to create and edit smart recording scenarios. See  “Smart recording features (overview)”,
+Page 161.
+– [Camera Speaker Volume]
+Allows you to adjust the selected camera’s speaker volume.
+– [Set Thumbnail]
+Allows you to set the preview image for the selected camera that is displayed in the camera list. See
+“Thumbnail image”, Page 168.
+– [Sensor Log]
+Displays a log of previous motion detection, sound alert, and temperature alert detections for the
+selected camera. See  “Viewing HD camera sensor history”, Page 163.
+– [Firmware Update]
+Allows you to update the firmware for the selected camera. See  “Updating the HD camera’s firmware”,
+Page 172.
+– [Version]
+Displays information about the selected camera’s firmware and about the app installed on your mobile
+device.
+Recording HD camera images
+To record camera images manually, see  “Recording HD camera images (manual recording)”, Page 156.
+To record images automatically according to a schedule, see  “Creating a scenario that uses a schedule
+as the trigger”, Page 161.
+To record images automatically when a sensor is triggered, see  “Creating a scenario that uses a sensor
+as the trigger”, Page 162.
+Taking snapshots
+To save snapshots (i.e., still images) while viewing live camera images, see  “Taking snapshots”,
+Page 155.
+154
+Using an HD camera

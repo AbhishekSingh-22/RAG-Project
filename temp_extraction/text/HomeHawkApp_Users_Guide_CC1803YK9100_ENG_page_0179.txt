@@ -1,0 +1,47 @@
+Initial setup
+I cannot perform initial setup
+R Your mobile device is connecting to a different wireless router during the initial setup procedure.
+→If your mobile device can connect to other nearby wireless routers, we recommend you turn them off
+or “forget” their settings while performing initial setup.
+Connecting from your mobile device
+Refer to the following after checking the general troubleshooting information described in  “General
+information”, Page 176.
+The connection is slow or disconnects while away from home
+R There is too much traffic on your home network or on the mobile device’s network.
+→Wait for network traffic to decrease.
+My mobile device is remotely connected to my devices (
+ or 
+ is displayed) even while at
+home
+R Your mobile device's location information feature is disabled, or access to the location information is
+denied to the [HomeHawk] app.
+→To obtain the SSID of your home's wireless network, access to your mobile device's location
+information is required. On your mobile device, enable the location information feature and allow
+access to the location information for the [HomeHawk] app.
+I cannot connect to my devices
+R You replaced your wireless router with a new router, or changed your wireless router’s SSID (i.e.,
+wireless network name) or password.
+→Your mobile device may have old SSID information. Delete the SSID information in [Home Wireless
+Network SSID] (shelf cameras/floor cameras/window cameras:  “Home wireless network SSID
+features”, Page 117, HD cameras:  “Deleting wireless access points”, Page 172).
+→Deregister the shelf camera, floor camera, or window camera from your mobile device
+( “Deregistering devices”, Page 41), and then register it again ( “Registering devices”, Page 33).
+→Deregister the HD camera from your mobile device ( “Deregistering devices”, Page 41), and then
+register it again ( “Registering devices”, Page 33).
+R Your wireless router at home is connected to another router.
+→If your wireless router is connected to another router, make sure your network is configured so that
+your mobile device and your device can communicate over your home network. We recommend
+making sure the DHCP feature of only one router is enabled and setting the other routers to “access
+point mode” or “bridge mode”.
+I cannot connect while away from home
+R You are using a public wireless network.
+→Network traffic, network conditions, and the network provider’s settings or policies may prevent the
+connection. Use a private wireless network or your mobile network service provider’s wireless
+network (3G, 4G, etc.).
+Sometimes I cannot connect while at home
+R There is too much traffic on your home network.
+→Wait for network traffic to decrease.
+→Refer to the operating instructions included with your wireless router for other possible solutions.
+R Your mobile device is discovering too many nearby wireless networks.
+179
+Troubleshooting

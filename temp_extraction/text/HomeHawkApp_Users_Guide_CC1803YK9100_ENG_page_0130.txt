@@ -1,0 +1,49 @@
+Playing back recordings
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Recording List].
+2
+Select the desired access point and camera.
+R Select [All Cameras] to see recorded images from all the cameras registered to the specified
+access point.
+3
+Tap 
+, 
+, or the displayed date to select a recording date.
+R A list of all recordings recorded on the selected date is displayed.
+4
+Select a recording.
+R The selected recording starts playing in the playback screen.
+Note:
+R When connected away from home, 
+ or 
+ is displayed on the playback screen. See
+“Accessing while away from home”, Page 21 for more information.
+R Recorded images can also be played back from the camera image/recording list screen ( “Viewing the
+camera image/recording list screen”, Page 123).
+Playback controls
+The following controls are displayed in the playback screen.
+Starts or resumes playback
+Pauses playback
+Allows you to quickly move to the desired area of the recording by sliding the
+progress bar
+Erases the current recording
+/
+Protects or removes the protection for the recording
+/
+Enables or disables audio for the recording
+Erasing recordings
+Erasing individual images
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Recording List].
+2
+Select the desired access point and camera.
+R Select [All Cameras] to see recorded images from all the cameras registered to the specified
+access point.
+3
+Tap 
+, 
+, or the displayed date to select a recording date.
+130
+Using a front door camera and outdoor camera

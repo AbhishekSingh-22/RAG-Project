@@ -1,0 +1,37 @@
+Exiting and logging out
+Exiting and logging out
+Use the standard method for exiting an app used by your mobile device.
+Confirming system status
+Confirming system status (overview)
+Your devices can provide information about system status in a variety of ways.
+– Displaying status notifications on your mobile device using your mobile device’s notifications features
+( “Status notifications”, Page 27)
+– Lighting the LED indicators on each device ( “Device LED indicators”, Page 28)
+Status notifications
+Your mobile device can receive status notifications that provide feedback about how your devices are
+functioning. Details vary depending on the app’s settings and the type of mobile device you are using.
+Note:
+R Information for HD cameras
+See  “Status notifications”, Page 159.
+Enabling and disabling status notifications
+See the following for information.
+– Shelf cameras:
+“Notification settings”, Page 115
+“Once motion is detected”, Page 64
+– Floor cameras:
+“Notification settings”, Page 115
+“Once motion is detected”, Page 87
+– Window cameras:
+“Notification settings”, Page 115
+“Once motion is detected”, Page 107
+– Access points, front door cameras, and outdoor cameras:
+“Notification settings”, Page 144
+“[Send Notifications]”, Page 134
+Alert tone
+The app sounds an alert tone when your mobile device receives a notification from your devices. The
+volume is determined by your mobile device’s alert volume setting.
+Status notifications for iPhone, iPad
+The app provides information about system status by displaying status notifications and error messages
+in the iOS Notifications Center.
+27
+Getting started with the HomeHawk!

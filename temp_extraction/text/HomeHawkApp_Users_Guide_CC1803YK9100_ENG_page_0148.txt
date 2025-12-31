@@ -1,0 +1,44 @@
+HD camera setup
+HD camera setup (overview)
+There are 3 basic steps you need to perform in order to connect to the HD camera from your mobile
+device.
+1
+Download the app
+Download the [HomeHawk] app to your mobile device.
+See  “Downloading the [HomeHawk] app”, Page 148.
+2
+Set up the HD camera
+Use the [HomeHawk] app to configure the camera to connect to your wireless router, and then
+register your mobile device to the camera.
+See  “Setting up the HD camera”, Page 149.
+3
+Register additional mobile devices (optional)
+You can register additional mobile devices to the camera, for a total of 8.
+See  “Registering additional mobile devices to the camera”, Page 150.
+Downloading the [HomeHawk] app
+Download information is available at the web page listed below.
+{{"https://panasonic.net/cns/pcc/support/homehawk"|tolink("https://panasonic.net/cns/pcc/
+support/homehawk")}}
+Using your device’s app store
+iPhone, iPad users
+Search for “Panasonic HomeHawk”. iPad users should search in the “iPhone only” category.
+Android device users
+Search for “Panasonic HomeHawk”.
+Compatible mobile devices
+Please check the latest information at the following supported page.
+{{"https://panasonic.net/cns/pcc/support/homehawk"|tolink("https://panasonic.net/cns/pcc/
+support/homehawk")}}
+– iPhone 5s and later, iPad Air and later (iOS 10.0 and later), Android devices (Android 5.0 and later)
+(As of October, 2019)
+Note:
+R The [HomeHawk] app may not function properly depending on the operating environment, such as the
+model of your mobile device, peripherals connected to your mobile device, and the apps installed on
+your mobile device. Bluetooth headsets are not supported by the [HomeHawk] app.
+R Operating systems for mobile devices are continually updated. Accordingly, the versions of operating
+systems the [HomeHawk] app supports may also be updated.
+R The following Android devices are not compatible with the [HomeHawk] app.
+– Android devices that are not supported by Google Play
+– Android devices with limited hardware features (Bluetooth, wireless LAN, and microphone support
+are required.)
+148
+Using an HD camera

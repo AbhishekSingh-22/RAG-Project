@@ -1,0 +1,46 @@
+1
+Tap the setting value displayed next to [Play Sound].
+2
+Select the desired sound.
+– [Beep]: Sounds a beep when motion is detected.
+– [Announcement]: Plays a predetermined announcement when motion is detected.
+R This setting is only available for front door cameras.
+R This setting may not be available in some regions.
+R The available languages of announcements may differ depending on the region of use.
+– [OFF]: Disables sounds for motion detection.
+3
+When finished, tap [OK].
+Note:
+R You can change the volume of beeps and announcements played form cameras. See  “Speaker
+volume settings”, Page 136 for more information.
+Editing modes
+1
+Access the mode screen ( “Accessing the mode screen”, Page 133).
+2
+Tap [Edit], and then tap 
+ next to the desired mode.
+3
+Edit the desired settings.
+4
+When finished, tap [Done].
+Deleting modes
+1
+Access the mode screen ( “Accessing the mode screen”, Page 133).
+2
+Tap [Edit], and then tap 
+ next to the desired mode.
+3
+Tap 
+.
+4
+Tap [OK].
+Status
+Camera battery level
+Battery icons displayed on camera images show the battery level or charging status of the battery.
+R Battery level icons:
+ high
+ medium
+ low
+ needs charging
+135
+Using a front door camera and outdoor camera

@@ -1,0 +1,16 @@
+Front door camera and outdoor camera features
+Front door camera and outdoor camera features (overview)
+You can use front door cameras and outdoor cameras to monitor and record the sights and sounds of the
+area where the cameras are located. Cameras have built-in motion detection features that, when
+triggered, allow cameras to record images automatically or send a notification to your mobile device.
+Additionally, built-in speakers and microphones allow you to talk to anyone who is near the camera.
+Note:
+R Front door cameras and outdoor cameras may stop working in extremely high or low temperatures.
+Normal operations will resume once the temperature is within the supported levels. See  “The camera
+will not charge (the charging LED indicator blinks quickly in red)”, Page 191.
+Main features
+Viewing the camera image/recording list screen
+The camera image/recording list screen shows live images and a list of recordings for the selected
+camera.
+123
+Using a front door camera and outdoor camera

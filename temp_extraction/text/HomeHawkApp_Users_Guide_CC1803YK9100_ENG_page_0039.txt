@@ -1,0 +1,50 @@
+5
+Using your Google Home app, search for the “Panasonic HomeHawk” service. Enter your Panasonic
+ID in the displayed screen and enable your devices.
+R For details about these settings, refer to the operating instructions and support information
+provided for your Google Home.
+Changing your Panasonic ID
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Google Home].
+3
+Select the desired device.
+4
+Tap [Unlink from Google Home] ® [OK], and follow the steps in  “Logging in to the Panasonic
+server and linking with your Google Home”, Page 38 to log in using the new Panasonic ID.
+Using Google Home to control devices
+Once you have enabled your devices for use with your Google Home, you can use your Google Home to
+control your devices. Devices are controlled by talking to your Google Home and using the voice
+commands specified in the “Panasonic HomeHawk” service.
+Note:
+R Available features and voice commands are subject to change without notice. Refer to the information
+provided with the “Panasonic HomeHawk” skill for available features and voice commands.
+R If Google Home does not recognize the camera names or mode names assigned to your devices, try
+changing the camera names*1 or mode names*1.
+*1
+Front door cameras/outdoor cameras:  “Changing the name of cameras”, Page 140
+Floor cameras/shelf cameras/window cameras:  “Changing the name of cameras”, Page 113
+*2
+Front door cameras/outdoor cameras:  “Mode name”, Page 134
+Shelf cameras:  “Mode name”, Page 63
+Floor cameras:  “Mode name”, Page 86
+Window cameras:  “Mode name”, Page 107
+Displaying live images from a camera (all cameras except HD cameras)
+Live images from cameras can be displayed and turned off (hidden) on a TV connected to Chromecast
+using Google Home.
+Note:
+R Chromecast must be registered to Google Home to display images from cameras.
+Displaying images voice command example:
+R OK Google, show <camera name>.
+R OK Google, show <camera name> on <chromecast name>.
+Hiding images voice command example:
+R OK Google, stop <chromecast name>.
+Note:
+R Images stop being displayed after about 1 minute if no operations are performed.
+Starting and stopping modes (all cameras except HD cameras)
+Modes can be started and stopped using Google Home.
+Starting modes command example:
+39
+Getting started with the HomeHawk!

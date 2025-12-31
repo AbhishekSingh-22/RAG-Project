@@ -1,0 +1,40 @@
+Note:
+R When connected away from home, 
+ or 
+ is displayed next to the access point’s name. See
+“Accessing while away from home”, Page 21 for more information.
+Viewing the live camera image screen
+The live camera image screen shows you live camera images and also allows you to operate the
+selected camera to zoom in, recording images, etc.
+To access the live camera image screen, tap the desired camera from the [HomeHawk] app home
+screen ( “Front door camera and outdoor camera home screen”, Page 24), and then tap the displayed
+camera image.
+B
+C
+F
+G
+J
+I
+E
+A
+D
+K
+H
+A
+Returns you to the home screen
+( “Front door camera and outdoor camera
+home screen”, Page 24)
+R iPhone, iPad:
+Displayed on the right side of the screen
+R Android devices:
+Displayed on the left side of the screen
+B
+Displays the camera setting screen
+C
+Shows the bit rate
+( “Displaying the bit rate level icon”,
+Page 138)
+D
+Shows the area zoomed in on
+125
+Using a front door camera and outdoor camera

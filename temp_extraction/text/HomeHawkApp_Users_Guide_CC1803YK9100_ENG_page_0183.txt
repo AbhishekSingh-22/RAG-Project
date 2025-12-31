@@ -1,0 +1,52 @@
+Initial setup can't be completed
+The camera’s LED indicator is blinking in red.
+If you have trouble during the initial setup check the following causes/solutions first and then turn off the
+camera and restart it.
+R The WPS function on your wireless router may be disabled.
+Some Internet Service Provider wireless routers may have WPS disabled.
+→Try initial setup without using a WPS button on your wireless router ( “Basic Setup”, Page 47).
+R The camera and wireless router are too far away.
+→Move the camera and wireless router closer together.
+R The wireless router is not in WPS mode.
+→Press the WPS button on the wireless router for long enough until the LED indicator on the router
+starts blinking.
+R Several cameras are in WPS mode.
+Only 1 camera can be operated in WPS mode at a time.
+→Turn off all other cameras and only operate 1 camera at a time.
+R The DHCP function of your wireless router may be disabled.
+→Enable the wireless router’s DHCP settings. For details, refer to your wireless router’s manual.
+R The address filter function of your wireless router may be enabled.
+→Register the MAC address of the camera to the address filter setting of the wireless router. Refer to
+your wireless router’s manual.
+The camera’s LED indicator is lit in blue.
+R The WPS button was pressed on another router which is different from the router your mobile device is
+connected with.
+→Perform one of the following.
+– If you want to connect your mobile device to the wireless router which the camera is
+connected with:
+Reconnect your mobile device to the router whose WPS button was pressed, restart the
+[HomeHawk] app, and then follow the on-screen instructions.
+– If you want to connect your camera to the wireless router which the mobile device is
+connected with:
+Press and hold the RESET button until you hear a beep (about 10 seconds) using an object with
+a thin tip ( “Resetting camera settings”, Page 114) and restart the [HomeHawk] app. Then press
+the WPS button on the router which your mobile device is connected with.
+R The "Isolation" function on the wireless router is enabled.
+Sometimes when the "Isolation" function is enabled, the camera will not be able to communicate with
+your mobile device via your wireless router.
+→Disable the "Isolation" function on your wireless router. For details, refer to your wireless router’s
+manual.
+The camera’s LED indicator is lit in yellow.
+R The camera is not in WPS mode because the SETUP button was not pressed for long enough.
+→Follow the on-screen instructions, and press and hold the SETUP button on the camera until it
+beeps (about 5 seconds).
+The camera’s LED indicator is blinking quickly in green.
+The camera is searching for your wireless router. Check the following causes/solutions first and wait until
+the LED indicator is lit in blue. Then restart the [HomeHawk] app.
+R The camera and wireless router are too far away.
+→Move the camera and wireless router closer together.
+R A network clash has occurred because you have 2 wireless routers at home that are using the same
+channel or channels of a close frequency.
+→Unplug all the wireless routers and plug them in again.
+183
+Troubleshooting

@@ -1,0 +1,48 @@
+Normal playback
+The normal playback screen allows you play back recording and perform other operations.
+B
+A
+C
+D
+F
+H
+G
+I
+E
+A
+Goes to the start of the recording
+R Tap twice to go to the previous recording.
+B
+Goes to the next recording
+C
+Starts or resumes playback
+D
+Allows you to quickly move to the desired
+area of the recording by sliding the progress
+bar
+E
+Goes to rapid playback
+F
+Erases the current recording
+G
+Protects the recording
+R Tap 
+ to remove the protection for the
+recording.
+H
+Downloads the recording to the mobile device
+R Do not perform any function on your
+mobile device while downloading is in
+progress.
+R Only 1 recording can be downloaded at a
+time.
+R Recordings can only be downloaded when
+the mobile device is connected to the
+same wireless network as the camera.
+I
+Indicates when motion for a person was
+detected during a recording
+Rapid playback
+Rapid playback allows you to play a condensed playback of the selected day’s recordings.
+101
+Using a shelf, floor, and window camera

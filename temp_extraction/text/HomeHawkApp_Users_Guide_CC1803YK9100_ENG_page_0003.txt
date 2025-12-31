@@ -1,0 +1,105 @@
+Shelf camera mode settings ..........................62
+Shelf camera mode settings (overview) ............62
+Preset modes ....................................................62
+Checking the selected mode ............................63
+Accessing the mode screen ..............................63
+Selecting modes ...............................................63
+Turning modes off .............................................63
+Creating new modes .........................................63
+Editing modes ...................................................64
+Deleting modes .................................................64
+Automatic Mode Switching ...............................64
+Configuring geo-fencing ....................................65
+Floor camera setup .........................................67
+Floor camera setup (overview) .........................67
+Floor camera initial setup ..................................67
+Registering other mobile devices to the floor
+camera ..............................................................69
+Floor camera features ....................................70
+Floor camera features (overview) .....................71
+Viewing the camera image/recording list
+screen ...............................................................71
+Viewing the live camera image screen .............72
+Recording camera images (manual
+recording) ..........................................................75
+Taking snapshots ..............................................75
+Talking to the camera .......................................76
+Viewing the recording list screen ......................76
+Playing back recordings ....................................78
+Erasing recordings ............................................79
+Protecting recordings ........................................80
+Adjusting the lighting .........................................81
+Battery status ....................................................81
+Detection area ..................................................82
+Motion sensitivity ..............................................82
+Detection test ....................................................82
+Temperature sensor .........................................83
+Temperature units .............................................83
+Sound sensitivity ...............................................83
+Camera SD cards .............................................83
+Floor camera mode settings ..........................85
+Floor camera mode settings (overview) ............85
+Preset modes ....................................................85
+Checking the selected mode ............................86
+Accessing the mode screen ..............................86
+Selecting modes ...............................................86
+Turning modes off .............................................86
+Creating new modes .........................................86
+Editing modes ...................................................87
+Deleting modes .................................................87
+Automatic Mode Switching ...............................87
+Configuring geo-fencing ....................................88
+Window camera setup ....................................90
+Window camera setup (overview) .....................90
+Window camera initial setup .............................90
+Registering other mobile devices to the window
+camera ..............................................................92
+Window camera features ...............................94
+Window camera features (overview) ................94
+Viewing the camera image/recording list
+screen ...............................................................94
+Viewing the live camera image screen .............95
+Recording camera images (manual
+recording) ..........................................................97
+Taking snapshots ..............................................98
+Viewing the recording list screen ......................98
+Playing back recordings ..................................100
+Erasing recordings ..........................................102
+Protecting recordings ......................................102
+Detection area ................................................103
+Motion sensitivity ............................................104
+Camera SD cards ...........................................104
+Window camera mode settings ...................106
+Window camera mode settings (overview) .....106
+Preset modes ..................................................106
+Checking the selected mode ..........................107
+Accessing the mode screen ............................107
+Selecting modes .............................................107
+Turning modes off ...........................................107
+Creating new modes .......................................107
+Editing modes .................................................108
+Deleting created modes ..................................108
+General features ...........................................109
+Status ..............................................................109
+Sound settings (shelf cameras and floor cameras
+only) ................................................................109
+Recording settings ..........................................110
+Using night vision (shelf cameras and floor
+cameras only) .................................................111
+Video settings .................................................112
+Changing the name of cameras ......................113
+Status LED ......................................................113
+Maintenance reminder (window cameras
+only) ................................................................114
+Updating firmware ...........................................114
+Resetting camera settings ..............................114
+Bit rate settings for Amazon Echo Show and
+Google Home ..................................................114
+Time adjustment .............................................115
+Displaying device information .........................115
+Notification settings .........................................115
+Login settings ..................................................116
+Network features .............................................116
+Home wireless network SSID features ...........117
+3
+Table of Contents

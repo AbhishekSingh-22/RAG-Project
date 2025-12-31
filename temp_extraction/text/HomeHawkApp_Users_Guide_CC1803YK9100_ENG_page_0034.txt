@@ -1,0 +1,50 @@
+Registering front door cameras and outdoor cameras
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Add Camera(s)].
+2
+Tap [OUTDOOR Camera] or [FRONT DOOR Camera].
+3
+If you are close to the access point and can press its SETUP button:
+Press and hold the access point’s SETUP button until the access point’s LED indicator blinks slowly
+in green, and then tap [Tap here to continue].
+If you are not close to the access point and cannot press its SETUP button:
+Tap [Tap here if AccessPoint isn’t close].
+R If there are multiple access points, select the access point that you want to register the device to.
+4
+Tap [Next] and follow the on-screen instructions.
+5
+When prompted, press and hold the SETUP button on the camera that you want to register until the
+camera’s LED indicator blinks slowly in green.
+R Follow the on-screen instructions.
+R When registration is complete, the camera sounds one long beep.
+R If registration fails, the camera sounds several short beeps.
+Note:
+R You can customize the name of each device for easier management. For details, see  “Changing the
+name of cameras”, Page 140.
+Registering HD cameras
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Add Camera(s)].
+2
+Tap [Indoor HD Camera].
+3
+For iPhone or iPad:
+Continue from step 5 of  “Initial setup for iPhone, iPad”, Page 149.
+For Android devices:
+Continue from step 5 of  “Initial setup for Android devices”, Page 150.
+Mobile device features
+Mobile device features (overview)
+You can configure settings for your mobile device.
+Editing mobile device names
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Mobile Device Settings].
+3
+Tap [Name] and enter the desired name.
+4
+Tap [OK].
+34
+Getting started with the HomeHawk!

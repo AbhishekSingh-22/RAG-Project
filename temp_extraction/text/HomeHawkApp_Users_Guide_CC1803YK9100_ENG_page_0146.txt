@@ -1,0 +1,62 @@
+Important:
+R In order to use this feature, you must first configure your devices to use a static IP address ( “Changing
+IP settings”, Page 145).
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Access Point Settings] and select the desired access point.
+3
+Tap [Network] ® [Port Forwarding].
+4
+Turn on the [Enable] radio button.
+5
+Tap the field next to [Port] and then enter the desired port number.
+R Only port numbers 55000-65000 can be assigned.
+R Configure your wireless router’s port forwarding feature to forward these ports to the static IP
+address that you have assigned to your devices.
+6
+When finished, tap [OK].
+R Your device restarts.
+MTU settings
+This setting affects how data is sent over the network. Typically this setting does not need to be changed.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Access Point Settings] and select the desired access point.
+3
+Tap [Network] ® [MTU Settings].
+4
+Select the desired value and then tap [OK].
+Home wireless network SSID features
+The app remembers the SSIDs of wireless routers that your mobile device uses at home to connect to
+your devices; it can remember 10 SSIDs, and saves them in the home wireless network SSID list. If the
+list is full and you try to connect to your devices using a new SSID while at home, the app may connect to
+your devices over the Internet even though you are at home, i.e., 
+ or 
+ will be displayed at the
+top of the home screen. In this case, we recommend deleting unused SSIDs from the home wireless
+network SSID list.
+Deleting wireless routers
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Access Point Settings] and select the desired access point.
+3
+Tap [Home Wireless Network SSID].
+4
+Select the wireless router that you want to delete and then tap [Delete].
+Updating the wireless network SSID information
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Access Point Settings] and select the desired access point.
+3
+Tap [Home Wireless Network SSID].
+4
+Tap [Update] to update the information.
+146
+Using a front door camera and outdoor camera

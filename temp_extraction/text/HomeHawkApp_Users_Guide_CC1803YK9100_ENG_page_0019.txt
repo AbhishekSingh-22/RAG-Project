@@ -1,0 +1,11 @@
+I only want to receive notifications when motion is detected
+for people
+You can configure the window camera to notify your mobile device only when motion is detected for a
+person and not for objects.
+Supported devices
+R Window camera (KX-HNC500, KX-HNC505)
+Required procedures
+R Use the [HomeHawk] app to set [Send Notifications] to [Person Only]. See  “Once motion is
+detected”, Page 107.
+19
+Getting started with the HomeHawk!

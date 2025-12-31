@@ -1,0 +1,53 @@
+3
+Tap [Login Settings].
+4
+Next to [Automatic Login], slide the switch to the desired position.
+To disable automatic login:
+Slide the switch to the off position.
+To enable automatic login:
+Slide the switch to the on position, enter the password and then tap [OK].
+R To display the characters that you have entered, tap 
+.
+Changing the login password
+You can change the login password used in order to connect to your devices while away from home.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Access Point Settings] and select the desired access point.
+3
+Tap [Login Settings] ® [Change Login Password].
+4
+Enter the new password.
+R To display the characters that you have entered, tap 
+.
+5
+Tap [OK].
+Note:
+R The login password can only be changed when you are at home (when your mobile device is
+connected to the same wireless router as the access point).
+Network features
+Changing IP settings
+Typically these settings should not be changed.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Access Point Settings] and select the desired access point.
+3
+Tap [Network] ® [IP Settings].
+4
+Select the desired IP address mode.
+R In most cases [Auto (DHCP)] is preferred. In this case, no other settings are available on this
+screen.
+R If you select [Manual (Static)], other settings on this screen become available.
+5
+Configure the settings as needed and then tap [OK].
+Note:
+R If you make a mistake while configuring your device to use a static IP address and you can no longer
+connect to your device, reset the device’s network settings ( “Resetting an access point”, Page 142).
+Port forwarding settings
+These settings are only required if you need to configure your wireless router’s port forwarding feature in
+order to connect to your devices while away from home.
+145
+Using a front door camera and outdoor camera

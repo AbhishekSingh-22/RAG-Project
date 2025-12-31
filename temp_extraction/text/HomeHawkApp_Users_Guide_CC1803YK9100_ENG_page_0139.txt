@@ -1,0 +1,52 @@
+Detection settings
+Detection area
+You can select which areas of the camera image are monitored for motion detection. This allows you to
+ignore motion in certain areas of the camera’s image.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Detection] ® [Set Detection Area].
+4
+Tap the desired areas of the camera image.
+R Gray areas of the camera image indicate areas for which image detection is disabled.
+5
+When finished, tap [Set].
+Motion sensitivity
+You can adjust the sensitivity of the camera’s motion detection features.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Detection] ® [Motion Sensitivity].
+4
+Select the desired setting.
+If you want to use the same sensitivity level for the IR sensor and video motion sensor:
+– [High]: The sensors are very sensitive to changes, i.e., even a small change will trigger the
+sensors.
+– [Normal]: The sensors are moderately sensitive to changes.
+– [Low]: The sensors are somewhat sensitive to changes.
+If you want to use different sensitivity levels for the IR sensor and video motion sensor:
+Tap [Advanced].
+– [IR Sensor]: Determines sensitivity levels for the IR sensor.
+– [Video Motion]: Determines sensitivity levels for the video motion sensor.
+5
+When finished, tap [OK].
+Disabling detections when leaving your house (front door
+cameras only)
+You can disable detections for when people leave your house.
+This is convenient when you only want to detect people approaching your house and do not want to
+detect people leaving your house.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Detection].
+139
+Using a front door camera and outdoor camera

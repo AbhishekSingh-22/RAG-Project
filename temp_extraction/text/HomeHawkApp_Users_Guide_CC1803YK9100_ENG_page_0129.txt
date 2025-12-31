@@ -1,0 +1,53 @@
+The recording list displays all recordings for the specified dates and filters can be used to specify the
+recordings that you want to display.
+A
+C
+H
+B
+A
+G
+J
+E
+I
+F
+D
+K
+A
+: Displays recorded images for the
+previous date
+: Displays recorded images for the next
+date
+B
+Displays the selected date and you can tap
+here to select a date
+C
+[Select]: Used to select multiple recordings
+for deleting or protecting
+D
+Shows the access point’s name
+E
+Selects devices when there are multiple
+devices registered
+F
+Shows the camera’s name
+– Select [All Cameras] to see recorded
+images from all the cameras registered to
+the specified access point.
+G
+Displays a thumbnail image for the recording
+H
+Shows information about the type of recording
+– [Manual]: Recordings that were recorded
+manually.
+– [Motion]: Recordings that were recorded
+when a motion sensor was triggered.
+I
+Shows the time when the recording was
+made and its duration
+J
+Indicates that a recording is protected
+K
+Indicates recordings were recorded with the
+sound muted by the recording settings
+129
+Using a front door camera and outdoor camera

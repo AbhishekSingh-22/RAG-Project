@@ -1,0 +1,51 @@
+3
+Tap [Video] ® [Resolution].
+4
+Select the desired setting and then tap [OK].
+Changing the frame rate
+The frame rate determines the speed at which images from the camera are refreshed.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Video] ® [Frame Rate].
+4
+Select the desired setting and then tap [OK].
+Note:
+R Higher frame rates mean images are refreshed faster and moving subjects are displayed more
+smoothly, however, images displayed on your mobile device may be delayed and sound may cut out
+or be delayed when talking to the camera, especially over a slow or congested network connection.
+R Lower frame rates mean images are refreshed less often and moving subjects may appear “choppy”,
+however, images displayed on your mobile device will be less delayed and sound may be more
+consistent when talking to the camera over a slow or congested network connection.
+Changing the brightness
+You can adjust the overall brightness of the camera image.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Video] ® [Brightness].
+4
+Select the desired setting.
+Displaying the bit rate level icon
+You can display the bit rate level icons on camera images.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Video].
+4
+Slide the [Bit Rate Level Icon] switch to the desired position.
+R When the switch is turned on, the bit rate is displayed while viewing camera images as follows.
+ Highest bit rate
+ High bit rate
+ Moderate bit rate
+ Lowest bit rate
+138
+Using a front door camera and outdoor camera

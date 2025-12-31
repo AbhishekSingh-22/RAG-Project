@@ -1,0 +1,60 @@
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Network] ® [IP Settings].
+4
+Select the desired IP address mode.
+R In most cases [Auto (DHCP)] is preferred. In this case, no other settings are available on this
+screen.
+R If you select [Manual (Static)], other settings on this screen become available.
+5
+Configure the settings as needed and then tap [OK].
+Note:
+R If you make a mistake while configuring your device to use a static IP address and you can no longer
+connect to your device, reset the device’s network settings ( “Resetting camera settings”, Page 114).
+Port forwarding settings
+These settings are only required if you need to configure your wireless router’s port forwarding feature in
+order to connect to your devices while away from home.
+Important:
+R In order to use this feature, you must first configure your devices to use a static IP address ( “Changing
+IP settings”, Page 116).
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Network] ® [Port Forwarding].
+4
+Turn on the [Enable] radio button.
+5
+Tap the field next to [Port] and then enter the desired port number.
+R Only port numbers 55000-65000 can be assigned.
+R Configure your wireless router’s port forwarding feature to forward these ports to the static IP
+address that you have assigned to your devices.
+6
+When finished, tap [OK].
+R Your device restarts.
+MTU settings
+This setting affects how data is sent over the network. Typically this setting does not need to be changed.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Network] ® [MTU Settings].
+4
+Select the desired value and then tap [OK].
+Home wireless network SSID features
+The app remembers the SSIDs of wireless routers that your mobile device uses at home to connect to
+your devices; it can remember 10 SSIDs, and saves them in the home wireless network SSID list. If the
+list is full and you try to connect to your devices using a new SSID while at home, the app may connect to
+your devices over the Internet even though you are at home, i.e., 
+ or 
+ will be displayed at the
+117
+Using a shelf, floor, and window camera

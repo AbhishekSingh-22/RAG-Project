@@ -1,0 +1,46 @@
+Live images are being viewed or recorded, or camera is starting up
+Device malfunction
+*1
+You can configure the camera so that its LED indicator does not light during normal operation or
+when motion is detected. See  “Enabling and disabling the HD camera’s LED indicator”, Page 161.
+Enabling and disabling the HD camera’s LED indicator
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Settings] ® [Device Profiles].
+4
+Slide the [Camera LED] switch to the desired position.
+Smart recording features
+Smart recording features (overview)
+Smart recording allows the HD camera to start recording images automatically. You can configure smart
+recording settings by creating “scenarios”. Each scenario answers the following two questions.
+1
+What is the trigger that will make the camera start recording?
+– A schedule
+– A sensor
+2
+How long should the camera record images?
+– Maximum 15 minutes
+Sensors that can be used to trigger smart recording scenarios
+– Built-in motion sensor in HD camera
+– Built-in sound sensor in HD camera
+– Built-in temperature sensor in HD camera
+Creating smart recording scenarios
+Smart recording scenarios can be executed on a schedule and when a sensor is triggered.
+Note:
+R 10 smart recording scenarios can be created for each camera.
+Creating a scenario that uses a schedule as the trigger
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Smart Recording].
+R A list of existing scenarios is displayed.
+4
+Tap 
+.
+161
+Using an HD camera

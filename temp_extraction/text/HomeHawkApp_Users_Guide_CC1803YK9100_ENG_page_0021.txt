@@ -1,0 +1,39 @@
+Setting up devices
+Refer to the following for information on setting up your device.
+– Shelf cameras:
+“Shelf camera setup (overview)”, Page 45
+– Floor cameras:
+“Floor camera setup (overview)”, Page 67
+– Window cameras:
+“Window camera setup (overview)”, Page 90
+– Access points, front door cameras, and outdoor cameras:
+“Front door camera and outdoor camera setup (overview)”, Page 119
+– HD cameras:
+“HD camera setup (overview)”, Page 148
+App basics
+App basics (overview)
+To begin, simply start the [HomeHawk] app on your mobile device by tapping its icon (shown below).
+To prevent unauthorized access to your devices, you may need to enter a system password. Whether or
+not you need to enter the system password depends on how your mobile device is connecting to your
+devices, as explained below.
+Accessing while at home
+If your mobile device is connected to the same wireless network as your devices, you do not need to
+enter the system password when connecting to your devices. This is because it is assumed that in this
+situation, anyone in your home who is using your mobile device is authorized to access your devices.
+Note that even when you are at home, you will need to enter the system password if your mobile device
+is not connected to the same wireless network as your devices. This could occur if your mobile device is
+connected to the Internet using its mobile network connection instead of your wireless network, or if your
+mobile device is connected to a different wireless network.
+Accessing while away from home
+If your mobile device is not connected to the same wireless network as your devices, including situations
+when you are away from home, you will need to enter the system password when connecting to your
+devices. This is to prevent someone from using your mobile device to access your devices in the event
+that you lose your mobile device while away from home, for example.
+Note:
+R The password is set during initial setup.
+– Shelf cameras:
+“Shelf camera setup (overview)”, Page 45
+– Floor cameras:
+“Floor camera setup (overview)”, Page 67
+21
+Getting started with the HomeHawk!

@@ -1,0 +1,59 @@
+Video settings
+Changing the camera resolution
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Video] ® [Resolution].
+4
+Select the desired setting and then tap [OK].
+Changing the frame rate
+The frame rate determines the speed at which images from the camera are refreshed.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Video] ® [Frame Rate].
+4
+Select the desired setting and then tap [OK].
+Note:
+R Higher frame rates mean images are refreshed faster and moving subjects are displayed more
+smoothly, however, images displayed on your mobile device may be delayed and sound may cut out
+or be delayed when talking to the camera (shelf cameras and floor cameras only), especially over a
+slow or congested network connection.
+R Lower frame rates mean images are refreshed less often and moving subjects may appear “choppy”,
+however, images displayed on your mobile device will be less delayed and sound may be more
+consistent when talking (shelf cameras and floor cameras only) to the camera over a slow or
+congested network connection.
+Changing the brightness
+You can adjust the overall brightness of the camera image.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Video] ® [Brightness].
+4
+Select the desired setting.
+Enabling HDR (window cameras only)
+You can enable HDR for viewing images from the camera.
+HDR (high dynamic range) is a technique used to reproduce a greater dynamic range of luminosity than
+what is possible with standard digital imaging techniques.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Video].
+4
+Slide the [HDR] switch to the desired position.
+Displaying the bit rate level icon
+You can display the bit rate level icons on camera images.
+112
+Using a shelf, floor, and window camera

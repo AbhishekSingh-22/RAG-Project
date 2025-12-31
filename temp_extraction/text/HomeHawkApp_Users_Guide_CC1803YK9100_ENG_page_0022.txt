@@ -1,0 +1,46 @@
+– Window cameras:
+“Window camera setup (overview)”, Page 90
+– Access points, front door cameras, and outdoor cameras:
+“Front door camera and outdoor camera setup (overview)”, Page 119
+– HD cameras:
+“HD camera setup (overview)”, Page 148
+R You can change the password if necessary.
+– Shelf cameras, floor cameras, and window cameras:
+“Login settings”, Page 116
+– Access points, front door cameras, and outdoor cameras:
+“Login settings”, Page 144
+– HD cameras:
+“[Automatic Login]”, Page 169
+R If the app disconnects from your devices while away from home (such as when you turn your mobile
+device’s screen off and then on, or you switch to another app and then return to the [HomeHawk]
+app), the app’s home screen will be displayed instead of the last screen you were viewing. Also note
+that in this case, it may take some time for the app’s screen to be displayed.
+Automatic login
+When entering the login password, you can enable the automatic login feature by turning on the
+[Automatic Login (for remote access)] checkbox. In this case, the password that you enter will be
+saved, allowing the [HomeHawk] app to connect to your devices automatically.
+Note:
+R You can turn this feature on and off later if desired.
+– Shelf cameras, floor cameras, and window cameras:
+“Login settings”, Page 116
+– Access points, front door cameras, and outdoor cameras:
+“Login settings”, Page 144
+– HD cameras:
+“Login password”, Page 170
+Important:
+R Turning on this feature could allow unauthorized parties to access your devices if they are using your
+mobile device.
+Privacy information
+Certain features of the app function by accessing your mobile device’s hardware, such as the
+microphone, or the information stored in your mobile device. While using the app, a dialog may be
+displayed that asks whether you want to allow the app to access these features of your mobile device.
+You can change this setting later if desired in the privacy section of your mobile device’s [Settings] app.
+R Please note the following for location information and geo-fencing features.
+– Access to location information is required to obtain wireless LAN information and location
+information for use with the geo-fencing feature.
+– If a dialog is displayed requesting access to location information, allow access.
+– When using the geo-fencing feature, set access to location information to always allow.
+Using the home screen
+The [HomeHawk] app home screen is displayed when you start the app.
+22
+Getting started with the HomeHawk!

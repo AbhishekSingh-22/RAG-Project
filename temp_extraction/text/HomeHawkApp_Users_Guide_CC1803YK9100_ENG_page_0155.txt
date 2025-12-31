@@ -1,0 +1,40 @@
+Talking to the HD camera
+To use your mobile device’s microphone and the camera’s built-in speaker to talk to someone where the
+camera is installed, see  “Talking to the HD camera”, Page 155.
+Taking snapshots
+You can save snapshots (i.e., still images) while viewing live camera images. Snapshots are saved in
+your mobile device’s default photo album app.
+1
+View live images from the desired camera.
+2
+Tap [Photo].
+Note:
+R Snapshot sizes are scaled to fit the width of your mobile device’s display.
+R iPhone, iPad
+Snapshots are saved as JPEG files in your mobile device’s “Photos” app.
+R Android devices
+Snapshots are saved as JPEG files in your mobile device’s picture directory. The file naming
+convention is: device name + the date and time.
+Talking to the HD camera
+You can use your mobile device’s microphone and the camera’s built-in speaker to talk to someone
+where the camera is installed.
+This feature behaves differently depending on the [Talk Mode] setting ( “Talk mode”, Page 167).
+[Half Duplex Mode]
+When [Talk Mode] is set to [Half Duplex Mode], the following icons are displayed.
+The [Talk] feature is turned off. Your voice will not be heard at the camera.
+The [Talk] feature is turned on. Your voice will be heard at the camera if your voice is
+louder than the audio captured by the camera’s microphone.
+1
+View live images from the desired camera.
+2
+Tap [Talk].
+R Talk in turns with the other party. Only one party can be heard at a time.
+R To turn the talk feature off, tap [Talk] again.
+Temporary [Push to Talk Mode]
+When [Talk Mode] is set to [Half Duplex Mode], you can temporarily switch to “push to talk” mode. Tap
+and hold [Talk] and then select the temporary [Push to Talk Mode] option.
+[Push to Talk Mode]
+When [Talk Mode] is set to [Push to Talk Mode], the following icons are displayed.
+The [Talk] feature is turned off. Your voice will not be heard at the camera.
+155
+Using an HD camera

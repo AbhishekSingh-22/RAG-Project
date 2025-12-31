@@ -1,0 +1,37 @@
+M
+Displays the recorded images in a timeline
+Filters
+Filters can be used to specify the type recordings that you want to display. A single or multiple categories
+can be selected. The following filter categories can be selected.
+– [Person]: Displays recordings that contain detections for the motion of people.
+– [Motion]: Displays recordings recorded when motion for objects was detected.
+– [Manual]: Displays recordings that were recorded manually.
+– [Protected]: Displays recordings that are protected.
+Playing back recordings
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Recording List].
+R The recording list screen is displayed ( “Viewing the recording list screen”, Page 98).
+2
+Select the desired camera.
+3
+Tap 
+, 
+, or the displayed date to select a recording date.
+R A list of all recordings recorded on the selected date is displayed.
+R Filter categories ( “Filters”, Page 100) can be used to display to the desired recordings.
+R Tap 
+ to display recordings in a timeline. Tap 
+ to display recordings in a list.
+4
+Select a recording.
+R The selected recording starts playing in the playback screen.
+Note:
+R When connected away from home, 
+ or 
+ is displayed on the playback screen. See
+“Connection mode when away from home”, Page 24 for more information.
+R Recorded images can also be played back from the camera image/recording list screen ( “Viewing the
+camera image/recording list screen”, Page 94).
+100
+Using a shelf, floor, and window camera

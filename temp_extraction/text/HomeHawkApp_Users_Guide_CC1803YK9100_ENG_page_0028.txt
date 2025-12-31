@@ -1,0 +1,33 @@
+If your mobile device is registered to multiple devices, your mobile device can receive notifications from
+all devices, regardless of the device that your mobile device is currently connected to. When you tap a
+notification in the iOS Notifications Center, the app will attempt to connect to the corresponding device.
+Status notifications for Android devices
+The app provides information about system status by displaying status notifications, error messages, and
+the following icons in your mobile device’s status bar and notifications panel.
+If your mobile device is registered to multiple devices, your mobile device can receive notifications from
+all devices, regardless of the device that your mobile device is currently connected to. When you tap a
+notification in the notifications panel, the app will attempt to connect to the corresponding device.
+Shelf cameras and floor cameras:
+The camera’s motion sensor was triggered
+The selected mode was changed
+The sound sensor was triggered
+The temperature sensor was triggered
+The privacy mode was enabled
+The privacy mode was disabled
+A different event other than the above occurred
+Window cameras:
+The camera’s motion sensor was triggered for objects
+The camera’s motion sensor was triggered for people
+The selected mode was changed
+A different event other than the above occurred
+Front door cameras and outdoor cameras:
+The camera’s motion sensor was triggered
+The selected mode was changed
+A different event other than the above occurred
+HD cameras:
+For information about status notifications for HD cameras, see  “Status notifications for Android devices”,
+Page 160.
+Device LED indicators
+Each device can provide information about its status by turning on its LED indicator.
+28
+Getting started with the HomeHawk!

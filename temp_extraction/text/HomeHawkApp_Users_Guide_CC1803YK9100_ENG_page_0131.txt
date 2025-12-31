@@ -1,0 +1,63 @@
+4
+Select the desired recording.
+5
+Tap 
+ ® [OK].
+Erasing multiple images
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Recording List].
+2
+Select the desired access point and camera.
+R Select [All Cameras] to see recorded images from all the cameras registered to the specified
+access point.
+3
+Tap 
+, 
+, or the displayed date to select a recording date.
+4
+Tap [Select].
+5
+Select the desired recordings.
+R Tap 
+/
+ displayed next to the date to select or deselect all images shown in the list.
+6
+When finished, tap [Delete] ® [OK].
+Protecting recordings
+You can protect recordings so that they cannot be erased.
+Protecting individual images
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Recording List].
+2
+Select the desired access point and camera.
+R Select [All Cameras] to see recorded images from all the cameras registered to the specified
+access point.
+3
+Tap 
+, 
+, or the displayed date to select a recording date.
+4
+Select the desired recording.
+5
+Tap 
+.
+R Tap 
+ to remove the protection.
+R
+ is displayed in the thumbnail of images to indicate that the image is protected.
+Protecting multiple images
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Recording List].
+2
+Select the desired access point and camera.
+R Select [All Cameras] to see recorded images from all the cameras registered to the specified
+access point.
+3
+Tap 
+, 
+, or the displayed date to select a recording date.
+131
+Using a front door camera and outdoor camera

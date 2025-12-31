@@ -1,0 +1,41 @@
+Front door camera and outdoor camera home screen
+F
+G
+D
+E
+A
+B
+C
+A
+Displays the settings menu
+B
+Shows the access point’s name
+C
+Selects the camera to be displayed at the top
+of the list
+D
+Shows the selected mode icon and displays
+the mode screen
+( “Mode settings (overview)”, Page 132)
+E
+Shows the selected mode name
+F
+Displays the camera setting screen
+G
+Shows the camera’s name
+Note:
+R For information about the home screen for HD cameras, see  “HD camera home screen”, Page 153.
+Connection mode when away from home
+When connected away from home (i.e., your mobile device is not connected to the same wireless router
+as your devices), an icon is displayed in the live camera image screen*1, camera image/recording list
+screen*2, and playback screen*3 to indicate that you are connected away from home and whether you
+are connected via a relay server. (A relay server is used to make connections with your wireless router
+when you are away from home.)
+–
+ is displayed when connected away from home using a relay server.
+–
+ is displayed when connected away from home without using a relay server.
+*1
+Front door cameras/outdoor cameras:  “Viewing the live camera image screen”, Page 125
+24
+Getting started with the HomeHawk!

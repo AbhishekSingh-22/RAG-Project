@@ -1,0 +1,59 @@
+3
+Make sure your HD camera can connect to your wireless router.
+→Disconnect the HD camera’s AC adaptor, connect it again, and wait for the camera to start up. If
+the camera’s LED indicator remains blinking in white after a few minutes, the camera is not
+connected to your wireless router.
+In this case, set up the HD camera again by following the initial setup procedure (see  “Setting up
+the HD camera”, Page 149).
+In this case, deregister the HD camera from your mobile device ( “Deregistering HD cameras”,
+Page 42), and then register it again ( “Registering HD cameras”, Page 34).
+4
+Make sure your mobile device can connect to your shelf camera, floor camera, or window camera
+while you are at home.
+→Check your mobile device’s wireless network settings and confirm that it is connected to your
+wireless router.
+Next, use the [HomeHawk] app to connect to the camera, and confirm that 
+ or 
+ are not
+displayed in the live camera image screen (shelf camera:  “Viewing the live camera image screen”,
+Page 50, floor camera:  “Viewing the live camera image screen”, Page 72, window camera:
+“Viewing the live camera image screen”, Page 95), camera image/recording list screen (shelf
+camera:  “Viewing the camera image/recording list screen”, Page 49, floor camera:  “Viewing the
+camera image/recording list screen”, Page 71, window camera:  “Viewing the camera image/
+recording list screen”, Page 94), or playback screen (shelf camera:  “Playing back recordings”,
+Page 56, floor camera:  “Playing back recordings”, Page 78, window camera:  “Playing back
+recordings”, Page 100).
+5
+Make sure your mobile device can connect to your access point while you are at home.
+→Check your mobile device’s wireless network settings and confirm that it is connected to your
+wireless router.
+Next, use the [HomeHawk] app to connect to the access point, and confirm that 
+ or 
+are not displayed in the live camera image screen ( “Viewing the live camera image screen”,
+Page 125), camera image/recording list screen ( “Viewing the camera image/recording list screen”,
+Page 123), or playback screen ( “Playing back recordings”, Page 130).
+6
+Make sure your mobile device can connect to your HD camera while you are at home.
+→Check your mobile device’s wireless network settings and confirm that it is connected to your
+wireless router.
+Next, use the [HomeHawk] app to connect to the camera.
+7
+Make sure your front door camera or outdoor camera is registered to the access point. Register them
+if they are not ( “Registering front door cameras and outdoor cameras”, Page 34).
+→Check the home screen ( “Front door camera and outdoor camera home screen”, Page 24) or
+camera image/recording screen ( “Viewing the camera image/recording list screen”, Page 123). If
+a camera is displayed, it is registered; if it is not displayed, it is not registered.
+8
+Make sure your shelf camera, floor camera, or window camera have adequate signal strength.
+→Check the signal strength ( “Camera signal strength”, Page 109) and move cameras closer to the
+wireless router if necessary.
+9
+Make sure your front door camera or outdoor camera has adequate signal strength.
+→Check the signal strength ( “Camera signal strength”, Page 136) and move devices closer to the
+access point if necessary.
+Date and time settings
+Make sure the date and time settings for the devices are correct.
+If the time is incorrect, adjust the time with [Time Adjustment]. Reselect the mobile device used to
+match the time to as necessary.
+177
+Troubleshooting

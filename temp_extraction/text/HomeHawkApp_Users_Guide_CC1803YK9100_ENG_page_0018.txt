@@ -1,0 +1,36 @@
+Supported devices
+R Shelf camera (KX-HNC810, KX-HNC815)
+R Floor camera (KX-HNC850, KX-HNC855)
+R HD Camera (KX-HNC800, KX-HNC805, KX-HN1003)
+Required procedures
+R Use the [HomeHawk] app to configure the camera’s sound alert feature.
+– Floor cameras: See  “Notification settings”, Page 115.
+– Shelf cameras: See  “Notification settings”, Page 115.
+– HD Camera: See  “[Notification Settings]”, Page 170.
+I want the lights to turn on automatically when I come home
+You can configure the floor camera to turn on its light when it detects your mobile device, such as when
+you return home from outside.
+Supported devices
+R Floor camera (KX-HNC850, KX-HNC855)
+Required procedures
+R Use the [HomeHawk] app to configure the camera’s mode feature. See  “Adjusting the lighting”,
+Page 81.
+R Use the [HomeHawk] app to configure the camera’s geo-fencing feature. See  “Automatic Mode
+Switching”, Page 87.
+I want the lights to turn on automatically when I’m away on
+vacation
+You can configure the floor camera to turn on its light at specified schedules or when it detects motion.
+Supported devices
+R Floor camera (KX-HNC850, KX-HNC855)
+Required procedures
+R Use the [HomeHawk] app to configure the camera’s lighting feature. See  “Adjusting the lighting”,
+Page 81.
+I want to record images 24/7
+You can configure the window camera to record images continuously 24/7.
+Supported devices
+R Window camera (KX-HNC500, KX-HNC505)
+Required procedures
+R Use the [HomeHawk] app to use the [24/7 Recording] mode. See  “Window camera mode settings
+(overview)”, Page 106.
+18
+Getting started with the HomeHawk!

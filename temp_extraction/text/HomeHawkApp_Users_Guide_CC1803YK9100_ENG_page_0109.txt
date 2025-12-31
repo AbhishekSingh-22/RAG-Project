@@ -1,0 +1,46 @@
+General features
+Status
+Camera signal strength
+You can check the signal strength of the camera’s wireless connection.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Signal Strength].
+4
+Confirm the number of blue bars.
+R More blue bars indicate a stronger signal.
+ Strongest signal
+ Good signal
+ Weak signal
+ No signal
+ Could not obtain signal information
+Sound settings (shelf cameras and floor cameras only)
+Adjusting the talk volume
+You can adjust the volume of your mobile device’s microphone, which determines the volume of your
+voice that is sent to the camera when talking to the camera.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Sound].
+4
+Under [Talk Volume], adjust the volume as desired.
+Adjusting the motion detection volume
+You can adjust the volume of the camera audio (beeps) that sounds from the camera when motion is
+detected.
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Settings].
+2
+Tap [Camera Settings] and select the desired camera.
+3
+Tap [Sound].
+4
+Under [Motion detection volume], adjust the volume as desired.
+109
+Using a shelf, floor, and window camera

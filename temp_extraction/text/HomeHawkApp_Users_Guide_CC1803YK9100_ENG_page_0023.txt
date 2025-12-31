@@ -1,0 +1,43 @@
+Shelf camera, floor camera, and window camera home screen
+D
+E
+G
+H
+F
+A
+B
+C
+I
+A
+Displays the settings menu
+B
+Shows the camera’s name
+C
+Selects the camera to be displayed at the top
+of the list
+D
+Shows the selected mode icon and displays
+the mode screen*1
+E
+Shows the selected mode name
+F
+Displays the brightness settings for the light
+(floor cameras only)
+G
+Displays the camera setting screen
+H
+Adjusts the brightness for the light (floor
+cameras only)
+I
+Shows the camera’s name
+*1
+Shelf camera mode settings:
+“Shelf camera mode settings (overview)”, Page 62
+Floor camera mode settings:
+“Floor camera mode settings (overview)”, Page 85
+Window camera mode settings:
+“Window camera mode settings (overview)”, Page 106
+Note:
+R For information about the home screen for HD cameras, see  “HD camera home screen”, Page 153.
+23
+Getting started with the HomeHawk!

@@ -1,0 +1,61 @@
+[Port Forwarding] settings
+These settings are only required if you need to configure your wireless router’s port forwarding feature in
+order to connect to the camera while away from home.
+Important:
+R In order to use this feature, you must first configure the camera to use a static IP address ( “Changing
+IP settings”, Page 171).
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Settings] ® [Wireless Settings].
+4
+Tap [Port Forwarding].
+5
+Turn on the [Enable] radio button.
+6
+Tap field number 1 and enter the desired port number.
+R A value must be assigned to each port.
+R Only port numbers 62000–63000 can be assigned.
+R Configure your wireless router’s port forwarding feature to forward these ports to the static IP
+address that you have assigned to the camera.
+7
+When finished, tap [OK].
+[MTU Settings] (maximum data size setting)
+This setting affects how data is sent over the network. Typically this setting does not need to be changed.
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Settings] ® [Wireless Settings].
+4
+Tap [MTU Settings].
+5
+Select the desired value and then tap [OK].
+Deleting wireless access points
+The app remembers the SSIDs of wireless routers that you use at home to connect to the camera; it can
+remember 10 SSIDs, and saves them in the wireless access point list. If the list is full and you try to
+connect to the camera using a new SSID while at home, the app may connect to the camera over the
+Internet even though you are at home. In this case, we recommend deleting unused SSIDs from the
+wireless access point list.
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Settings].
+4
+Tap [Wireless Access Point].
+5
+Select the wireless access point that you want to delete and then tap [Delete].
+Note:
+R You cannot delete the wireless access point that your mobile device is currently connected to.
+Updating the HD camera’s firmware
+You can use this feature to check for a newer version of the camera firmware (i.e., system software). If a
+newer version is found, you can update the firmware.
+1
+View live images from the desired camera.
+172
+Using an HD camera

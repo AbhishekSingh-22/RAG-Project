@@ -1,0 +1,44 @@
+[Device Profiles]
+See  “HD camera device profiles”, Page 171.
+[Notification Settings]
+You can select which types of status notifications are displayed, and which are not.
+– [Motion Detect]
+This setting determines whether a notification is displayed when the camera detects motion.
+– [Camera Recording]
+This setting determines whether a notification is displayed when camera images are being recorded.
+– [Temperature Alert]
+This setting determines whether a notification is displayed when the camera’s temperature sensor is
+triggered.
+– [Sound Detection Alert]
+This setting determines whether a notification is displayed when the camera’s sound sensor is
+triggered.
+– [Shutter Open/Close]
+This setting determines whether a notification is displayed when the camera’s privacy shutter is
+opened or closed.
+– [Device Error]
+This setting determines whether a notification is displayed when a device error is detected.
+[Wireless Settings]
+See  “Network features”, Page 171.
+[Wireless Access Point]
+See  “Deleting wireless access points”, Page 172.
+[Reset HD Camera]
+See  “Resetting the HD camera’s settings”, Page 173.
+Login password
+You can change the password that is used to connect to the camera.
+1
+View live images from the desired camera.
+2
+Open the options menu (see  “Displaying the options menu”, Page 151).
+3
+Tap [Settings].
+4
+Tap [Change Login Password].
+5
+Enter the desired password and then tap [OK].
+R To display the characters that you have entered, turn on the [Show Password] checkbox.
+Note:
+R If you forget the login password, reset the camera ( “Resetting the HD camera’s settings”, Page 173),
+and then set up the camera again by following the initial setup procedure (see  “Setting up the HD
+camera”, Page 149).
+170
+Using an HD camera

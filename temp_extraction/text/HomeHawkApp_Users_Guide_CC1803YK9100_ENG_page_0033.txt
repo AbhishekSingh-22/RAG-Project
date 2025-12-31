@@ -1,0 +1,46 @@
+System expansion
+System expansion (overview)
+You can expand the system by registering additional devices. See  “Panasonic Home Monitoring Camera
+device lineup”, Page 7 for information on the types and number of devices that can be registered.
+Registering devices
+If you purchased devices that are not registered, you must register them before you can use them.
+Note:
+R To register a mobile device, use the procedure described in the following.
+– Floor cameras:  “Registering other mobile devices to the floor camera”, Page 69
+– Shelf cameras:  “Registering other mobile devices to the shelf camera”, Page 47
+– Window cameras:  “Registering other mobile devices to the window camera”, Page 92
+– Front door cameras/outdoor cameras:  “Registering your mobile device to additional access points”,
+Page 142
+– HD cameras:  “Registering other mobile devices to the HD camera”, Page 174
+Registering shelf cameras
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Add Camera(s)].
+2
+Tap [SHELF Camera].
+3
+Perform the procedure described in  “Initial setup”, Page 45, starting from step 3.
+Registering floor cameras
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Add Camera(s)].
+2
+Tap [FLOOR Camera].
+3
+Perform the procedure described in  “Initial setup”, Page 67, starting from step 3.
+Registering window cameras
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Add Camera(s)].
+2
+Tap [WINDOW Camera].
+3
+Perform the procedure described in  “Initial setup”, Page 90, starting from step 3.
+Registering access points
+1
+From the [HomeHawk] app home screen, tap 
+ ® [Add Camera(s)].
+2
+Perform the procedure described in  “Initial setup”, Page 119, starting from step 2.
+33
+Getting started with the HomeHawk!

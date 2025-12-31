@@ -1,0 +1,45 @@
+Floor camera features
+General issues
+Refer to the following after checking the general troubleshooting information described in  “General
+information”, Page 176.
+The camera’s LED indicator is blinking in red.
+R The camera is out of range of your wireless router.
+→Confirm that your wireless router is powered on and wired correctly, and then move the camera
+closer to your wireless router.
+No sound is heard in camera recordings
+R If 
+ is displayed next to the recording in the recording list, the system is configured to not record
+audio when recording camera images.
+→Change the [Recording with Sound] setting ( “Recording with sound (shelf cameras and floor
+cameras only)”, Page 110).
+R The volume is turned down on your mobile device.
+→Adjust the volume of your mobile device.
+Colors in camera images appear different from normal
+R The camera is aimed at a dark location, or it is nighttime.
+→If there is not adequate light to illuminate the subject, such as at night, the camera switches to night
+vision mode depending on the settings ( “Using night vision (shelf cameras and floor cameras only)”,
+Page 111). In this case, colors may appear different from normal.
+There is a long delay when talking to the camera while away from home
+R Your mobile device’s network connection is slow or congested.
+→Wait for network traffic to decrease.
+→Lower the [Frame Rate] setting ( “Changing the frame rate”, Page 112).
+Images are poor at night when the camera is installed in front of a window
+R Night vision mode is causing images to have poor quality.
+→Turn off night vision mode ( “Using night vision (shelf cameras and floor cameras only)”, Page 111).
+The light turns on at night by itself
+R The light will automatically turn on at night if [Color] is selected for the night vision mode and you view
+or record images with the camera.
+→Turn off night vision mode or set it to [Monochrome] ( “Using night vision (shelf cameras and floor
+cameras only)”, Page 111).
+Note:
+R Turning off night vision mode will reduce the visibility of images at night.
+Camera images are not displayed at first while away from home, and are displayed after some
+time passes
+R Your mobile device’s network connection is slow or congested.
+→Wait for network traffic to decrease.
+→Lower the [Frame Rate] setting ( “Changing the frame rate”, Page 112).
+I have to wait a long time before camera images are displayed while away from home
+R There is too much traffic on your home network or on the mobile device’s network.
+→Wait for network traffic to decrease.
+185
+Troubleshooting
