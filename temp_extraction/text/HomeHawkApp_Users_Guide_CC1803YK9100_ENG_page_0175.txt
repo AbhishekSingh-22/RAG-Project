@@ -1,6 +1,0 @@
-Note:
-R If you use this procedure to deregister the mobile device you are using to perform the procedure, and if
-there are no other cameras or access points that the app can connect to, the initial setup screen is
-displayed.
-175
-Using an HD camera

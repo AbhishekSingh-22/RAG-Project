@@ -1,7 +1,0 @@
-Front door camera (KX-HNC700, KX-HNC705)
-R Full-color camera with night vision (including color night vision) and built-in microphone for live
-monitoring and recording
-R Built-in motion sensor (visual detection) can be used to trigger other actions (alerts, etc.)
-R Built-in microphone and speaker for two-way communication
-10
-Getting started with the HomeHawk!

@@ -1,8 +1,0 @@
-Note:
-R To register other devices, see  “Registering devices”, Page 33.
-R For privacy, we recommend that you deregister your mobile device from the access point
-( “Deregistering mobile devices”, Page 41) before handing it over to a third party (such as when
-submitting your mobile device for service, lending it to someone else, selling it, etc.), or if you no longer
-intend to use the mobile device with the access point.
-122
-Using a front door camera and outdoor camera

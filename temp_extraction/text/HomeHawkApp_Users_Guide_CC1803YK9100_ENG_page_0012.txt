@@ -1,8 +1,0 @@
-HD Camera (KX-HNC800, KX-HNC805, KX-HN1003)
-R Full-color, high-definition camera with night vision and built-in microphone for live monitoring and
-recording
-R Built-in motion sensor (visual detection), sound sensor, and temperature sensor can be used to trigger
-other actions (camera recording, etc.)
-R Built-in microphone and speaker for two-way communication
-12
-Getting started with the HomeHawk!

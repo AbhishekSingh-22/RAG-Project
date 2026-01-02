@@ -8,7 +8,7 @@ from pdf_extractor import extract_pdf
 
 def main():
     """Main function to run the PDF extraction."""
-    # Get project root (assuming script is in src/ingestion)
+    
     project_root = Path(__file__).parent.parent.parent
     
     # PDF file path

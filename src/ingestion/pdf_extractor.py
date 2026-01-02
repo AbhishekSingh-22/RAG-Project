@@ -10,6 +10,10 @@ from typing import Dict, List, Tuple
 from datetime import datetime
 import pymupdf as fitz  # PyMuPDF
 from tqdm import tqdm
+import pytesseract
+from PIL import Image
+import cv2
+import numpy as np
 
 
 class PDFExtractor:
@@ -59,6 +63,111 @@ class PDFExtractor:
             error_msg = f"Error extracting text from page {page_num + 1}: {str(e)}"
             self.summary["errors"].append(error_msg)
             return "", False
+    
+    def extract_text_from_image(self, image_path: str) -> Tuple[str, bool]:
+        """
+        Extract text from an image using OCR (Tesseract).
+        This is useful for extracting annotations, numberings, and labels from images.
+        
+        Args:
+            image_path: Path to the image file
+            
+        Returns:
+            Tuple of (extracted_text, success_flag)
+        """
+        try:
+            # Open image with PIL
+            img = Image.open(image_path)
+            
+            # Preprocess image for better OCR results
+            img_processed = self._preprocess_image_for_ocr(img)
+            
+            # Extract text using Tesseract OCR with custom config
+            # --psm 6: Assume a single uniform block of text
+            # --oem 3: Use both legacy and LSTM OCR modes
+            custom_config = r'--psm 6 --oem 3'
+            extracted_text = pytesseract.image_to_string(img_processed, config=custom_config)
+            
+            # Return text only if non-empty after stripping
+            if extracted_text.strip():
+                return extracted_text, True
+            else:
+                return "", False
+                
+        except Exception as e:
+            # Silently fail for OCR - not all images have text
+            return "", False
+    
+    def _preprocess_image_for_ocr(self, img: Image.Image) -> Image.Image:
+        """
+        Preprocess image to enhance text visibility for OCR.
+        Improves contrast and clarity of text/numbers in diagrams.
+        
+        Args:
+            img: PIL Image object
+            
+        Returns:
+            Preprocessed PIL Image object
+        """
+        try:
+            # Convert PIL image to numpy array for OpenCV processing
+            img_array = np.array(img)
+            
+            # Convert to grayscale if color image
+            if len(img_array.shape) == 3:
+                gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
+            else:
+                gray = img_array
+            
+            # Apply CLAHE (Contrast Limited Adaptive Histogram Equalization)
+            # This enhances local contrast while preventing noise amplification
+            clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8, 8))
+            enhanced = clahe.apply(gray)
+            
+            # Apply binary threshold for better text definition
+            # Use Otsu's method for automatic threshold calculation
+            _, binary = cv2.threshold(enhanced, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+            
+            # Apply morphological operations to clean up noise
+            kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
+            morph = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel, iterations=1)
+            morph = cv2.morphologyEx(morph, cv2.MORPH_OPEN, kernel, iterations=1)
+            
+            # Convert back to PIL Image
+            result = Image.fromarray(morph)
+            
+            return result
+        except Exception as e:
+            # If preprocessing fails, return original image
+            return img
+    
+    def _add_ocr_text_to_image_info(self, image_info: Dict, image_path: str, perform_ocr: bool = True) -> Dict:
+        """
+        Add OCR-extracted text to image metadata.
+        
+        Args:
+            image_info: Image metadata dictionary
+            image_path: Path to the image file
+            perform_ocr: Whether to perform OCR (can be disabled for performance)
+            
+        Returns:
+            Updated image_info dictionary with OCR text if found
+        """
+        if not perform_ocr:
+            return image_info
+        
+        try:
+            ocr_text, success = self.extract_text_from_image(image_path)
+            if success and ocr_text:
+                image_info["ocr_text"] = ocr_text
+                image_info["has_ocr_text"] = True
+            else:
+                image_info["has_ocr_text"] = False
+        except Exception as e:
+            # Silently fail for OCR
+            image_info["has_ocr_text"] = False
+        
+        return image_info
     
     def _group_nearby_blocks(self, blocks: List[Dict], proximity_threshold: float = 20.0) -> List[List[Dict]]:
         """
@@ -207,7 +316,7 @@ class PDFExtractor:
                     with open(image_path, "wb") as img_file:
                         img_file.write(image_bytes)
                     
-                    images_info.append({
+                    image_data = {
                         "filename": image_filename,
                         "path": str(image_path),
                         "size_bytes": len(image_bytes),
@@ -215,7 +324,12 @@ class PDFExtractor:
                         "page": page_num + 1,
                         "index": image_counter,
                         "method": "get_images"
-                    })
+                    }
+                    
+                    # Extract text from image using OCR
+                    image_data = self._add_ocr_text_to_image_info(image_data, str(image_path))
+                    
+                    images_info.append(image_data)
                     
                     extracted_xrefs.add(xref)
                     self.summary["images_extracted"] += 1
@@ -256,7 +370,7 @@ class PDFExtractor:
                                     with open(image_path, "wb") as img_file:
                                         img_file.write(image_bytes)
                                     
-                                    images_info.append({
+                                    image_data = {
                                         "filename": image_filename,
                                         "path": str(image_path),
                                         "size_bytes": len(image_bytes),
@@ -265,7 +379,12 @@ class PDFExtractor:
                                         "index": image_counter,
                                         "method": "text_dict_block_xref_grouped",
                                         "blocks_merged": len(block_group)
-                                    })
+                                    }
+                                    
+                                    # Extract text from image using OCR
+                                    image_data = self._add_ocr_text_to_image_info(image_data, str(image_path))
+                                    
+                                    images_info.append(image_data)
                                     
                                     extracted_xrefs.add(xref)
                                     self.summary["images_extracted"] += 1
@@ -281,7 +400,7 @@ class PDFExtractor:
                             merged_rect = self._merge_bboxes(bboxes)
                             
                             # Render the merged area as a single image
-                            pix = page.get_pixmap(clip=merged_rect, matrix=fitz.Matrix(2, 2))  # 2x zoom for better quality
+                            pix = page.get_pixmap(clip=merged_rect, matrix=fitz.Matrix(4, 4))  # 4x zoom for better quality and OCR
                             
                             if pix and pix.n > 0:
                                 image_counter += 1
@@ -292,7 +411,7 @@ class PDFExtractor:
                                 pix.save(image_path)
                                 image_bytes = pix.tobytes()
                                 
-                                images_info.append({
+                                image_data = {
                                     "filename": image_filename,
                                     "path": str(image_path),
                                     "size_bytes": len(image_bytes),
@@ -302,7 +421,12 @@ class PDFExtractor:
                                     "method": "text_dict_block_rendered_grouped",
                                     "blocks_merged": len(block_group),
                                     "bbox": list(merged_rect)
-                                })
+                                }
+                                
+                                # Extract text from image using OCR
+                                image_data = self._add_ocr_text_to_image_info(image_data, str(image_path))
+                                
+                                images_info.append(image_data)
                                 
                                 self.summary["images_extracted"] += 1
                                 pix = None  # Free memory
@@ -347,7 +471,7 @@ class PDFExtractor:
                                         continue
                                     
                                     # Render the drawing area as an image
-                                    pix = page.get_pixmap(clip=drawing_rect, matrix=fitz.Matrix(2, 2))
+                                    pix = page.get_pixmap(clip=drawing_rect, matrix=fitz.Matrix(4, 4))
                                     
                                     if pix and pix.n > 0:
                                         image_counter += 1
@@ -358,7 +482,7 @@ class PDFExtractor:
                                         pix.save(image_path)
                                         image_bytes = pix.tobytes()
                                         
-                                        images_info.append({
+                                        image_data = {
                                             "filename": image_filename,
                                             "path": str(image_path),
                                             "size_bytes": len(image_bytes),
@@ -368,7 +492,12 @@ class PDFExtractor:
                                             "method": "vector_graphics",
                                             "drawings_merged": len(drawing_group),
                                             "bbox": list(drawing_rect)
-                                        })
+                                        }
+                                        
+                                        # Extract text from image using OCR
+                                        image_data = self._add_ocr_text_to_image_info(image_data, str(image_path))
+                                        
+                                        images_info.append(image_data)
                                         
                                         self.summary["images_extracted"] += 1
                                         pix = None  # Free memory
