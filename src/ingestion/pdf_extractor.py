@@ -10,10 +10,6 @@ from typing import Dict, List, Tuple
 from datetime import datetime
 import pymupdf as fitz  # PyMuPDF
 from tqdm import tqdm
-import pytesseract
-from PIL import Image
-import cv2
-import numpy as np
 
 
 class PDFExtractor:
@@ -63,111 +59,6 @@ class PDFExtractor:
             error_msg = f"Error extracting text from page {page_num + 1}: {str(e)}"
             self.summary["errors"].append(error_msg)
             return "", False
-    
-    def extract_text_from_image(self, image_path: str) -> Tuple[str, bool]:
-        """
-        Extract text from an image using OCR (Tesseract).
-        This is useful for extracting annotations, numberings, and labels from images.
-        
-        Args:
-            image_path: Path to the image file
-            
-        Returns:
-            Tuple of (extracted_text, success_flag)
-        """
-        try:
-            # Open image with PIL
-            img = Image.open(image_path)
-            
-            # Preprocess image for better OCR results
-            img_processed = self._preprocess_image_for_ocr(img)
-            
-            # Extract text using Tesseract OCR with custom config
-            # --psm 6: Assume a single uniform block of text
-            # --oem 3: Use both legacy and LSTM OCR modes
-            custom_config = r'--psm 6 --oem 3'
-            extracted_text = pytesseract.image_to_string(img_processed, config=custom_config)
-            
-            # Return text only if non-empty after stripping
-            if extracted_text.strip():
-                return extracted_text, True
-            else:
-                return "", False
-                
-        except Exception as e:
-            # Silently fail for OCR - not all images have text
-            return "", False
-    
-    def _preprocess_image_for_ocr(self, img: Image.Image) -> Image.Image:
-        """
-        Preprocess image to enhance text visibility for OCR.
-        Improves contrast and clarity of text/numbers in diagrams.
-        
-        Args:
-            img: PIL Image object
-            
-        Returns:
-            Preprocessed PIL Image object
-        """
-        try:
-            # Convert PIL image to numpy array for OpenCV processing
-            img_array = np.array(img)
-            
-            # Convert to grayscale if color image
-            if len(img_array.shape) == 3:
-                gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
-            else:
-                gray = img_array
-            
-            # Apply CLAHE (Contrast Limited Adaptive Histogram Equalization)
-            # This enhances local contrast while preventing noise amplification
-            clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8, 8))
-            enhanced = clahe.apply(gray)
-            
-            # Apply binary threshold for better text definition
-            # Use Otsu's method for automatic threshold calculation
-            _, binary = cv2.threshold(enhanced, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-            
-            # Apply morphological operations to clean up noise
-            kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
-            morph = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel, iterations=1)
-            morph = cv2.morphologyEx(morph, cv2.MORPH_OPEN, kernel, iterations=1)
-            
-            # Convert back to PIL Image
-            result = Image.fromarray(morph)
-            
-            return result
-        except Exception as e:
-            # If preprocessing fails, return original image
-            return img
-    
-    def _add_ocr_text_to_image_info(self, image_info: Dict, image_path: str, perform_ocr: bool = True) -> Dict:
-        """
-        Add OCR-extracted text to image metadata.
-        
-        Args:
-            image_info: Image metadata dictionary
-            image_path: Path to the image file
-            perform_ocr: Whether to perform OCR (can be disabled for performance)
-            
-        Returns:
-            Updated image_info dictionary with OCR text if found
-        """
-        if not perform_ocr:
-            return image_info
-        
-        try:
-            ocr_text, success = self.extract_text_from_image(image_path)
-            if success and ocr_text:
-                image_info["ocr_text"] = ocr_text
-                image_info["has_ocr_text"] = True
-            else:
-                image_info["has_ocr_text"] = False
-        except Exception as e:
-            # Silently fail for OCR
-            image_info["has_ocr_text"] = False
-        
-        return image_info
     
     def _group_nearby_blocks(self, blocks: List[Dict], proximity_threshold: float = 20.0) -> List[List[Dict]]:
         """
@@ -277,10 +168,396 @@ class PDFExtractor:
         
         return fitz.Rect(min_x, min_y, max_x, max_y)
     
+    def _get_page_drawings_bbox(self, page: fitz.Page) -> fitz.Rect:
+        """
+        Get the bounding box that encompasses all vector drawings on the page.
+        This helps identify annotation areas like pointer lines, callouts, etc.
+        
+        Args:
+            page: PyMuPDF page object
+            
+        Returns:
+            Bounding box of all drawings, or empty rect if no drawings
+        """
+        try:
+            drawings = page.get_drawings()
+            if not drawings:
+                return fitz.Rect()
+            
+            all_rects = [d.get("rect") for d in drawings if d.get("rect")]
+            if not all_rects:
+                return fitz.Rect()
+            
+            min_x = min(r.x0 for r in all_rects)
+            min_y = min(r.y0 for r in all_rects)
+            max_x = max(r.x1 for r in all_rects)
+            max_y = max(r.y1 for r in all_rects)
+            
+            return fitz.Rect(min_x, min_y, max_x, max_y)
+        except:
+            return fitz.Rect()
+    
+    def _has_overlaid_annotations(self, page: fitz.Page, image_bbox: List[float]) -> bool:
+        """
+        Check if there are vector drawings (annotations) near/overlapping an image.
+        
+        Args:
+            page: PyMuPDF page object
+            image_bbox: Bounding box of the image [x0, y0, x1, y1]
+            
+        Returns:
+            True if annotations exist near the image
+        """
+        try:
+            drawings = page.get_drawings()
+            if not drawings:
+                return False
+            
+            img_rect = fitz.Rect(image_bbox)
+            
+            for d in drawings:
+                d_rect = d.get("rect")
+                if d_rect:
+                    # Check if drawing is near the image (within 150 points)
+                    # This catches pointer lines extending from the image
+                    expanded_img = img_rect + fitz.Rect(-20, -20, 150, 20)  # Expand right for callouts
+                    if expanded_img.intersects(d_rect):
+                        return True
+            
+            return False
+        except:
+            return False
+    
+    def _is_callout_label(self, text: str) -> bool:
+        """
+        Check if text is likely a callout label (A, B, C, 1, 2, 3, ①, ②, etc.)
+        Also detects callout labels at the START of description text (e.g., "AReturns you...")
+        
+        Args:
+            text: Text content to check
+            
+        Returns:
+            True if text appears to be a callout label or starts with one
+        """
+        text = text.strip()
+        if not text:
+            return False
+        
+        # Single letter (A-Z, a-z)
+        if len(text) == 1 and text.isalpha():
+            return True
+        
+        # Single digit or small number (1-99)
+        if text.isdigit() and len(text) <= 2:
+            return True
+        
+        # Circled numbers ①②③④⑤⑥⑦⑧⑨⑩ etc.
+        circled_chars = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳❶❷❸❹❺❻❼❽❾❿"
+        if len(text) == 1 and text in circled_chars:
+            return True
+        
+        # Text starting with circled number
+        if text and text[0] in circled_chars:
+            return True
+        
+        # Letter with period (A., B., 1., 2.)
+        if len(text) == 2 and text[1] == '.' and (text[0].isalpha() or text[0].isdigit()):
+            return True
+        
+        # Parenthesized letters/numbers like (A), (1), [A], [1]
+        if len(text) <= 3 and (text.startswith('(') or text.startswith('[')):
+            return True
+        
+        # Text that STARTS with a single uppercase letter followed by description
+        # Pattern: "A" + description (like "AReturns you to the home screen")
+        # This is common in technical documentation callouts
+        if len(text) >= 2:
+            first_char = text[0]
+            second_char = text[1]
+            # Single uppercase letter followed by uppercase letter (start of word)
+            # e.g., "AReturns", "BDisplays", "CShows"
+            if first_char.isupper() and second_char.isupper():
+                return True
+            # Single uppercase letter followed by lowercase (description continues)
+            # e.g., "Ashows", but less common
+        
+        return False
+    
+    def _get_combined_annotation_bbox(self, page: fitz.Page, image_bbox: List[float]) -> fitz.Rect:
+        """
+        Get combined bounding box of image and all related annotations.
+        Includes both vector drawings (pointer lines) AND text callout labels.
+        
+        Uses a two-pass approach:
+        1. First find all connected drawings to expand the base area
+        2. Then search for text callouts in the expanded area
+        
+        Args:
+            page: PyMuPDF page object
+            image_bbox: Bounding box of the image [x0, y0, x1, y1]
+            
+        Returns:
+            Combined bounding box including image and annotations
+        """
+        try:
+            img_rect = fitz.Rect(image_bbox)
+            connected_rects = [img_rect]
+            
+            # PASS 1: Find all connected drawings (pointer lines, etc.)
+            # Use generous expansion to find drawings that extend from the image
+            search_area = img_rect + fitz.Rect(-50, -50, 200, 150)
+            
+            drawings = page.get_drawings()
+            if drawings:
+                for d in drawings:
+                    d_rect = d.get("rect")
+                    if d_rect and search_area.intersects(d_rect):
+                        connected_rects.append(d_rect)
+            
+            # Calculate intermediate combined rect after adding drawings
+            min_x = min(r.x0 for r in connected_rects)
+            min_y = min(r.y0 for r in connected_rects)
+            max_x = max(r.x1 for r in connected_rects)
+            max_y = max(r.y1 for r in connected_rects)
+            drawings_combined_rect = fitz.Rect(min_x, min_y, max_x, max_y)
+            
+            # PASS 2: Search for text callouts using the EXPANDED area from drawings
+            # This ensures we find callouts at the end of pointer lines that extend
+            # far from the original image
+            expanded_search_area = drawings_combined_rect + fitz.Rect(-50, -50, 200, 150)
+            
+            try:
+                text_dict = page.get_text("dict")
+                for block in text_dict.get("blocks", []):
+                    if block.get("type") == 0:  # Text block
+                        block_bbox = block.get("bbox", [])
+                        if len(block_bbox) >= 4:
+                            block_rect = fitz.Rect(block_bbox)
+                            
+                            # Check if this text block is near the expanded area
+                            if expanded_search_area.intersects(block_rect):
+                                # Get the text content
+                                text = ""
+                                for line in block.get("lines", []):
+                                    for span in line.get("spans", []):
+                                        text += span.get("text", "")
+                                
+                                # If it's a callout label, include it
+                                if self._is_callout_label(text):
+                                    connected_rects.append(block_rect)
+            except:
+                pass
+            
+            # Combine all rectangles (image + drawings + text callouts)
+            min_x = min(r.x0 for r in connected_rects)
+            min_y = min(r.y0 for r in connected_rects)
+            max_x = max(r.x1 for r in connected_rects)
+            max_y = max(r.y1 for r in connected_rects)
+            
+            return fitz.Rect(min_x, min_y, max_x, max_y)
+        except:
+            return fitz.Rect(image_bbox)
+    
+    def _expand_bbox_for_context(self, page: fitz.Page, image_bbox: List[float], 
+                                  margin_x: float = 25.0, 
+                                  context_above: float = 80.0,
+                                  context_below: float = 50.0) -> fitz.Rect:
+        """
+        Expand the image bounding box to include contextual content for caption generation.
+        
+        This method:
+        1. Extends to full page width (with margins)
+        2. Expands upward to include section headers and intro text
+        3. Expands downward to include descriptions and captions
+        
+        Args:
+            page: PyMuPDF page object
+            image_bbox: Current image bounding box [x0, y0, x1, y1]
+            margin_x: Horizontal margin from page edges (default 25 points)
+            context_above: Max points to expand above for context (default 80)
+            context_below: Max points to expand below for context (default 50)
+            
+        Returns:
+            Expanded bounding box with contextual content
+        """
+        try:
+            page_rect = page.rect
+            img_rect = fitz.Rect(image_bbox)
+            
+            # Step 1: Extend to full page width (with margins)
+            new_x0 = margin_x
+            new_x1 = page_rect.width - margin_x
+            
+            # Step 2: Find contextual text above the image
+            # Look for text blocks that could be section headers or intro text
+            new_y0 = img_rect.y0
+            new_y1 = img_rect.y1  # Initialize here to avoid unbound variable
+            
+            try:
+                text_dict = page.get_text("dict")
+                blocks = text_dict.get("blocks", [])
+                
+                # Find text blocks above the image
+                blocks_above = []
+                for block in blocks:
+                    if block.get("type") == 0:  # Text block
+                        block_bbox = block.get("bbox", [])
+                        if len(block_bbox) >= 4:
+                            block_y1 = block_bbox[3]  # Bottom of text block
+                            block_y0 = block_bbox[1]  # Top of text block
+                            
+                            # Block is above the image and within context range
+                            if block_y1 <= img_rect.y0 and block_y0 >= (img_rect.y0 - context_above):
+                                # Get text to check if it's meaningful context
+                                text = ""
+                                for line in block.get("lines", []):
+                                    for span in line.get("spans", []):
+                                        text += span.get("text", "")
+                                
+                                text = text.strip()
+                                # Include if it's substantial text (not just a callout label)
+                                if len(text) > 5 and not self._is_callout_label(text):
+                                    blocks_above.append((block_y0, block_y1, text))
+                
+                # Expand to include contextual blocks above
+                if blocks_above:
+                    # Sort by y position (closest to image first)
+                    blocks_above.sort(key=lambda x: -x[0])  # Sort by y0 descending
+                    
+                    # Include blocks that are likely related (headers, intro)
+                    for block_y0, block_y1, text in blocks_above:
+                        # Check if this could be a section header or intro
+                        # Section headers are usually short, intro text can be longer
+                        if len(text) > 10:  # Substantial text
+                            new_y0 = min(new_y0, block_y0)
+                
+                # Step 3: Find contextual text below the image
+                # Look for descriptions, captions, or legend text
+                new_y1 = img_rect.y1
+                
+                blocks_below = []
+                for block in blocks:
+                    if block.get("type") == 0:  # Text block
+                        block_bbox = block.get("bbox", [])
+                        if len(block_bbox) >= 4:
+                            block_y0 = block_bbox[1]  # Top of text block
+                            block_y1 = block_bbox[3]  # Bottom of text block
+                            
+                            # Block is below the image and within context range
+                            if block_y0 >= img_rect.y1 and block_y0 <= (img_rect.y1 + context_below):
+                                # Get text
+                                text = ""
+                                for line in block.get("lines", []):
+                                    for span in line.get("spans", []):
+                                        text += span.get("text", "")
+                                
+                                text = text.strip()
+                                # Include if it's substantial text
+                                if len(text) > 5 and not self._is_callout_label(text):
+                                    blocks_below.append((block_y0, block_y1, text))
+                
+                # Expand to include contextual blocks below
+                if blocks_below:
+                    for block_y0, block_y1, text in blocks_below:
+                        if len(text) > 10:  # Substantial text
+                            new_y1 = max(new_y1, block_y1)
+                            
+            except Exception:
+                pass
+            
+            # Step 4: Apply minimum expansion for padding
+            # Add small padding if no context was found
+            min_padding = 10.0
+            if new_y0 == img_rect.y0:
+                new_y0 = max(margin_x, img_rect.y0 - min_padding)
+            if new_y1 == img_rect.y1:
+                new_y1 = min(page_rect.height - margin_x, img_rect.y1 + min_padding)
+            
+            # Ensure we don't exceed page bounds
+            new_y0 = max(margin_x, new_y0)
+            new_y1 = min(page_rect.height - margin_x, new_y1)
+            
+            return fitz.Rect(new_x0, new_y0, new_x1, new_y1)
+            
+        except Exception:
+            # Fallback: just extend to full width with small padding
+            page_rect = page.rect
+            return fitz.Rect(
+                margin_x, 
+                max(margin_x, image_bbox[1] - 10),
+                page_rect.width - margin_x,
+                min(page_rect.height - margin_x, image_bbox[3] + 10)
+            )
+    
+    def _get_image_positions_on_page(self, page: fitz.Page) -> List[Dict]:
+        """
+        Get positions of all images on the page from text_dict.
+        
+        Args:
+            page: PyMuPDF page object
+            
+        Returns:
+            List of dicts with 'bbox', 'xref', and size info
+        """
+        positions = []
+        try:
+            text_dict = page.get_text("dict")
+            for block in text_dict.get("blocks", []):
+                if block.get("type") == 1:  # Image block
+                    bbox = block.get("bbox", [])
+                    if len(bbox) >= 4:
+                        width = bbox[2] - bbox[0]
+                        height = bbox[3] - bbox[1]
+                        positions.append({
+                            "bbox": bbox,
+                            "xref": block.get("xref"),
+                            "width": width,
+                            "height": height,
+                            "area": width * height
+                        })
+        except Exception:
+            pass
+        return positions
+    
+    def _regions_overlap(self, region1: List[float], region2: List[float], threshold: float = 0.5) -> bool:
+        """
+        Check if two regions overlap significantly.
+        
+        Args:
+            region1: First bounding box [x0, y0, x1, y1]
+            region2: Second bounding box [x0, y0, x1, y1]
+            threshold: Minimum overlap ratio to consider as overlapping
+            
+        Returns:
+            True if regions overlap significantly
+        """
+        try:
+            rect1 = fitz.Rect(region1)
+            rect2 = fitz.Rect(region2)
+            intersection = rect1 & rect2
+            
+            if intersection.is_empty:
+                return False
+            
+            # Calculate overlap ratio relative to smaller region
+            inter_area = intersection.width * intersection.height
+            smaller_area = min(rect1.width * rect1.height, rect2.width * rect2.height)
+            
+            if smaller_area == 0:
+                return False
+            
+            return (inter_area / smaller_area) >= threshold
+        except Exception:
+            return False
+    
     def extract_images(self, page: fitz.Page, page_num: int, pdf_name: str) -> List[Dict]:
         """
         Extract images from a PDF page using multiple methods.
         Groups nearby image blocks to extract complete images.
+        INCLUDES overlaid annotations (numbered callouts, pointer lines) with screenshots.
+        
+        Small icons are extracted WITH surrounding context (text, descriptions) rather than
+        as standalone images.
         
         Args:
             page: PyMuPDF page object
@@ -293,119 +570,228 @@ class PDFExtractor:
         images_info = []
         image_counter = 0
         extracted_xrefs = set()  # Track extracted images to avoid duplicates
+        extracted_regions = []   # Track rendered regions to avoid duplicates
+        
+        # Size thresholds - filter out very tiny decorative elements
+        MIN_SIZE_FILTER = 20      # Minimum size to consider at all (pixels)
+        MIN_AREA_FILTER = 400     # Minimum area to consider (pixels)
         
         try:
-            # Method 1: Extract images using get_images() - standard method
-            image_list = page.get_images(full=True)
+            # Get all image positions on the page with their sizes
+            image_positions = self._get_image_positions_on_page(page)
             
-            for img in image_list:
-                try:
-                    xref = img[0]
-                    if xref in extracted_xrefs:
-                        continue  # Skip if already extracted
-                    
-                    base_image = self.doc.extract_image(xref)
-                    image_bytes = base_image["image"]
-                    image_ext = base_image["ext"]
-                    
-                    # Save image
-                    image_counter += 1
-                    image_filename = f"{pdf_name}_page_{page_num + 1:04d}_img_{image_counter:03d}.{image_ext}"
-                    image_path = self.images_dir / image_filename
-                    
-                    with open(image_path, "wb") as img_file:
-                        img_file.write(image_bytes)
-                    
-                    image_data = {
-                        "filename": image_filename,
-                        "path": str(image_path),
-                        "size_bytes": len(image_bytes),
-                        "format": image_ext,
-                        "page": page_num + 1,
-                        "index": image_counter,
-                        "method": "get_images"
-                    }
-                    
-                    # Extract text from image using OCR
-                    image_data = self._add_ocr_text_to_image_info(image_data, str(image_path))
-                    
-                    images_info.append(image_data)
-                    
-                    extracted_xrefs.add(xref)
-                    self.summary["images_extracted"] += 1
-                    
-                except Exception as e:
-                    error_msg = f"Error extracting image from page {page_num + 1}: {str(e)}"
-                    self.summary["errors"].append(error_msg)
-                    self.summary["images_failed"] += 1
+            # Filter out very tiny decorative elements
+            valid_images = []
+            for pos in image_positions:
+                if pos["width"] < MIN_SIZE_FILTER or pos["height"] < MIN_SIZE_FILTER:
+                    continue
+                if pos["area"] < MIN_AREA_FILTER:
+                    continue
+                valid_images.append(pos)
             
-            # Method 2: Extract images from text dictionary blocks (type=1)
-            # Group nearby blocks together to extract complete images
+            # Method 2: Extract ALL images with annotations AND context
+            # Every image (regardless of size) gets:
+            # 1. Annotation expansion (callouts, pointer lines)
+            # 2. Context expansion (headers, descriptions)
             try:
-                text_dict = page.get_text("dict")
-                image_blocks = [b for b in text_dict.get("blocks", []) if b.get("type") == 1]
-                
-                if image_blocks:
-                    # Group nearby blocks together
-                    block_groups = self._group_nearby_blocks(image_blocks, proximity_threshold=30.0)
+                # Group nearby images together to extract as a unit
+                if valid_images:
+                    image_bboxes = [{"bbox": p["bbox"], "xref": p.get("xref")} for p in valid_images]
+                    image_groups = self._group_nearby_blocks(image_bboxes, proximity_threshold=50.0)
                     
-                    for group_idx, block_group in enumerate(block_groups):
+                    for group_idx, group in enumerate(image_groups):
                         try:
-                            # Try to extract using xref first (if all blocks share same xref)
-                            xrefs = [b.get("xref") for b in block_group if b.get("xref")]
-                            unique_xrefs = list(set(xrefs))
-                            
-                            # If all blocks have the same xref, extract once
-                            if len(unique_xrefs) == 1 and unique_xrefs[0] and unique_xrefs[0] not in extracted_xrefs:
-                                try:
-                                    xref = unique_xrefs[0]
-                                    base_image = self.doc.extract_image(xref)
-                                    image_bytes = base_image["image"]
-                                    image_ext = base_image["ext"]
-                                    
-                                    image_counter += 1
-                                    image_filename = f"{pdf_name}_page_{page_num + 1:04d}_img_{image_counter:03d}.{image_ext}"
-                                    image_path = self.images_dir / image_filename
-                                    
-                                    with open(image_path, "wb") as img_file:
-                                        img_file.write(image_bytes)
-                                    
-                                    image_data = {
-                                        "filename": image_filename,
-                                        "path": str(image_path),
-                                        "size_bytes": len(image_bytes),
-                                        "format": image_ext,
-                                        "page": page_num + 1,
-                                        "index": image_counter,
-                                        "method": "text_dict_block_xref_grouped",
-                                        "blocks_merged": len(block_group)
-                                    }
-                                    
-                                    # Extract text from image using OCR
-                                    image_data = self._add_ocr_text_to_image_info(image_data, str(image_path))
-                                    
-                                    images_info.append(image_data)
-                                    
-                                    extracted_xrefs.add(xref)
-                                    self.summary["images_extracted"] += 1
-                                    continue  # Successfully extracted, skip rendering
-                                except:
-                                    pass  # Fall back to rendering
-                            
-                            # Merge bounding boxes and render as single image
-                            bboxes = [b.get("bbox", []) for b in block_group if b.get("bbox")]
+                            # Merge all bboxes in this group
+                            bboxes = [b.get("bbox", []) for b in group if b.get("bbox")]
                             if not bboxes:
                                 continue
                             
                             merged_rect = self._merge_bboxes(bboxes)
                             
-                            # Render the merged area as a single image
-                            pix = page.get_pixmap(clip=merged_rect, matrix=fitz.Matrix(4, 4))  # 4x zoom for better quality and OCR
+                            # Step 1: Expand to include annotations (callouts, pointer lines)
+                            # This captures ❶❷❸ labels and connecting lines
+                            has_annotations = self._has_overlaid_annotations(page, list(merged_rect))
+                            
+                            if has_annotations:
+                                annotation_rect = self._get_combined_annotation_bbox(page, list(merged_rect))
+                            else:
+                                annotation_rect = merged_rect
+                            
+                            # Step 2: Expand to include contextual content (headers, descriptions)
+                            render_rect = self._expand_bbox_for_context(
+                                page, list(annotation_rect),
+                                margin_x=25.0,
+                                context_above=100.0,
+                                context_below=80.0
+                            )
+                            
+                            # Check for overlap with already extracted regions
+                            is_duplicate = False
+                            for existing_region in extracted_regions:
+                                if self._regions_overlap(list(render_rect), existing_region, 0.7):
+                                    is_duplicate = True
+                                    break
+                            
+                            if is_duplicate:
+                                continue
+                            
+                            # Render the complete area
+                            pix = page.get_pixmap(clip=render_rect, matrix=fitz.Matrix(4, 4))
                             
                             if pix and pix.n > 0:
                                 image_counter += 1
-                                image_ext = "png"  # Rendered images saved as PNG
-                                image_filename = f"{pdf_name}_page_{page_num + 1:04d}_img_{image_counter:03d}.{image_ext}"
+                                image_filename = f"{pdf_name}_page_{page_num + 1:04d}_img_{image_counter:03d}.png"
+                                image_path = self.images_dir / image_filename
+                                
+                                pix.save(image_path)
+                                image_bytes = pix.tobytes()
+                                
+                                # Track xrefs
+                                for item in group:
+                                    xref = item.get("xref")
+                                    if xref:
+                                        extracted_xrefs.add(xref)
+                                
+                                image_data = {
+                                    "filename": image_filename,
+                                    "path": str(image_path),
+                                    "size_bytes": len(image_bytes),
+                                    "format": "png",
+                                    "page": page_num + 1,
+                                    "index": image_counter,
+                                    "method": "image_with_context",
+                                    "images_merged": len(group),
+                                    "bbox": list(render_rect),
+                                    "has_annotations": has_annotations
+                                }
+                                
+                                images_info.append(image_data)
+                                extracted_regions.append(list(render_rect))
+                                self.summary["images_extracted"] += 1
+                                pix = None
+                                
+                        except Exception:
+                            pass
+                        
+            except Exception:
+                pass
+            
+            # Method 3: Extract vector graphics/drawings as images
+            # Handle two cases:
+            # 1. Large vector graphics: Diagrams, illustrations - extract FIRST with context
+            # 2. Icon clusters: Small grouped vector elements - extract remaining with context
+            # 
+            # IMPORTANT: Process large graphics FIRST to avoid icon clusters fragmenting the diagram
+            try:
+                drawings = page.get_drawings()
+                if drawings:
+                    page_width = page.rect.width
+                    
+                    # FIRST: Check for larger meaningful graphics (diagrams, UI mockups, etc.)
+                    # These should be processed before icon clusters to avoid fragmentation
+                    meaningful_drawings = self._filter_decorative_drawings(drawings, page_width)
+                    
+                    if meaningful_drawings and len(meaningful_drawings) >= 3:
+                        all_rects = [d.get("rect") for d in meaningful_drawings if d.get("rect")]
+                        
+                        if all_rects:
+                            # Get the bounding box of meaningful drawings
+                            min_x = min(r.x0 for r in all_rects)
+                            min_y = min(r.y0 for r in all_rects)
+                            max_x = max(r.x1 for r in all_rects)
+                            max_y = max(r.y1 for r in all_rects)
+                            
+                            full_drawing_rect = fitz.Rect(min_x, min_y, max_x, max_y)
+                            
+                            # Only proceed if the drawing area is substantial
+                            if full_drawing_rect.width >= 50 and full_drawing_rect.height >= 50:
+                                # Expand to include annotations
+                                expanded_rect = self._get_combined_annotation_bbox(page, list(full_drawing_rect))
+                                
+                                # Check if already covered
+                                is_duplicate = False
+                                for existing_region in extracted_regions:
+                                    if self._regions_overlap(list(expanded_rect), existing_region, 0.7):
+                                        is_duplicate = True
+                                        break
+                                
+                                if not is_duplicate:
+                                    try:
+                                        # Expand with context
+                                        context_rect = self._expand_bbox_for_context(page, list(expanded_rect))
+                                        
+                                        pix = page.get_pixmap(clip=context_rect, matrix=fitz.Matrix(4, 4))
+                                        
+                                        if pix and pix.n > 0:
+                                            image_counter += 1
+                                            image_filename = f"{pdf_name}_page_{page_num + 1:04d}_img_{image_counter:03d}.png"
+                                            image_path = self.images_dir / image_filename
+                                            
+                                            pix.save(image_path)
+                                            image_bytes = pix.tobytes()
+                                            
+                                            image_data = {
+                                                "filename": image_filename,
+                                                "path": str(image_path),
+                                                "size_bytes": len(image_bytes),
+                                                "format": "png",
+                                                "page": page_num + 1,
+                                                "index": image_counter,
+                                                "method": "vector_graphics_with_context",
+                                                "drawings_count": len(meaningful_drawings),
+                                                "bbox": list(context_rect)
+                                            }
+                                            
+                                            images_info.append(image_data)
+                                            extracted_regions.append(list(context_rect))
+                                            self.summary["images_extracted"] += 1
+                                            pix = None
+                                            
+                                    except Exception:
+                                        pass
+                    
+                    # SECOND: Check for icon clusters (small grouped drawings)
+                    # These are extracted only if not already covered by larger graphics
+                    icon_clusters = self._find_icon_clusters(drawings)
+                    
+                    for cluster_rect in icon_clusters:
+                        try:
+                            # Skip if area already covered by larger extraction
+                            is_duplicate = False
+                            for existing_region in extracted_regions:
+                                cluster_center_x = (cluster_rect.x0 + cluster_rect.x1) / 2
+                                cluster_center_y = (cluster_rect.y0 + cluster_rect.y1) / 2
+                                ex_rect = fitz.Rect(existing_region)
+                                if ex_rect.contains(fitz.Point(cluster_center_x, cluster_center_y)):
+                                    is_duplicate = True
+                                    break
+                            
+                            if is_duplicate:
+                                continue
+                            
+                            # Expand to include context around the icon
+                            context_rect = self._expand_bbox_for_context(
+                                page, list(cluster_rect),
+                                margin_x=25.0,
+                                context_above=100.0,
+                                context_below=80.0
+                            )
+                            
+                            # Check overlap with existing extractions
+                            for existing_region in extracted_regions:
+                                if self._regions_overlap(list(context_rect), existing_region, 0.7):
+                                    is_duplicate = True
+                                    break
+                            
+                            if is_duplicate:
+                                continue
+                            
+                            # Render the icon with context
+                            pix = page.get_pixmap(clip=context_rect, matrix=fitz.Matrix(4, 4))
+                            
+                            if pix and pix.n > 0:
+                                image_counter += 1
+                                image_filename = f"{pdf_name}_page_{page_num + 1:04d}_img_{image_counter:03d}.png"
                                 image_path = self.images_dir / image_filename
                                 
                                 pix.save(image_path)
@@ -415,101 +801,24 @@ class PDFExtractor:
                                     "filename": image_filename,
                                     "path": str(image_path),
                                     "size_bytes": len(image_bytes),
-                                    "format": image_ext,
+                                    "format": "png",
                                     "page": page_num + 1,
                                     "index": image_counter,
-                                    "method": "text_dict_block_rendered_grouped",
-                                    "blocks_merged": len(block_group),
-                                    "bbox": list(merged_rect)
+                                    "method": "icon_cluster_with_context",
+                                    "bbox": list(context_rect)
                                 }
                                 
-                                # Extract text from image using OCR
-                                image_data = self._add_ocr_text_to_image_info(image_data, str(image_path))
-                                
                                 images_info.append(image_data)
-                                
+                                extracted_regions.append(list(context_rect))
                                 self.summary["images_extracted"] += 1
-                                pix = None  # Free memory
+                                pix = None
                                 
-                        except Exception as e:
-                            error_msg = f"Error extracting image group {group_idx + 1} from page {page_num + 1}: {str(e)}"
-                            self.summary["errors"].append(error_msg)
-                            self.summary["images_failed"] += 1
-                        
-            except Exception as e:
-                # If text dict method fails, continue
+                        except Exception:
+                            pass
+                                    
+            except Exception:
+                # If drawings method fails, continue
                 pass
-            
-            # Method 3: Extract vector graphics/drawings as images
-            # Some PDFs use vector graphics instead of raster images (like diagrams, illustrations)
-            # Only extract if no raster images were found to avoid duplicates
-            if len(images_info) == 0:
-                try:
-                    drawings = page.get_drawings()
-                    
-                    if drawings:
-                        # Filter out very small drawings (likely decorative elements like lines, borders)
-                        # Keep drawings that are substantial enough to be meaningful images
-                        significant_drawings = []
-                        for d in drawings:
-                            rect = d.get("rect")
-                            if rect and rect.width > 20 and rect.height > 20:
-                                significant_drawings.append(d)
-                        
-                        if significant_drawings:
-                            # Group nearby drawings together (likely parts of same diagram)
-                            drawing_groups = self._group_drawings(significant_drawings, proximity_threshold=50.0)
-                            
-                            for group_idx, drawing_group in enumerate(drawing_groups):
-                                try:
-                                    # Get bounding box for the drawing group
-                                    drawing_rect = self._get_drawings_bbox(drawing_group)
-                                    
-                                    # Skip if too small (likely not a meaningful image)
-                                    # Increased threshold to filter out decorative elements
-                                    if drawing_rect.width < 30 or drawing_rect.height < 30:
-                                        continue
-                                    
-                                    # Render the drawing area as an image
-                                    pix = page.get_pixmap(clip=drawing_rect, matrix=fitz.Matrix(4, 4))
-                                    
-                                    if pix and pix.n > 0:
-                                        image_counter += 1
-                                        image_ext = "png"
-                                        image_filename = f"{pdf_name}_page_{page_num + 1:04d}_img_{image_counter:03d}.{image_ext}"
-                                        image_path = self.images_dir / image_filename
-                                        
-                                        pix.save(image_path)
-                                        image_bytes = pix.tobytes()
-                                        
-                                        image_data = {
-                                            "filename": image_filename,
-                                            "path": str(image_path),
-                                            "size_bytes": len(image_bytes),
-                                            "format": image_ext,
-                                            "page": page_num + 1,
-                                            "index": image_counter,
-                                            "method": "vector_graphics",
-                                            "drawings_merged": len(drawing_group),
-                                            "bbox": list(drawing_rect)
-                                        }
-                                        
-                                        # Extract text from image using OCR
-                                        image_data = self._add_ocr_text_to_image_info(image_data, str(image_path))
-                                        
-                                        images_info.append(image_data)
-                                        
-                                        self.summary["images_extracted"] += 1
-                                        pix = None  # Free memory
-                                        
-                                except Exception as e:
-                                    error_msg = f"Error extracting drawing group {group_idx + 1} from page {page_num + 1}: {str(e)}"
-                                    self.summary["errors"].append(error_msg)
-                                    self.summary["images_failed"] += 1
-                                    
-                except Exception as e:
-                    # If drawings method fails, continue
-                    pass
                     
         except Exception as e:
             error_msg = f"Error processing images on page {page_num + 1}: {str(e)}"
@@ -613,6 +922,190 @@ class PDFExtractor:
         max_y = max(r.y1 for r in rects)
         
         return fitz.Rect(min_x, min_y, max_x, max_y)
+    
+    def _is_decorative_drawing(self, drawing: Dict, page_width: float) -> bool:
+        """
+        Check if a drawing is likely a decorative layout element (not meaningful graphics).
+        
+        Decorative elements include:
+        - Horizontal lines/dividers spanning most of the page
+        - Header bar backgrounds (wide rectangles)
+        - Simple bullet points/circles
+        - Thin vertical/horizontal rules
+        
+        Args:
+            drawing: Drawing dictionary from page.get_drawings()
+            page_width: Width of the page in points
+            
+        Returns:
+            True if the drawing is likely decorative
+        """
+        rect = drawing.get("rect")
+        if not rect:
+            return True
+        
+        width = rect.width
+        height = rect.height
+        
+        # Very thin elements are likely lines/rules
+        if width < 3 or height < 3:
+            return True
+        
+        # Horizontal lines/bars spanning significant page width (>60%) are likely decorative
+        if width > page_width * 0.6 and height < 30:
+            return True
+        
+        # Very thin horizontal rectangles (header bars, dividers)
+        aspect_ratio = width / height if height > 0 else float('inf')
+        if aspect_ratio > 15 and width > page_width * 0.5:
+            return True
+        
+        # Small circles/dots (bullet points) - tiny elements
+        if width < 15 and height < 15:
+            return True
+        
+        return False
+    
+    def _filter_decorative_drawings(self, drawings: List[Dict], page_width: float) -> List[Dict]:
+        """
+        Filter out decorative drawings, keeping only meaningful graphics.
+        
+        Args:
+            drawings: List of drawing dictionaries
+            page_width: Width of the page in points
+            
+        Returns:
+            Filtered list of drawings that are likely meaningful graphics
+        """
+        meaningful = []
+        for d in drawings:
+            if not self._is_decorative_drawing(d, page_width):
+                meaningful.append(d)
+        return meaningful
+    
+    def _find_icon_clusters(self, drawings: List[Dict], cluster_distance: float = 30.0) -> List[fitz.Rect]:
+        """
+        Find clusters of small drawings that together form icons.
+        
+        Many icons (like dustbin, WiFi, etc.) are composed of multiple tiny 
+        vector elements. This method identifies such clusters.
+        
+        Args:
+            drawings: List of drawing dictionaries
+            cluster_distance: Maximum distance between elements to be in same cluster
+            
+        Returns:
+            List of bounding rects for identified icon clusters
+        """
+        # Get all small drawings (those that would normally be filtered as decorative)
+        # Use 25x25 threshold to capture icons like muted speakers, WiFi symbols, etc.
+        small_drawings = []
+        for d in drawings:
+            rect = d.get("rect")
+            if rect and rect.width < 25 and rect.height < 25 and rect.width >= 1 and rect.height >= 1:
+                small_drawings.append(rect)
+        
+        if len(small_drawings) < 2:  # Reduced from 3 to 2 for simpler icons
+            return []
+        
+        # Find clusters using simple proximity grouping
+        clusters = []
+        used = set()
+        
+        for i, rect1 in enumerate(small_drawings):
+            if i in used:
+                continue
+            
+            # Start a new cluster
+            cluster = [rect1]
+            used.add(i)
+            
+            # Find all nearby small drawings
+            for j, rect2 in enumerate(small_drawings):
+                if j in used:
+                    continue
+                
+                # Check if rect2 is close to any rect in the cluster
+                for cluster_rect in cluster:
+                    # Calculate distance between centers
+                    c1_x = (cluster_rect.x0 + cluster_rect.x1) / 2
+                    c1_y = (cluster_rect.y0 + cluster_rect.y1) / 2
+                    c2_x = (rect2.x0 + rect2.x1) / 2
+                    c2_y = (rect2.y0 + rect2.y1) / 2
+                    dist = ((c1_x - c2_x) ** 2 + (c1_y - c2_y) ** 2) ** 0.5
+                    
+                    if dist <= cluster_distance:
+                        cluster.append(rect2)
+                        used.add(j)
+                        break
+            
+            # If cluster has enough elements, it's likely an icon
+            if len(cluster) >= 2:  # Reduced from 5 to capture simpler icons (muted speaker, etc.)
+                # Calculate cluster bounding box
+                min_x = min(r.x0 for r in cluster)
+                min_y = min(r.y0 for r in cluster)
+                max_x = max(r.x1 for r in cluster)
+                max_y = max(r.y1 for r in cluster)
+                cluster_rect = fitz.Rect(min_x, min_y, max_x, max_y)
+                
+                # Only consider if the cluster is reasonably sized (icon-like, not scattered)
+                if cluster_rect.width < 100 and cluster_rect.height < 100:
+                    clusters.append(cluster_rect)
+        
+        return clusters
+    
+    def _has_meaningful_graphics(self, page: fitz.Page) -> Tuple[bool, List[Dict]]:
+        """
+        Check if a page has meaningful vector graphics (not just decorative elements).
+        
+        Args:
+            page: PyMuPDF page object
+            
+        Returns:
+            Tuple of (has_meaningful_graphics, filtered_drawings)
+        """
+        try:
+            drawings = page.get_drawings()
+            if not drawings:
+                return False, []
+            
+            page_width = page.rect.width
+            
+            # First, check for icon clusters (many small drawings clustered together)
+            icon_clusters = self._find_icon_clusters(drawings)
+            if icon_clusters:
+                # Found icon clusters - return the drawings that form them
+                # For simplicity, return all drawings since we'll render the cluster area
+                return True, drawings
+            
+            # Filter out decorative elements
+            meaningful_drawings = self._filter_decorative_drawings(drawings, page_width)
+            
+            if not meaningful_drawings:
+                return False, []
+            
+            # Need a minimum number of meaningful shapes to consider it a graphic
+            # A single rectangle is likely decorative; complex diagrams have many shapes
+            if len(meaningful_drawings) < 3:
+                return False, []
+            
+            # Check the complexity - meaningful graphics typically have variety
+            # Get bounding box of meaningful drawings
+            rects = [d.get("rect") for d in meaningful_drawings if d.get("rect")]
+            if not rects:
+                return False, []
+            
+            # Calculate the total area covered by meaningful drawings
+            total_area = sum(r.width * r.height for r in rects)
+            
+            # Meaningful graphics should have substantial area (at least 5000 sq points)
+            if total_area < 5000:
+                return False, []
+            
+            return True, meaningful_drawings
+            
+        except Exception:
+            return False, []
     
     def process_pdf(self, pdf_path: Path) -> Dict:
         """
