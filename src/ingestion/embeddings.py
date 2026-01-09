@@ -1,8 +1,8 @@
 """
 Embedding Module for RAG Pipeline
 
-Uses Jina Embeddings v4 from Hugging Face for generating high-quality
-embeddings optimized for retrieval tasks.
+Uses sentence-transformers all-mpnet-base-v2 model for generating
+high-quality embeddings optimized for retrieval tasks.
 """
 
 import os
@@ -12,7 +12,7 @@ from dataclasses import dataclass
 import logging
 
 import torch
-from transformers import AutoModel
+from sentence_transformers import SentenceTransformer
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -22,29 +22,27 @@ logger = logging.getLogger(__name__)
 @dataclass
 class EmbeddingConfig:
     """Configuration for the embedding model."""
-    model_name: str = "jinaai/jina-embeddings-v4"
-    device: str = "auto"  # "auto", "cuda", "cpu", "mps"
-    torch_dtype: str = "float16"  # "float16", "float32", "bfloat16"
-    task: str = "retrieval"  # "retrieval", "text-matching", "code"
-    truncate_dim: Optional[int] = None  # Matryoshka: 128, 256, 512, 1024, 2048
-    max_length: int = 8192  # Max tokens per text
-    batch_size: int = 8
+    model_name: str = "sentence-transformers/all-mpnet-base-v2"
+    device: str = "cuda"  # "cuda", "cpu", "mps"
+    task: str = "retrieval"  # "retrieval" or other task (for compatibility)
+    max_length: int = 384  # Max tokens per text for all-mpnet-base-v2
+    batch_size: int = 32
 
 
 class JinaEmbeddings:
     """
-    Jina Embeddings v4 wrapper for generating text embeddings.
+    Sentence Transformers all-mpnet-base-v2 wrapper for generating text embeddings.
     
     Features:
-    - Task-specific adapters (retrieval, text-matching, code)
-    - Matryoshka dimension reduction (2048 → 128)
-    - Asymmetric query/passage encoding for retrieval
-    - Multilingual support (30+ languages)
+    - Optimized for semantic search and retrieval tasks
+    - Lightweight model (~438M params) that fits on GPU
+    - Mean pooling for symmetric embeddings
+    - Multilingual support
     """
     
     def __init__(self, config: Optional[EmbeddingConfig] = None):
         """
-        Initialize the Jina Embeddings model.
+        Initialize the embedding model.
         
         Args:
             config: Embedding configuration
@@ -56,35 +54,16 @@ class JinaEmbeddings:
     
     def _get_device(self) -> str:
         """Determine the best available device."""
-        if self.config.device != "auto":
-            return self.config.device
-        
         if torch.cuda.is_available():
             return "cuda"
-        elif hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
-            return "mps"
         else:
             return "cpu"
-    
-    def _get_torch_dtype(self) -> torch.dtype:
-        """Get torch dtype from config string."""
-        dtype_map = {
-            "float16": torch.float16,
-            "float32": torch.float32,
-            "bfloat16": torch.bfloat16,
-        }
-        return dtype_map.get(self.config.torch_dtype, torch.float16)
     
     def _convert_embeddings_to_list(self, embeddings) -> List[List[float]]:
         """
         Convert embeddings to a list of lists of floats.
         
-        Handles various return types from the model:
-        - Single PyTorch tensor (batch)
-        - List of individual PyTorch tensors
-        - NumPy array
-        - List of NumPy arrays
-        - Already a list of lists
+        Handles various return types from the model.
         
         Args:
             embeddings: Raw embeddings from the model
@@ -100,22 +79,11 @@ class JinaEmbeddings:
         if hasattr(embeddings, 'tolist') and not isinstance(embeddings, list):
             return embeddings.tolist()
         
-        # Case 3: List (could be list of tensors, arrays, or already lists)
-        if isinstance(embeddings, list) and len(embeddings) > 0:
-            converted = []
-            for emb in embeddings:
-                if hasattr(emb, 'cpu') and hasattr(emb, 'numpy'):
-                    # PyTorch tensor
-                    converted.append(emb.cpu().numpy().tolist())
-                elif hasattr(emb, 'tolist'):
-                    # NumPy array
-                    converted.append(emb.tolist())
-                else:
-                    # Already a list
-                    converted.append(emb)
-            return converted
+        # Case 3: Already a list
+        if isinstance(embeddings, list):
+            return embeddings
         
-        # Fallback: return as-is (empty list or already correct format)
+        # Fallback
         return embeddings
     
     def initialize(self) -> None:
@@ -123,23 +91,19 @@ class JinaEmbeddings:
         if self._initialized:
             return
         
-        logger.info(f"Loading Jina Embeddings v4 model: {self.config.model_name}")
+        logger.info(f"Loading model: {self.config.model_name}")
         
         self.device = self._get_device()
-        torch_dtype = self._get_torch_dtype()
         
-        logger.info(f"Using device: {self.device}, dtype: {torch_dtype}")
+        logger.info(f"Using device: {self.device}")
         
         try:
-            self.model = AutoModel.from_pretrained(
+            # Load SentenceTransformer model
+            self.model = SentenceTransformer(
                 self.config.model_name,
-                trust_remote_code=True,
-                torch_dtype=torch_dtype
+                device=self.device,
+                trust_remote_code=True
             )
-            
-            # Move to device
-            if self.device != "cpu":
-                self.model = self.model.to(self.device)
             
             self._initialized = True
             logger.info("Model loaded successfully")
@@ -156,8 +120,6 @@ class JinaEmbeddings:
         """
         Generate embeddings for documents/passages.
         
-        For retrieval tasks, documents are encoded as "passages".
-        
         Args:
             texts: List of document texts to embed
             batch_size: Batch size for processing
@@ -169,38 +131,28 @@ class JinaEmbeddings:
             self.initialize()
         
         batch_size = batch_size or self.config.batch_size
-        all_embeddings = []
         
-        # Process in batches
-        for i in range(0, len(texts), batch_size):
-            batch_texts = texts[i:i + batch_size]
+        try:
+            # SentenceTransformer handles batching automatically
+            embeddings = self.model.encode(
+                texts,
+                batch_size=batch_size,
+                convert_to_tensor=False,
+                show_progress_bar=True
+            )
             
-            try:
-                embeddings = self.model.encode_text(
-                    texts=batch_texts,
-                    task=self.config.task,
-                    prompt_name="passage",  # Documents are passages
-                    truncate_dim=self.config.truncate_dim,
-                    max_length=self.config.max_length
-                )
-                
-                # Convert to list of lists - handle various return types
-                embeddings = self._convert_embeddings_to_list(embeddings)
-                
-                all_embeddings.extend(embeddings)
-                
-            except Exception as e:
-                logger.error(f"Error embedding batch {i//batch_size}: {e}")
-                raise
-        
-        return all_embeddings
+            # Convert to list of lists
+            embeddings = self._convert_embeddings_to_list(embeddings)
+            
+            return embeddings
+            
+        except Exception as e:
+            logger.error(f"Error embedding documents: {e}")
+            raise
     
     def embed_query(self, text: str) -> List[float]:
         """
         Generate embedding for a query.
-        
-        For retrieval tasks, queries are encoded differently than documents
-        to optimize asymmetric retrieval.
         
         Args:
             text: Query text to embed
@@ -212,18 +164,18 @@ class JinaEmbeddings:
             self.initialize()
         
         try:
-            embedding = self.model.encode_text(
-                texts=[text],
-                task=self.config.task,
-                prompt_name="query",  # Queries use query prompt
-                truncate_dim=self.config.truncate_dim,
-                max_length=self.config.max_length
+            embedding = self.model.encode(
+                text,
+                convert_to_tensor=False
             )
             
-            # Convert to list - handle various return types
-            embeddings_list = self._convert_embeddings_to_list(embedding)
-            
-            return embeddings_list[0]
+            # Convert to list
+            if hasattr(embedding, 'tolist'):
+                return embedding.tolist()
+            elif isinstance(embedding, list):
+                return embedding
+            else:
+                return list(embedding)
             
         except Exception as e:
             logger.error(f"Error embedding query: {e}")
@@ -254,9 +206,7 @@ class JinaEmbeddings:
     @property
     def embedding_dimension(self) -> int:
         """Get the embedding dimension."""
-        if self.config.truncate_dim:
-            return self.config.truncate_dim
-        return 2048  # Default Jina v4 dimension
+        return 768  # all-mpnet-base-v2 outputs 768-dim embeddings
     
     def __del__(self):
         """Cleanup when object is destroyed."""
@@ -268,7 +218,7 @@ class JinaEmbeddings:
 
 class LangChainJinaEmbeddings:
     """
-    LangChain-compatible wrapper for Jina Embeddings.
+    LangChain-compatible wrapper for Sentence Transformers embeddings.
     
     Implements the interface expected by LangChain vector stores.
     """
@@ -293,36 +243,31 @@ class LangChainJinaEmbeddings:
 
 
 def create_embeddings(
-    model_name: str = "jinaai/jina-embeddings-v4",
-    device: str = "auto",
-    truncate_dim: Optional[int] = None
+    model_name: str = "sentence-transformers/all-mpnet-base-v2",
+    device: str = "cuda",
 ) -> LangChainJinaEmbeddings:
     """
     Factory function to create embeddings instance.
     
     Args:
         model_name: Hugging Face model name
-        device: Device to use ("auto", "cuda", "cpu", "mps")
-        truncate_dim: Dimension to truncate embeddings to (Matryoshka)
+        device: Device to use ("cuda" or "cpu")
         
     Returns:
         LangChain-compatible embeddings instance
     """
     config = EmbeddingConfig(
         model_name=model_name,
-        device=device,
-        truncate_dim=truncate_dim
+        device=device
     )
     return LangChainJinaEmbeddings(config)
 
 
 if __name__ == "__main__":
     # Test the embeddings
-    print("Testing Jina Embeddings v4...")
+    print("Testing Sentence Transformers Embeddings...")
     
-    config = EmbeddingConfig(
-        truncate_dim=512  # Use smaller dimension for testing
-    )
+    config = EmbeddingConfig()
     
     embeddings = LangChainJinaEmbeddings(config)
     

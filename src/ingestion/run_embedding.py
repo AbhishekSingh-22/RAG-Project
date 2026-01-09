@@ -47,7 +47,7 @@ def parse_args():
         "--truncate-dim",
         type=int,
         default=None,
-        help="Truncate embeddings to dimension (Matryoshka: 128, 256, 512, 1024, 2048)"
+        help="Truncate embeddings to dimension (not applicable for all-mpnet-base-v2)"
     )
     parser.add_argument(
         "--batch-size",
@@ -97,7 +97,7 @@ def main():
     print(f"Chunks File: {chunks_path}")
     print(f"Persist Directory: {persist_dir}")
     print(f"Collection Name: {args.collection_name}")
-    print(f"Embedding Dimension: {args.truncate_dim or 2048}")
+    print(f"Embedding Model: sentence-transformers/all-mpnet-base-v2 (768-dim)")
     print(f"Batch Size: {args.batch_size}")
     print(f"Device: {args.device}")
     print(f"Reset Collection: {args.reset}")
@@ -109,10 +109,9 @@ def main():
     print(f"Loaded {len(documents)} document chunks")
     
     # Create embedding model
-    print("\nInitializing Jina Embeddings v4 model...")
+    print("\nInitializing Sentence Transformers model...")
     embed_config = EmbeddingConfig(
         device=args.device,
-        truncate_dim=args.truncate_dim,
         batch_size=args.batch_size
     )
     embeddings = LangChainJinaEmbeddings(embed_config)
@@ -122,7 +121,7 @@ def main():
     store_config = VectorStoreConfig(
         collection_name=args.collection_name,
         persist_directory=str(persist_dir),
-        embedding_dimension=args.truncate_dim or 2048
+        embedding_dimension=768  # all-mpnet-base-v2 outputs 768-dim embeddings
     )
     
     vector_store = ChromaVectorStore(config=store_config, embeddings=embeddings)
