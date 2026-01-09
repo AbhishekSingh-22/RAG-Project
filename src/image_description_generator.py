@@ -10,8 +10,11 @@ from pathlib import Path
 from typing import Dict, List, Optional
 import google.generativeai as genai
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # Configure Gemini API
-GOOGLE_API_KEY = "AIzaSyD2w04VhL9ez8hu1fNIzLpmnl8p-5dCbUY"
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 
 SYSTEM_PROMPT = """You are an expert technical documentation analyst specializing in visual content description for Retrieval-Augmented Generation (RAG) systems. 
