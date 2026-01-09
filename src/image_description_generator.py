@@ -1,29 +1,3 @@
-ICONS_AND_GRAPHICS_PROMPT = """
-You are an expert at describing all icons, graphics, and visual elements in a user interface image for technical documentation and RAG systems.
-
-For the given image, provide a single markdown file that contains:
-
-1. A section for each distinct icon, graphic, or visual element (including vector graphics, illustrations, badges, etc.)
-2. Each section should use a markdown heading (## [Element Name or Type])
-3. For each element, describe:
-    - What it is and its purpose
-    - Its visual style, color, and design
-    - Where it appears in the image/interface
-    - Any user interaction or functional meaning
-    - Any standard or brand conventions it follows
-
-If there are no distinct icons or graphics, state: "No separate icons or graphics found."
-
-Format:
----
-## [Element Name or Type]
-Summary: [Short description]
-Visual Style: [Details]
-Location: [Where in the image/interface]
-Function: [Purpose or user interaction]
-Design Pattern: [Standard/brand conventions]
----
-"""
 """
 Production-grade image description generator using Google Gemini LLM.
 Generates structured descriptions of images for RAG pipeline.
@@ -54,41 +28,43 @@ CRITICAL REQUIREMENTS:
 7. For app interfaces: identify screen purpose, user flow context, and actionable elements
 8. For diagrams/illustrations: note components, relationships, and spatial arrangements
 
-RESPONSE TEMPLATE (MUST USE THIS EXACT STRUCTURE):
+RESPONSE TEMPLATE (MUST USE THIS EXACT STRUCTURE, USING MARKDOWN SUBHEADINGS):
 
 ---
-Summary: [2-3 sentences describing the main subject and purpose]
+## Summary
+[2-3 sentences describing the main subject and purpose]
 
-Image Type: [screenshot/diagram/icon/illustration/flowchart/etc.]
+## Image Type
+[screenshot/diagram/icon/illustration/flowchart/etc.]
 
-Scene Overview:
+## Scene Overview
 • [Key visual element 1]
 • [Key visual element 2]
 • [Visual hierarchy and layout description]
 • [Color palette and design characteristics]
 • [Visual emphasis and focal points]
 
-Technical Details:
+## Technical Details
 • [UI components: buttons, input fields, menus, etc.]
 • [Text content - quote important labels, instructions, or data]
 • [Visual styling: fonts, sizes, spacing]
 • [Measurements or scale information if visible]
 • [Specific technical elements: icons, indicators, status badges]
 
-Spatial Relationships:
+## Spatial Relationships
 • [Top-to-bottom organization]
 • [Left-to-right flow]
 • [Element positioning and alignment]
 • [Grouping and visual connections]
 • [Hierarchy of information]
 
-Functional Context:
+## Functional Context
 • [Purpose of the screen/diagram/element]
 • [User actions this enables]
 • [Information this conveys]
 • [Connection to larger workflow/system]
 
-Analysis & Metadata:
+## Analysis & Metadata
 • [Key insights for RAG retrieval]
 • [Important patterns or warnings]
 • [User experience implications]
@@ -157,7 +133,7 @@ def generate_image_description(image_path: str, image_filename: str) -> Optional
         }
         
         # Call Gemini API
-        model = genai.GenerativeModel("gemini-3-flash-preview")
+        model = genai.GenerativeModel("gemini-2.5-flash-lite-preview-09-2025")
         response = model.generate_content(message)
         
         # Extract description
@@ -214,8 +190,7 @@ def process_images_directory(
         "total_processed": 0,
         "successful": 0,
         "failed": 0,
-        "descriptions": [],
-        "icons_graphics_described": 0
+        "descriptions": []
     }
 
     for idx, image_filename in enumerate(image_files, 1):
@@ -229,48 +204,19 @@ def process_images_directory(
         if result["status"] == "success":
             results["successful"] += 1
 
-            # Save individual description
+            # Save description as markdown file
             output_file = os.path.join(
                 output_dir, 
-                f"{Path(image_filename).stem}_description.txt"
+                f"{Path(image_filename).stem}_description.md"
             )
             with open(output_file, "w", encoding="utf-8") as f:
-                f.write(f"Image: {image_filename}\n")
-                f.write(f"Path: {image_path}\n")
-                f.write("="*80 + "\n\n")
+                f.write(f"# Description for: {image_filename}\n\n")
+                f.write(f"**Source Image**: {image_filename}\n")
+                f.write(f"**Extraction Date**: {str(Path(image_path).stat().st_mtime)}\n\n")
+                f.write("---\n\n")
                 f.write(result["description"])
 
-            print(f"  ✓ Description saved")
-
-            # Describe all icons/graphics in a single markdown file
-            print(f"  → Describing all icons and graphics...")
-            try:
-                image_data = encode_image_to_base64(image_path)
-                media_type = get_image_media_type(image_path)
-                message = {
-                    "role": "user",
-                    "parts": [
-                        {"text": ICONS_AND_GRAPHICS_PROMPT},
-                        {"inline_data": {"mime_type": media_type, "data": image_data}}
-                    ]
-                }
-                model = genai.GenerativeModel("gemini-3-flash-preview")
-                response = model.generate_content(message)
-                icons_graphics_content = response.text
-                icons_graphics_file = os.path.join(
-                    output_dir,
-                    f"{Path(image_filename).stem}_icons_graphics.md"
-                )
-                with open(icons_graphics_file, "w", encoding="utf-8") as f:
-                    f.write(f"# Icons and Graphics Described from: {image_filename}\n\n")
-                    f.write(f"**Source Image**: {image_filename}\n")
-                    f.write(f"**Extraction Date**: {str(Path(image_path).stat().st_mtime)}\n\n")
-                    f.write("---\n\n")
-                    f.write(icons_graphics_content)
-                results["icons_graphics_described"] += 1
-                print(f"  ✓ Icons/graphics description saved")
-            except Exception as e:
-                print(f"  ✗ Icons/graphics description failed: {e}")
+            print(f"  ✓ Markdown description saved")
         else:
             results["failed"] += 1
             print(f"  ✗ Failed: {result.get('error', 'Unknown error')}")
@@ -279,7 +225,6 @@ def process_images_directory(
     summary_file = os.path.join(output_dir, "descriptions_summary.json")
     with open(summary_file, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
-    
     return results
 
 def create_rag_index_file(descriptions_dir: str, index_file: str) -> None:
@@ -297,14 +242,13 @@ def create_rag_index_file(descriptions_dir: str, index_file: str) -> None:
     }
     
     for desc_file in sorted(os.listdir(descriptions_dir)):
-        if desc_file.endswith("_description.txt"):
+        if desc_file.endswith("_description.md"):
             file_path = os.path.join(descriptions_dir, desc_file)
             with open(file_path, "r", encoding="utf-8") as f:
                 content = f.read()
                 # Extract filename from first line
                 lines = content.split("\n")
-                image_name = lines[0].replace("Image: ", "") if lines else "unknown"
-                
+                image_name = lines[0].replace("# Description for: ", "") if lines else "unknown"
                 index["images"].append({
                     "filename": image_name,
                     "description_file": desc_file,
@@ -322,8 +266,8 @@ if __name__ == "__main__":
     print("IMAGE DESCRIPTION GENERATOR FOR RAG SYSTEM")
     print("="*80)
     print(f"\nProcessing images from: {images_directory}")
-    print(f"Saving descriptions to: {output_directory}\n")
-    
+    print(f"Saving markdown descriptions to: {output_directory}\n")
+
     # Process first 5 images for review
     results = process_images_directory(
         images_directory, 
@@ -331,13 +275,11 @@ if __name__ == "__main__":
         max_images=5,
         start_index=0
     )
-    
+
     print("\n" + "="*80)
     print("PROCESSING SUMMARY")
     print("="*80)
     print(f"Total Processed: {results['total_processed']}")
     print(f"Successful: {results['successful']}")
     print(f"Failed: {results['failed']}")
-    print(f"Icons/Graphics Described: {results['icons_graphics_described']}")
-    print(f"\nDescriptions saved to: {output_directory}")
-    print(f"Icons/graphics markdown saved to: {output_directory}/*_icons_graphics.md")
+    print(f"\nMarkdown descriptions saved to: {output_directory}/*_description.md")

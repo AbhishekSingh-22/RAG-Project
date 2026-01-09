@@ -14,6 +14,7 @@ from typing import Optional
 
 from text_chunker import chunk_documents
 from embeddings import LangChainJinaEmbeddings, EmbeddingConfig
+
 from vector_store import (
     ChromaVectorStore,
     VectorStoreConfig,
@@ -21,11 +22,31 @@ from vector_store import (
     create_vector_store
 )
 
+def load_image_chunks_from_json_dir(json_dir: Path) -> list:
+    """
+    Load image chunk documents from a directory of JSON files.
+    Returns a list of LangChain Documents.
+    """
+    from langchain_core.documents import Document
+    docs = []
+    for file in sorted(json_dir.glob('*.json')):
+        with open(file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            meta = data.get('metadata', {})
+            content = data.get('content', '')
+            docs.append(Document(page_content=content, metadata=meta))
+    return docs
+
 
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
         description="Generate embeddings and store in ChromaDB"
+    )
+    parser.add_argument(
+        "--image-chunks-dir",
+        type=str,
+        help="Directory containing image chunk JSON files (for embedding image descriptions)"
     )
     parser.add_argument(
         "--chunks-path",
@@ -75,26 +96,39 @@ def main():
     """Main function to run the embedding pipeline."""
     args = parse_args()
     
+
     # Setup paths
     project_root = Path(__file__).parent.parent.parent
-    
-    chunks_path = Path(args.chunks_path) if args.chunks_path else \
-                  project_root / "temp_extraction" / "chunks" / "chunks.json"
-    
-    persist_dir = Path(args.persist_dir) if args.persist_dir else \
-                  project_root / "data" / "vectorstore"
-    
-    # Validate chunks file exists
+
+    # Determine if embedding text, image, or both chunks
+    # Always load both text and image chunks by default unless overridden
+    documents = []
+    persist_dir = Path(args.persist_dir) if args.persist_dir else project_root / "data" / "vectorstore"
+    # Text chunks
+    chunks_path = Path(args.chunks_path) if args.chunks_path else project_root / "temp_extraction" / "chunks" / "chunks.json"
     if not chunks_path.exists():
         print(f"Error: Chunks file not found at {chunks_path}")
         print("Please run the chunking pipeline first: python run_chunking.py")
         sys.exit(1)
-    
+    print(f"Loading text chunks from: {chunks_path}")
+    text_docs = load_chunks_from_json(chunks_path)
+    documents.extend(text_docs)
+    # Image chunks
+    image_chunks_dir = Path(args.image_chunks_dir) if args.image_chunks_dir else project_root / "temp_extraction" / "image_chunks_review"
+    if not image_chunks_dir.exists():
+        print(f"Warning: Image chunks directory not found at {image_chunks_dir}. Only text chunks will be embedded.")
+        image_docs = []
+    else:
+        print(f"Loading image chunks from: {image_chunks_dir}")
+        image_docs = load_image_chunks_from_json_dir(image_chunks_dir)
+        documents.extend(image_docs)
+
     # Print configuration
     print(f"\n{'='*60}")
     print("EMBEDDING PIPELINE")
     print(f"{'='*60}")
-    print(f"Chunks File: {chunks_path}")
+    print(f"Text Chunks: {chunks_path}")
+    print(f"Image Chunks Dir: {image_chunks_dir}")
     print(f"Persist Directory: {persist_dir}")
     print(f"Collection Name: {args.collection_name}")
     print(f"Embedding Model: sentence-transformers/all-mpnet-base-v2 (768-dim)")
@@ -102,11 +136,7 @@ def main():
     print(f"Device: {args.device}")
     print(f"Reset Collection: {args.reset}")
     print(f"{'='*60}\n")
-    
-    # Load chunks
-    print("Loading chunks from JSON...")
-    documents = load_chunks_from_json(chunks_path)
-    print(f"Loaded {len(documents)} document chunks")
+    print(f"Loaded {len(documents)} total document chunks (text + image)")
     
     # Create embedding model
     print("\nInitializing Sentence Transformers model...")

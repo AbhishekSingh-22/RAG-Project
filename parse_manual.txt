@@ -1,0 +1,121 @@
+Text: 3. Press “SMART” button on remote until the Wi-Fi (figure: Wi-Fi icon) Indicator on AC starts blinking. “SE” will be displayed, showing that the AC is in setup mode. Click on continue button.
+Image path: grounding/parse_manual_20251205_121816/page_0/text_0ff04508-6366-49aa-b513-0b0df316fbaf_0.png
+Text: Summary : This is a screenshot from a mobile app showing instructions for setting up a Panasonic air conditioner (AC) device using the remote control's SMART Wi-Fi button.
+
+screenshot:
+Scene Overview :
+  • The main subject is a setup instruction screen for a Panasonic AC, viewed on a mobile device.
+  • The top section displays a header "Setup device" and a back arrow.
+  • A simple illustration shows a wall-mounted AC unit, a remote control held by a hand, and some decorative plants and wall art.
+  • The remote control is highlighted with a red button, indicating the SMART Wi-Fi button.
+  • The colour palette is light, with blue and white tones, and minimalistic design.
+
+Technical Details :
+  • Instructional text: "Press SMART Wi-Fi button on remote. Press the SMART Wi-Fi button on your AC remote for 5 seconds to bring the AC into setup mode. (Blinking Wi-Fi icon and SE text on AC display confirms the AC is in setup mode.)"
+  • Two interactive buttons at the bottom: "Continue" (blue) and "Exit" (grey).
+  • No scale bar, magnification, or scientific modality.
+
+Spatial Relationships :
+  • The AC unit is at the top, remote control in the lower right foreground, plants and wall art in the lower left/middle.
+  • The instructional text is centered below the illustration.
+  • The "Continue" and "Exit" buttons are at the bottom, aligned horizontally.
+
+Analysis :
+  • The visual and textual elements guide the user to press the SMART Wi-Fi button on the AC remote for setup, with clear confirmation cues (blinking Wi-Fi icon and SE text).
+  • The layout is designed for clarity and ease of use, with step-by-step instructions and visual emphasis on the relevant button.
+Image path: grounding/parse_manual_20251205_121816/page_0/figure_ff85b303-4f0f-4baf-830e-bad45d758f67_0.png
+Text: 4. Choose Home WiFi Network and enter the Password.
+Image path: grounding/parse_manual_20251205_121816/page_0/text_2e51da8e-7935-4b16-bf1e-a51fa7885909_0.png
+Text: Summary : This is a screenshot of a mobile app interface for selecting a Wi-Fi network, specifically a 2.4GHz network, and entering credentials to connect a device.
+
+screenshot:
+Scene Overview :
+  • The main subject is a Wi-Fi network selection and password entry screen, likely part of a device setup process.
+  • The interface is vertically oriented, with a clean, white background and blue accent buttons.
+  • The top section displays a back arrow and the title "Select Wi-Fi network".
+  • The next section confirms "Device found!" and instructs the user to select a 2.4GHz Wi-Fi network.
+  • A dropdown menu labeled "Wi-Fi name" is set to "My_WIFI Home".
+  • A password field is filled with hidden characters (dots) and an eye icon for toggling visibility.
+  • Below, a blue information box lists three setup tips: correct credentials, router settings, and 2.4GHz network requirement.
+  • A large blue "Next" button is centered at the bottom, with a smaller "Exit" link below.
+
+Technical Details :
+  • No scale bar or magnification; this is a digital UI screenshot.
+  • UI elements include dropdown menus, password field with visibility toggle, information box, and navigation buttons.
+  • Text formatting uses bold for section headers and blue for links (e.g., "Router Settings").
+  • The password field contains 12 hidden characters.
+
+Spatial Relationships :
+  • The interface is organized top-to-bottom: title, instructions, input fields, tips, action buttons.
+  • The "Next" button is visually prominent, encouraging progression.
+  • The "Exit" link is less prominent, placed at the bottom.
+
+Analysis :
+  • The screenshot guides users through connecting a device to a 2.4GHz Wi-Fi network, emphasizing the need for correct credentials and network compatibility.
+  • The design prioritizes clarity and stepwise progression, with helpful tips to prevent common setup errors.
+  • The presence of a password visibility toggle and router settings link suggests attention to user experience and troubleshooting.
+Image path: grounding/parse_manual_20251205_121816/page_0/figure_26a9ba8d-ca5c-4cf3-bffb-b613959f5835_0.png
+Text: 5. Mobile App will setup the Air conditioner and connect to server.
+Image path: grounding/parse_manual_20251205_121816/page_0/text_74887756-b4ae-4c19-a89f-b955dcaea4ff_0.png
+Text: Connect device
+
+Setting up your Air Conditioner...
+Image path: grounding/parse_manual_20251205_121816/page_0/text_ecd1d386-a0d0-402b-98d0-dc6ce5a71443_0.png
+Text: Summary : This image shows a circular progress indicator with a cloud icon at its center, commonly used in user interfaces to represent loading or synchronization status.
+
+icon / UI illustration:
+  Scene Overview :
+    • The main subject is a circular progress indicator.
+    • At the center of the circle is a small cloud icon outlined in blue.
+    • The progress indicator consists of three thick blue arc segments spaced evenly around the circumference of the circle.
+    • The arcs do not form a complete circle, leaving gaps between them.
+    • The entire design is rendered in a blue color on a white background.
+
+  Technical Details :
+    • No text, numbers, or labels are present.
+    • The cloud icon is simple, with a rounded outline and no internal details.
+    • The circular indicator is composed of two concentric thin blue circles, with the thicker arc segments inside.
+    • No scale bar, magnification, or other measurement cues are present.
+
+  Spatial Relationships :
+    • The cloud icon is centered within the circle.
+    • The three arc segments are evenly distributed around the circle, each covering roughly one-third of the circumference.
+    • The design is symmetrical and balanced.
+
+  Analysis :
+    • The image likely represents a loading, syncing, or cloud-related status indicator in a digital interface.
+    • The use of blue and the cloud icon suggests an association with cloud computing or online services.
+    • The incomplete circle formed by the arcs implies an ongoing process rather than completion.
+Image path: grounding/parse_manual_20251205_121816/page_0/figure_c9a61f55-265b-4cb6-932f-118b00406df5_0.png
+Text: 6.  Upon successful completion, press “Go to Dashboard”
+    to view and control the Air Conditioner.
+Image path: grounding/parse_manual_20251205_121816/page_0/text_5c09b226-26fe-423a-ba4c-639aa46c2418_0.png
+Text: Summary : This image is a mobile app screenshot showing the completion of a device setup process, with options to add another device or proceed to the dashboard.
+
+screenshot:
+Scene Overview :
+  • Main subject is a confirmation screen indicating "Device setup complete."
+  • Central blue checkmark icon visually confirms successful setup.
+  • Faint outline of a device labeled "Panasonic" with a small green indicator dot, suggesting the device is online or active.
+  • Prominent button labeled "Add Another Device" with a plus (+) icon, inviting the user to set up more devices.
+  • Secondary button at the bottom labeled "Go to Dashboard" in a blue rounded rectangle, offering navigation to the main dashboard.
+  • Layout is vertically centered, minimalistic, with ample white space and a clean, modern design.
+
+Technical Details :
+  • No scale bar, magnification, or scientific modality present.
+  • All text is legible and clearly rendered.
+  • UI elements include buttons with drop shadows and rounded corners.
+  • The device image is faint and not interactive; the main interactive elements are the two buttons.
+
+Spatial Relationships :
+  • The checkmark icon is centered near the top, followed by the device image, then the "Add Another Device" button, and finally the "Go to Dashboard" button at the bottom.
+  • All elements are vertically stacked and horizontally centered.
+  • The green dot is at the top left of the device outline, suggesting status.
+
+Analysis :
+  • The visual message is that the device setup was successful, and the user can either add more devices or proceed to the dashboard.
+  • The design prioritizes clarity and ease of navigation, with clear next steps and confirmation of success.
+  • The use of color (blue for confirmation and navigation, green for device status) reinforces positive outcomes and guides user action.
+Image path: grounding/parse_manual_20251205_121816/page_0/figure_e67d51eb-158e-4417-9413-4c344bbdf769_0.png
+Text: 4
+Image path: grounding/parse_manual_20251205_121816/page_0/marginalia_af1777c0-59d9-4512-8cef-7488d2a6e948_0.png

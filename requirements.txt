@@ -230,7 +230,6 @@ unstructured_inference==1.1.2
 urllib3==2.3.0
 uuid_utils==0.12.0
 uvicorn==0.40.0
-uvloop==0.22.1
 watchfiles==1.1.1
 wcwidth==0.2.14
 webencodings==0.5.1
@@ -243,3 +242,4 @@ xxhash==3.6.0
 yarl==1.22.0
 zipp==3.23.0
 zstandard==0.25.0
+google-generativeai==0.7.2

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-09T14:05:39.793761",
+  "configuration": {
+    "chunks_file": "D:\\Panasonic\\main_project\\temp_extraction\\chunks\\chunks.json",
+    "persist_directory": "D:\\Panasonic\\main_project\\data\\vectorstore",
+    "collection_name": "rag_documents",
+    "embedding_model": "jinaai/jina-embeddings-v4",
+    "embedding_dimension": 2048,
+    "batch_size": 8,
+    "device": "auto"
+  },
+  "results": {
+    "total_documents": 563,
+    "documents_added": 563,
+    "errors": [],
+    "start_time": "2026-01-09T14:05:08.748897",
+    "end_time": "2026-01-09T14:05:39.791761",
+    "collection_size": 555
+  },
+  "performance": {
+    "total_duration_seconds": 37.540497,
+    "documents_per_second": 14.997137624469914
+  }
+}
