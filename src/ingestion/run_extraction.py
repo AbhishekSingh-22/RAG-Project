@@ -12,7 +12,7 @@ def main():
     project_root = Path(__file__).parent.parent.parent
     
     # PDF file path
-    pdf_path = project_root / "data" / "pdfs" / "HomeHawkApp_Users_Guide_CC1803YK9100_ENG.pdf"
+    pdf_path = project_root / "data" / "pdfs" / "Panasonic-Smart-AC-User-Manual.pdf"
     
     # Output directory
     output_dir = project_root / "temp_extraction"

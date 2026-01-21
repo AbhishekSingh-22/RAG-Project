@@ -360,8 +360,8 @@ class PDFExtractor:
     
     def _expand_bbox_for_context(self, page: fitz.Page, image_bbox: List[float], 
                                   margin_x: float = 25.0, 
-                                  context_above: float = 80.0,
-                                  context_below: float = 50.0) -> fitz.Rect:
+                                  context_above: float = 100.0,
+                                  context_below: float = 100.0) -> fitz.Rect:
         """
         Expand the image bounding box to include contextual content for caption generation.
         
@@ -519,6 +519,132 @@ class PDFExtractor:
             pass
         return positions
     
+    def _merge_adjacent_strips(self, image_positions: List[Dict], 
+                                width_tolerance: float = 5.0,
+                                vertical_gap_tolerance: float = 5.0,
+                                min_strip_height: float = 30.0) -> List[Dict]:
+        """
+        Merge adjacent image strips that are likely parts of the same sliced image.
+        
+        Some PDFs export screenshots as multiple thin horizontal strips. This method
+        detects such strips (images with similar widths stacked vertically) and merges
+        them into single logical images.
+        
+        Args:
+            image_positions: List of image position dicts with 'bbox', 'width', 'height'
+            width_tolerance: Maximum width difference to consider images as part of same strip group
+            vertical_gap_tolerance: Maximum vertical gap between strips to consider them adjacent
+            min_strip_height: Images taller than this are not considered strips
+            
+        Returns:
+            List of merged image positions (strips combined into single entries)
+        """
+        if not image_positions:
+            return []
+        
+        # Separate potential strips from regular images
+        potential_strips = []
+        regular_images = []
+        
+        for pos in image_positions:
+            height = pos.get("height", 0)
+            # Strips are thin horizontal images
+            if height < min_strip_height and height > 0:
+                potential_strips.append(pos)
+            else:
+                regular_images.append(pos)
+        
+        if len(potential_strips) < 2:
+            # Not enough strips to merge, return original
+            return image_positions
+        
+        # Sort strips by x position (left), then by y position (top to bottom)
+        potential_strips.sort(key=lambda p: (p["bbox"][0], p["bbox"][1]))
+        
+        # Group strips by similar x position and width (same column)
+        strip_groups = []
+        used_strips = set()
+        
+        for i, strip in enumerate(potential_strips):
+            if i in used_strips:
+                continue
+            
+            bbox = strip["bbox"]
+            strip_x0 = bbox[0]
+            strip_width = strip["width"]
+            
+            # Start a new group with this strip
+            group = [strip]
+            used_strips.add(i)
+            
+            # Find all other strips with similar x position and width
+            for j, other_strip in enumerate(potential_strips):
+                if j in used_strips:
+                    continue
+                
+                other_bbox = other_strip["bbox"]
+                other_x0 = other_bbox[0]
+                other_width = other_strip["width"]
+                
+                # Check if same column (similar x0 and width)
+                if (abs(other_x0 - strip_x0) <= width_tolerance and 
+                    abs(other_width - strip_width) <= width_tolerance):
+                    group.append(other_strip)
+                    used_strips.add(j)
+            
+            if len(group) >= 2:
+                strip_groups.append(group)
+            else:
+                # Single strip, treat as regular image
+                regular_images.append(strip)
+        
+        # Merge each group into a single image position
+        merged_images = list(regular_images)
+        
+        for group in strip_groups:
+            # Sort group by y position
+            group.sort(key=lambda p: p["bbox"][1])
+            
+            # Check if strips are truly adjacent (small vertical gaps)
+            is_contiguous = True
+            for k in range(len(group) - 1):
+                current_bottom = group[k]["bbox"][3]
+                next_top = group[k + 1]["bbox"][1]
+                gap = next_top - current_bottom
+                
+                if gap > vertical_gap_tolerance:
+                    is_contiguous = False
+                    break
+            
+            if is_contiguous and len(group) >= 3:
+                # Merge all strips in this group
+                all_bboxes = [p["bbox"] for p in group]
+                merged_x0 = min(b[0] for b in all_bboxes)
+                merged_y0 = min(b[1] for b in all_bboxes)
+                merged_x1 = max(b[2] for b in all_bboxes)
+                merged_y1 = max(b[3] for b in all_bboxes)
+                
+                merged_width = merged_x1 - merged_x0
+                merged_height = merged_y1 - merged_y0
+                
+                # Collect all xrefs from the strips
+                xrefs = [p.get("xref") for p in group if p.get("xref")]
+                
+                merged_images.append({
+                    "bbox": [merged_x0, merged_y0, merged_x1, merged_y1],
+                    "xref": xrefs[0] if xrefs else None,
+                    "xrefs": xrefs,  # Keep all xrefs for reference
+                    "width": merged_width,
+                    "height": merged_height,
+                    "area": merged_width * merged_height,
+                    "merged_strips": len(group)
+                })
+            else:
+                # Not contiguous enough, add as individual images
+                merged_images.extend(group)
+        
+        return merged_images
+    
     def _regions_overlap(self, region1: List[float], region2: List[float], threshold: float = 0.5) -> bool:
         """
         Check if two regions overlap significantly.
@@ -547,6 +673,41 @@ class PDFExtractor:
                 return False
             
             return (inter_area / smaller_area) >= threshold
+        except Exception:
+            return False
+    
+    def _region_contained_in(self, region: List[float], container: List[float], threshold: float = 0.8) -> bool:
+        """
+        Check if a region is substantially contained within another region.
+        
+        This is used to detect when a new extraction's render area is already
+        covered by an existing extraction, even if their core image areas don't overlap.
+        
+        Args:
+            region: Bounding box to check [x0, y0, x1, y1]
+            container: Container bounding box [x0, y0, x1, y1]
+            threshold: Minimum containment ratio (0.8 = 80% of region must be in container)
+            
+        Returns:
+            True if region is substantially contained in container
+        """
+        try:
+            rect = fitz.Rect(region)
+            container_rect = fitz.Rect(container)
+            intersection = rect & container_rect
+            
+            if intersection.is_empty:
+                return False
+            
+            # Calculate what percentage of 'region' is inside 'container'
+            inter_area = intersection.width * intersection.height
+            region_area = rect.width * rect.height
+            
+            if region_area == 0:
+                return False
+            
+            containment_ratio = inter_area / region_area
+            return containment_ratio >= threshold
         except Exception:
             return False
     
@@ -580,6 +741,15 @@ class PDFExtractor:
             # Get all image positions on the page with their sizes
             image_positions = self._get_image_positions_on_page(page)
             
+            # FIRST: Merge adjacent strips before filtering
+            # Some PDFs export screenshots as thin horizontal strips that need to be combined
+            image_positions = self._merge_adjacent_strips(
+                image_positions,
+                width_tolerance=5.0,
+                vertical_gap_tolerance=5.0,
+                min_strip_height=30.0
+            )
+            
             # Filter out very tiny decorative elements
             valid_images = []
             for pos in image_positions:
@@ -597,7 +767,18 @@ class PDFExtractor:
                 # Group nearby images together to extract as a unit
                 if valid_images:
                     image_bboxes = [{"bbox": p["bbox"], "xref": p.get("xref")} for p in valid_images]
-                    image_groups = self._group_nearby_blocks(image_bboxes, proximity_threshold=50.0)
+                    image_groups = self._group_nearby_blocks(image_bboxes, proximity_threshold=100.0)
+                    
+                    # Sort groups by Y position (topmost first) so that images higher on the page
+                    # are processed first. This tends to result in better context expansion
+                    # coverage and helps eliminate redundant extractions when context areas overlap.
+                    def get_group_top_y(group):
+                        bboxes = [b.get("bbox", []) for b in group if b.get("bbox")]
+                        if not bboxes:
+                            return float('inf')
+                        return min(bbox[1] for bbox in bboxes)  # Min y0 = topmost
+                    
+                    image_groups.sort(key=get_group_top_y)
                     
                     for group_idx, group in enumerate(image_groups):
                         try:
@@ -626,9 +807,25 @@ class PDFExtractor:
                             )
                             
                             # Check for overlap with already extracted regions
+                            # Use the ORIGINAL image bbox (merged_rect) for overlap detection,
+                            # not the context-expanded bbox, to avoid false duplicates when
+                            # context expansion causes unrelated image groups to overlap
                             is_duplicate = False
-                            for existing_region in extracted_regions:
-                                if self._regions_overlap(list(render_rect), existing_region, 0.7):
+                            original_bbox = list(merged_rect)
+                            for existing_core, existing_render in extracted_regions:
+                                if self._regions_overlap(original_bbox, existing_core, 0.7):
+                                    is_duplicate = True
+                                    break
+                            
+                            if is_duplicate:
+                                continue
+                            
+                            # Also check if this render area is already substantially covered
+                            # by an existing extraction (handles case where different image groups
+                            # expand to overlapping context areas)
+                            render_bbox = list(render_rect)
+                            for existing_core, existing_render in extracted_regions:
+                                if self._region_contained_in(render_bbox, existing_render, 0.8):
                                     is_duplicate = True
                                     break
                             
@@ -666,7 +863,8 @@ class PDFExtractor:
                                 }
                                 
                                 images_info.append(image_data)
-                                extracted_regions.append(list(render_rect))
+                                # Store both core bbox and render bbox for duplicate detection
+                                extracted_regions.append((original_bbox, list(render_rect)))
                                 self.summary["images_extracted"] += 1
                                 pix = None
                                 
@@ -708,10 +906,11 @@ class PDFExtractor:
                                 # Expand to include annotations
                                 expanded_rect = self._get_combined_annotation_bbox(page, list(full_drawing_rect))
                                 
-                                # Check if already covered
+                                # Check if already covered using core bbox
                                 is_duplicate = False
-                                for existing_region in extracted_regions:
-                                    if self._regions_overlap(list(expanded_rect), existing_region, 0.7):
+                                original_drawing_bbox = list(full_drawing_rect)
+                                for existing_core, existing_render in extracted_regions:
+                                    if self._regions_overlap(original_drawing_bbox, existing_core, 0.7):
                                         is_duplicate = True
                                         break
                                 
@@ -743,7 +942,7 @@ class PDFExtractor:
                                             }
                                             
                                             images_info.append(image_data)
-                                            extracted_regions.append(list(context_rect))
+                                            extracted_regions.append((original_drawing_bbox, list(context_rect)))
                                             self.summary["images_extracted"] += 1
                                             pix = None
                                             
@@ -758,10 +957,12 @@ class PDFExtractor:
                         try:
                             # Skip if area already covered by larger extraction
                             is_duplicate = False
-                            for existing_region in extracted_regions:
-                                cluster_center_x = (cluster_rect.x0 + cluster_rect.x1) / 2
-                                cluster_center_y = (cluster_rect.y0 + cluster_rect.y1) / 2
-                                ex_rect = fitz.Rect(existing_region)
+                            cluster_center_x = (cluster_rect.x0 + cluster_rect.x1) / 2
+                            cluster_center_y = (cluster_rect.y0 + cluster_rect.y1) / 2
+                            original_cluster_bbox = list(cluster_rect)
+                            
+                            for existing_core, existing_render in extracted_regions:
+                                ex_rect = fitz.Rect(existing_render)
                                 if ex_rect.contains(fitz.Point(cluster_center_x, cluster_center_y)):
                                     is_duplicate = True
                                     break
@@ -774,12 +975,12 @@ class PDFExtractor:
                                 page, list(cluster_rect),
                                 margin_x=25.0,
                                 context_above=100.0,
-                                context_below=80.0
+                                context_below=100.0
                             )
                             
-                            # Check overlap with existing extractions
-                            for existing_region in extracted_regions:
-                                if self._regions_overlap(list(context_rect), existing_region, 0.7):
+                            # Check overlap with existing extractions using core bbox
+                            for existing_core, existing_render in extracted_regions:
+                                if self._regions_overlap(original_cluster_bbox, existing_core, 0.7):
                                     is_duplicate = True
                                     break
                             
@@ -809,7 +1010,7 @@ class PDFExtractor:
                                 }
                                 
                                 images_info.append(image_data)
-                                extracted_regions.append(list(context_rect))
+                                extracted_regions.append((original_cluster_bbox, list(context_rect)))
                                 self.summary["images_extracted"] += 1
                                 pix = None
                                 
@@ -826,7 +1027,7 @@ class PDFExtractor:
         
         return images_info
     
-    def _group_drawings(self, drawings: List[Dict], proximity_threshold: float = 50.0) -> List[List[Dict]]:
+    def _group_drawings(self, drawings: List[Dict], proximity_threshold: float = 100.0) -> List[List[Dict]]:
         """
         Group drawings that are close together (likely parts of the same diagram).
         
@@ -983,7 +1184,7 @@ class PDFExtractor:
                 meaningful.append(d)
         return meaningful
     
-    def _find_icon_clusters(self, drawings: List[Dict], cluster_distance: float = 30.0) -> List[fitz.Rect]:
+    def _find_icon_clusters(self, drawings: List[Dict], cluster_distance: float = 100.0) -> List[fitz.Rect]:
         """
         Find clusters of small drawings that together form icons.
         
