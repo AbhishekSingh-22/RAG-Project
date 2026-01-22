@@ -10,21 +10,26 @@ from typing import Dict, List, Tuple
 from datetime import datetime
 import pymupdf as fitz  # PyMuPDF
 from tqdm import tqdm
+import numpy as np
+from sklearn.cluster import DBSCAN
+from scipy.cluster.hierarchy import linkage, fcluster
 
 
 class PDFExtractor:
     """Extracts text and images from PDF files."""
     
-    def __init__(self, output_dir: Path):
+    def __init__(self, output_dir: Path, clustering_method: str = "dbscan"):
         """
         Initialize the PDF extractor.
         
         Args:
             output_dir: Directory to save extracted content
+            clustering_method: Image block clustering method ("dbscan", "hierarchical", or "proximity")
         """
         self.output_dir = output_dir
         self.text_dir = output_dir / "text"
         self.images_dir = output_dir / "images"
+        self.clustering_method = clustering_method
         self.summary = {
             "total_pages": 0,
             "pages_with_text": 0,
@@ -113,6 +118,336 @@ class PDFExtractor:
             groups.append(group)
         
         return groups
+    
+    def _group_blocks_dbscan(self, blocks: List[Dict], eps: float = 30.0, min_samples: int = 1) -> List[List[Dict]]:
+        """
+        Group image blocks using DBSCAN clustering algorithm.
+        
+        DBSCAN automatically determines the number of clusters and handles variable-density
+        groupings better than fixed proximity thresholds. It's especially effective for:
+        - Detecting natural clusters in block positions
+        - Handling variable-sized image groups
+        - Separating noise (isolated blocks) from meaningful clusters
+        
+        Args:
+            blocks: List of image block dictionaries with 'bbox' key
+            eps: Maximum distance between blocks to be in same cluster (in points)
+            min_samples: Minimum blocks required to form a cluster
+            
+        Returns:
+            List of grouped blocks, where each group is a list of blocks
+        """
+        if not blocks:
+            return []
+        
+        if len(blocks) <= 1:
+            return [[b] for b in blocks]
+        
+        try:
+            # Extract bbox centers for clustering
+            centers = []
+            for block in blocks:
+                bbox = block.get("bbox", [])
+                if bbox and len(bbox) >= 4:
+                    cx = (bbox[0] + bbox[2]) / 2
+                    cy = (bbox[1] + bbox[3]) / 2
+                    centers.append([cx, cy])
+                else:
+                    # Invalid bbox, skip
+                    continue
+            
+            if len(centers) <= 1:
+                return [[b] for b in blocks if b.get("bbox")]
+            
+            # Apply DBSCAN clustering
+            centers_array = np.array(centers)
+            clustering = DBSCAN(eps=eps, min_samples=min_samples).fit(centers_array)
+            labels = clustering.labels_
+            
+            # Group blocks by cluster label
+            # Note: label -1 means noise point (single isolated blocks)
+            cluster_dict = {}
+            valid_blocks = [b for b in blocks if b.get("bbox") and len(b.get("bbox")) >= 4]
+            
+            for block_idx, label in enumerate(labels):
+                if label not in cluster_dict:
+                    cluster_dict[label] = []
+                cluster_dict[label].append(valid_blocks[block_idx])
+            
+            # Convert to list of groups (excluding noise as individual items)
+            groups = []
+            for label in sorted(cluster_dict.keys()):
+                groups.append(cluster_dict[label])
+            
+            return groups
+            
+        except Exception as e:
+            # Fallback to original method if DBSCAN fails
+            return self._group_nearby_blocks(blocks, proximity_threshold=eps)
+    
+    def _group_blocks_hierarchical(self, blocks: List[Dict], distance_threshold: float = 100.0, 
+                                      linkage_method: str = "average") -> List[List[Dict]]:
+        """
+        Group image blocks using Hierarchical (Agglomerative) Clustering.
+        
+        Hierarchical clustering builds a dendrogram of block relationships and cuts it at a
+        specified distance threshold. It's effective for:
+        - Variable-sized groups with flexible shapes
+        - Documents where a distance threshold is easy to interpret
+        - Getting stable, hierarchical relationships between blocks
+        
+        Args:
+            blocks: List of image block dictionaries with 'bbox' key
+            distance_threshold: Maximum distance for cutting the dendrogram (in points)
+            linkage_method: Linkage criterion ("single", "complete", "average", "ward")
+                - "single": Minimum distance between clusters (chaining effect)
+                - "complete": Maximum distance between clusters (tight clusters)
+                - "average": Average distance between clusters (balanced)
+                - "ward": Minimizes within-cluster variance (compact clusters)
+            
+        Returns:
+            List of grouped blocks, where each group is a list of blocks
+        """
+        if not blocks:
+            return []
+        
+        if len(blocks) <= 1:
+            return [[b] for b in blocks]
+        
+        try:
+            # Extract bbox centers for clustering
+            centers = []
+            for block in blocks:
+                bbox = block.get("bbox", [])
+                if bbox and len(bbox) >= 4:
+                    cx = (bbox[0] + bbox[2]) / 2
+                    cy = (bbox[1] + bbox[3]) / 2
+                    centers.append([cx, cy])
+                else:
+                    continue
+            
+            if len(centers) <= 1:
+                return [[b] for b in blocks if b.get("bbox")]
+            
+            # Perform hierarchical clustering
+            centers_array = np.array(centers)
+            
+            # Compute linkage matrix
+            # For "ward" method, only Euclidean distance is supported
+            # For other methods, we use Euclidean distance as well
+            Z = linkage(centers_array, method=linkage_method, metric='euclidean')
+            
+            # Cut the dendrogram at the specified distance threshold
+            labels = fcluster(Z, distance_threshold, criterion='distance') - 1  # Subtract 1 to start from 0
+            
+            # Group blocks by cluster label
+            cluster_dict = {}
+            valid_blocks = [b for b in blocks if b.get("bbox") and len(b.get("bbox")) >= 4]
+            
+            for block_idx, label in enumerate(labels):
+                if label not in cluster_dict:
+                    cluster_dict[label] = []
+                cluster_dict[label].append(valid_blocks[block_idx])
+            
+            # Convert to list of groups
+            groups = []
+            for label in sorted(cluster_dict.keys()):
+                groups.append(cluster_dict[label])
+            
+            return groups
+            
+        except Exception as e:
+            # Fallback to proximity method if hierarchical clustering fails
+            return self._group_nearby_blocks(blocks, proximity_threshold=distance_threshold)
+    
+    def _group_blocks_connected_components(self, blocks: List[Dict], distance_threshold: float = 50.0) -> List[List[Dict]]:
+        """
+        Group image blocks using Connected Components (Graph-Based) approach.
+        
+        Treats blocks as nodes in a graph and connects those within a distance threshold.
+        Finds connected components using DFS. Effective for:
+        - Detecting clusters of blocks that are transitively connected
+        - Handling complex spatial relationships
+        - Building natural groupings based on proximity chains
+        
+        Args:
+            blocks: List of image block dictionaries with 'bbox' key
+            distance_threshold: Maximum distance between blocks to consider them connected (in points)
+            
+        Returns:
+            List of grouped blocks, where each group is a list of blocks
+        """
+        if not blocks:
+            return []
+        
+        if len(blocks) <= 1:
+            return [[b] for b in blocks]
+        
+        try:
+            # Filter valid blocks
+            valid_blocks = [b for b in blocks if b.get("bbox") and len(b.get("bbox")) >= 4]
+            n = len(valid_blocks)
+            
+            if n <= 1:
+                return [[b] for b in valid_blocks]
+            
+            # Build adjacency list (graph) - connect nearby blocks
+            adjacency = [[] for _ in range(n)]
+            
+            for i in range(n):
+                bbox_i = valid_blocks[i].get("bbox")
+                for j in range(i + 1, n):
+                    bbox_j = valid_blocks[j].get("bbox")
+                    
+                    # Check if blocks are nearby
+                    if self._blocks_are_nearby(bbox_i, bbox_j, distance_threshold):
+                        adjacency[i].append(j)
+                        adjacency[j].append(i)
+            
+            # Find connected components using DFS
+            visited = [False] * n
+            components = []
+            
+            def dfs(node, component):
+                """Depth-first search to find connected component"""
+                visited[node] = True
+                component.append(node)
+                for neighbor in adjacency[node]:
+                    if not visited[neighbor]:
+                        dfs(neighbor, component)
+            
+            for i in range(n):
+                if not visited[i]:
+                    component = []
+                    dfs(i, component)
+                    groups = [valid_blocks[idx] for idx in component]
+                    components.append(groups)
+            
+            return components
+            
+        except Exception as e:
+            # Fallback to proximity method if connected components fails
+            return self._group_nearby_blocks(blocks, proximity_threshold=distance_threshold)
+    
+    def _group_blocks_iou(self, blocks: List[Dict], iou_threshold: float = 0.1) -> List[List[Dict]]:
+        """
+        Group image blocks using Overlap/IoU (Intersection over Union) approach.
+        
+        Calculates IoU between bounding boxes and groups those with IoU >= threshold.
+        Uses union-find to efficiently group overlapping regions. Effective for:
+        - Merging overlapping or nearly-overlapping blocks
+        - Detecting fragmented parts of the same image
+        - Handling variable-size blocks with overlap patterns
+        
+        Args:
+            blocks: List of image block dictionaries with 'bbox' key
+            iou_threshold: Minimum IoU (0.0-1.0) to consider blocks as part of same group
+                          0.0 = any overlap counts, 1.0 = complete overlap only
+                          Default: 0.1 = 10% overlap threshold
+            
+        Returns:
+            List of grouped blocks, where each group is a list of blocks
+        """
+        if not blocks:
+            return []
+        
+        if len(blocks) <= 1:
+            return [[b] for b in blocks]
+        
+        try:
+            valid_blocks = [b for b in blocks if b.get("bbox") and len(b.get("bbox")) >= 4]
+            n = len(valid_blocks)
+            
+            if n <= 1:
+                return [[b] for b in valid_blocks]
+            
+            # Union-Find data structure for efficient grouping
+            parent = list(range(n))
+            
+            def find(x):
+                """Find root parent with path compression"""
+                if parent[x] != x:
+                    parent[x] = find(parent[x])
+                return parent[x]
+            
+            def union(x, y):
+                """Union two components"""
+                px, py = find(x), find(y)
+                if px != py:
+                    parent[px] = py
+            
+            # Calculate IoU and union overlapping blocks
+            for i in range(n):
+                bbox_i = valid_blocks[i].get("bbox")
+                rect_i = fitz.Rect(bbox_i)
+                area_i = rect_i.width * rect_i.height
+                
+                for j in range(i + 1, n):
+                    bbox_j = valid_blocks[j].get("bbox")
+                    rect_j = fitz.Rect(bbox_j)
+                    area_j = rect_j.width * rect_j.height
+                    
+                    # Calculate intersection
+                    intersection = rect_i & rect_j
+                    if intersection.is_empty:
+                        inter_area = 0
+                    else:
+                        inter_area = intersection.width * intersection.height
+                    
+                    # Calculate union area
+                    union_area = area_i + area_j - inter_area
+                    
+                    # Calculate IoU and union if threshold exceeded
+                    if union_area > 0:
+                        iou = inter_area / union_area
+                        if iou >= iou_threshold:
+                            union(i, j)
+            
+            # Group blocks by their root parent
+            groups_dict = {}
+            for i in range(n):
+                root = find(i)
+                if root not in groups_dict:
+                    groups_dict[root] = []
+                groups_dict[root].append(valid_blocks[i])
+            
+            # Convert to list of groups
+            groups = list(groups_dict.values())
+            return groups
+            
+        except Exception as e:
+            # Fallback to proximity method if IoU grouping fails
+            return self._group_nearby_blocks(blocks, proximity_threshold=20.0)
+    
+    def _group_blocks_adaptive(self, blocks: List[Dict], method: str = "dbscan") -> List[List[Dict]]:
+        """
+        Group blocks using specified method. Allows switching between algorithms.
+        
+        Args:
+            blocks: List of image block dictionaries with 'bbox' key
+            method: Clustering method to use - one of:
+                - "dbscan": DBSCAN density-based clustering (default, good for noise handling)
+                - "hierarchical": Agglomerative hierarchical clustering (good for variable group sizes)
+                - "proximity": Simple fixed-distance proximity grouping (fast, simple)
+                - "connected_components": Graph-based connected components (good for transitive relationships)
+                - "iou": Overlap/IoU-based grouping (good for fragmented/overlapping blocks)
+            
+        Returns:
+            List of grouped blocks
+        """
+        if method == "dbscan":
+            return self._group_blocks_dbscan(blocks, eps=30.0, min_samples=1)
+        elif method == "hierarchical":
+            return self._group_blocks_hierarchical(blocks, distance_threshold=100.0, linkage_method="average")
+        elif method == "proximity":
+            return self._group_nearby_blocks(blocks, proximity_threshold=20.0)
+        elif method == "connected_components":
+            return self._group_blocks_connected_components(blocks, distance_threshold=50.0)
+        elif method == "iou":
+            return self._group_blocks_iou(blocks, iou_threshold=0.1)
+        else:
+            # Default to DBSCAN
+            return self._group_blocks_dbscan(blocks, eps=30.0, min_samples=1)
     
     def _blocks_are_nearby(self, bbox1: List[float], bbox2: List[float], threshold: float) -> bool:
         """
@@ -230,7 +565,7 @@ class PDFExtractor:
     
     def _is_callout_label(self, text: str) -> bool:
         """
-        Check if text is likely a callout label (A, B, C, 1, 2, 3, ①, ②, etc.)
+        Check if text is likely a callout label (A, B, C, 1, 2, 3, ①, ②, ③, etc.)
         Also detects callout labels at the START of description text (e.g., "AReturns you...")
         
         Args:
@@ -759,6 +1094,37 @@ class PDFExtractor:
                     continue
                 valid_images.append(pos)
             
+            # --- DBSCAN performance/cluster stats ---
+            dbscan_stats = {}
+            try:
+                # Group nearby images together to extract as a unit
+                if valid_images:
+                    image_bboxes = [{"bbox": p["bbox"], "xref": p.get("xref")} for p in valid_images]
+                    import time
+                    t0 = time.time()
+                    # Use configured clustering method for more intelligent grouping
+                    image_groups = self._group_blocks_adaptive(image_bboxes, method=self.clustering_method)
+                    t1 = time.time()
+                    # Cluster statistics
+                    num_groups = len(image_groups)
+                    group_sizes = [len(g) for g in image_groups] if image_groups else []
+                    num_blocks = len(image_bboxes)
+                    num_noise = sum(1 for g in image_groups if len(g) == 1)
+                    dbscan_stats = {
+                        "num_blocks": num_blocks,
+                        "num_groups": num_groups,
+                        "avg_group_size": float(np.mean(group_sizes)) if group_sizes else 0.0,
+                        "num_noise_groups": num_noise,
+                        "group_sizes": group_sizes,
+                        "time_ms": (t1 - t0) * 1000.0
+                    }
+                    # Store stats for later summary
+                    if not hasattr(self, "dbscan_stats_per_page"):
+                        self.dbscan_stats_per_page = {}
+                    self.dbscan_stats_per_page[page_num + 1] = dbscan_stats
+            except Exception:
+                pass
+            
             # Method 2: Extract ALL images with annotations AND context
             # Every image (regardless of size) gets:
             # 1. Annotation expansion (callouts, pointer lines)
@@ -767,7 +1133,8 @@ class PDFExtractor:
                 # Group nearby images together to extract as a unit
                 if valid_images:
                     image_bboxes = [{"bbox": p["bbox"], "xref": p.get("xref")} for p in valid_images]
-                    image_groups = self._group_nearby_blocks(image_bboxes, proximity_threshold=100.0)
+                    # Use configured clustering method for more intelligent grouping
+                    image_groups = self._group_blocks_adaptive(image_bboxes, method=self.clustering_method)
                     
                     # Sort groups by Y position (topmost first) so that images higher on the page
                     # are processed first. This tends to result in better context expansion
@@ -1412,6 +1779,9 @@ class PDFExtractor:
                     if self.summary["pages_with_text"] > 0 else 0
                 )
             },
+            # Add DBSCAN cluster/performance stats if available
+            "dbscan_stats": getattr(self, "dbscan_stats_per_page", {})
+            ,
             "skipped_pages": self.summary["skipped_pages"],
             "errors": self.summary["errors"],
             "output_directories": {
@@ -1440,13 +1810,14 @@ class PDFExtractor:
             json.dump(results, f, indent=2, ensure_ascii=False)
 
 
-def extract_pdf(pdf_path: Path, output_dir: Path = None) -> Dict:
+def extract_pdf(pdf_path: Path, output_dir: Path = None, clustering_method: str = "dbscan") -> Dict:
     """
     Main function to extract text and images from a PDF.
     
     Args:
         pdf_path: Path to the PDF file
         output_dir: Output directory (defaults to temp folder in project root)
+        clustering_method: Image block clustering method ("dbscan", "hierarchical", or "proximity")
         
     Returns:
         Summary dictionary
@@ -1456,8 +1827,8 @@ def extract_pdf(pdf_path: Path, output_dir: Path = None) -> Dict:
         project_root = Path(__file__).parent.parent.parent
         output_dir = project_root / "temp_extraction"
     
-    # Create extractor
-    extractor = PDFExtractor(output_dir)
+    # Create extractor with specified clustering method
+    extractor = PDFExtractor(output_dir, clustering_method=clustering_method)
     
     # Process PDF
     print(f"\n{'='*60}")

@@ -12,10 +12,10 @@ def main():
     project_root = Path(__file__).parent.parent.parent
     
     # PDF file path
-    pdf_path = project_root / "data" / "pdfs" / "Panasonic-Smart-AC-User-Manual.pdf"
+    pdf_path = project_root / "data" / "pdfs" / "User Manual_NR-BR307_BR347.pdf"
     
     # Output directory
-    output_dir = project_root / "temp_extraction"
+    output_dir = project_root / "temp_extraction_hierarchical"
     
     # Check if PDF exists
     if not pdf_path.exists():
@@ -23,9 +23,9 @@ def main():
         print(f"Please ensure the file exists.")
         return
     
-    # Run extraction
+    # Run extraction with hierarchical clustering
     try:
-        summary = extract_pdf(pdf_path, output_dir)
+        summary = extract_pdf(pdf_path, output_dir, clustering_method="hierarchical")
         print("\n✓ Extraction completed successfully!")
     except Exception as e:
         print(f"\n✗ Extraction failed with error: {str(e)}")
