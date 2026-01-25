@@ -1,0 +1,32 @@
+This screen is a functional part of a mobile application used for managing smart devices, likely during an initial pairing or setup process.
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose of this screen is to **initiate the device pairing or configuration workflow** by requiring the user to identify the specific type of smart home hardware they wish to connect to the application (e.g., a Wi-Fi-enabled air conditioner, refrigerator, or smart plug).
+
+This selection directs the app to the appropriate next steps, which may involve downloading specific firmware, providing device-specific instructions, or starting a specialized discovery mode tailored to the selected appliance category (Appliances vs. Electrical).
+
+### 2. What ACTION should the user take?
+
+The user has two mandatory actions:
+
+1.  **Check Prerequisites:** The user must ensure that **Wi-Fi** connectivity and **Location Services (GPS)** are enabled on their smart phone device before proceeding.
+2.  **Select Device Type:** The user must scroll through the listed categories (Appliances and Electrical) and **tap the entry that corresponds exactly to the physical smart device** they are attempting to set up (e.g., tapping "Air Conditioner" as shown highlighted).
+
+### 3. What PROBLEM does this help solve?
+
+This screen primarily solves the problem of **onboarding new hardware** into the smart home ecosystem.
+
+*   **For the User:** It simplifies a potentially complex pairing process by providing a clear, categorized list, ensuring they start the correct setup procedure for their specific product.
+*   **For the System:** It allows the application to dynamically load the appropriate connectivity drivers and configuration steps, preventing connection failures that would occur if, for instance, the system tried to pair a Smart Plug using the protocol designed for a Water Heater.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+No numerical error codes or dynamic status indicators are displayed on this screen. However, a critical **Prerequisite Instruction** is provided, which serves as the primary troubleshooting guide:
+
+| Status/Indicator | Explanation and Troubleshooting Action |
+| :--- | :--- |
+| **"Please make sure that Wi-Fi and Location is enabled in your smart phone"** | This is a mandatory prerequisite for successful device discovery. If the user selects a device and the next screen fails to find it (or times out), the user must immediately troubleshoot by verifying both settings on their phone. Location services (GPS) are often required by Android and iOS operating systems for applications to perform local network scanning and device proximity detection (e.g., Bluetooth Low Energy). |
+| **Air Conditioner (Highlighted)** | This indicates the current selection. If the user intended to add a Refrigerator, this highlighting serves as a visual confirmation that the wrong setup path is currently active. The troubleshooting step is to back out (using the arrow) or tap the correct device type. |

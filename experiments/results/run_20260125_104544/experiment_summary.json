@@ -1,0 +1,62 @@
+[
+  {
+    "image_name": "HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0001_img_001.png",
+    "strategies": {
+      "visual_descriptive": {
+        "status": "success",
+        "output_file": "D:\\Panasonic\\main_project\\experiments\\results\\run_20260125_104544\\visual_descriptive\\HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0001_img_001.txt",
+        "output_preview": "This image appears to be a partial view of a cover page or title page from a technical document, lik..."
+      },
+      "functional_goal_oriented": {
+        "status": "success",
+        "output_file": "D:\\Panasonic\\main_project\\experiments\\results\\run_20260125_104544\\functional_goal_oriented\\HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0001_img_001.txt",
+        "output_preview": "As a Technical Support Expert analyzing this image from a user perspective, here is the functional i..."
+      },
+      "structured_json": {
+        "status": "success",
+        "output_file": "D:\\Panasonic\\main_project\\experiments\\results\\run_20260125_104544\\structured_json\\HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0001_img_001.txt",
+        "output_preview": "{\n    \"type\": \"other\",\n    \"title\": \"User's Guide\",\n    \"key_text\": [\n        \"Panasonic\\u00ae\",\n   ..."
+      }
+    }
+  },
+  {
+    "image_name": "HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0006_img_001.png",
+    "strategies": {
+      "visual_descriptive": {
+        "status": "success",
+        "output_file": "D:\\Panasonic\\main_project\\experiments\\results\\run_20260125_104544\\visual_descriptive\\HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0006_img_001.txt",
+        "output_preview": "This image is a technical illustration presenting an **Overview** of the Panasonic HomeHawk system w..."
+      },
+      "functional_goal_oriented": {
+        "status": "success",
+        "output_file": "D:\\Panasonic\\main_project\\experiments\\results\\run_20260125_104544\\functional_goal_oriented\\HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0006_img_001.txt",
+        "output_preview": "This image functions as a high-level conceptual diagram and introductory guide for a home security/m..."
+      },
+      "structured_json": {
+        "status": "success",
+        "output_file": "D:\\Panasonic\\main_project\\experiments\\results\\run_20260125_104544\\structured_json\\HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0006_img_001.txt",
+        "output_preview": "{\n    \"type\": \"diagram\",\n    \"title\": \"What is the HomeHawk?\",\n    \"key_text\": [\n        \"Overview\",..."
+      }
+    }
+  },
+  {
+    "image_name": "HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0007_img_001.png",
+    "strategies": {
+      "visual_descriptive": {
+        "status": "success",
+        "output_file": "D:\\Panasonic\\main_project\\experiments\\results\\run_20260125_104544\\visual_descriptive\\HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0007_img_001.txt",
+        "output_preview": "This image is a segment of technical documentation, likely from a manual or datasheet, presented in ..."
+      },
+      "functional_goal_oriented": {
+        "status": "success",
+        "output_file": "D:\\Panasonic\\main_project\\experiments\\results\\run_20260125_104544\\functional_goal_oriented\\HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0007_img_001.txt",
+        "output_preview": "Here is the technical support analysis of the provided screen/diagram from a user's perspective:\n\n--..."
+      },
+      "structured_json": {
+        "status": "success",
+        "output_file": "D:\\Panasonic\\main_project\\experiments\\results\\run_20260125_104544\\structured_json\\HomeHawkApp_Users_Guide_CC1803YK9100_ENG_page_0007_img_001.txt",
+        "output_preview": "{\n    \"type\": \"other\",\n    \"title\": \"The maximum number of camera devices for each type are listed b..."
+      }
+    }
+  }
+]

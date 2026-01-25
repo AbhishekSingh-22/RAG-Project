@@ -1,0 +1,31 @@
+This diagram functions as a specific instructional guide within a technical support context for smart home device integration.
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose of this guide is to provide a clear, step-by-step walkthrough for the user to successfully initiate the pairing process between a **Panasonic Non-Matter Air Conditioner** and the **MirAle Smart Home Application**. It shows the necessary navigation steps within the application interface required to begin the device onboarding sequence.
+
+### 2. What ACTION should the user take?
+
+The user should take the following actions, in sequence:
+
+1.  **Preparation:** Ensure that **Wi-Fi** and **Location services (GPS)** are enabled on the smartphone before starting the application steps.
+2.  **Initiate Pairing (Step 1):** Open the MirAle application and navigate to the dashboard. Locate and tap the **blue plus sign (+) icon** to add a new device.
+3.  **Select Device Type (Step 2):** From the "Select device" screen, choose the category of the appliance to be paired. In this case, the user must tap **"Air Conditioner"** under the "Appliances" heading.
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the problem of **initial device setup and connectivity**. Specifically, it addresses the user's need to link a new physical smart appliance (the Air Conditioner) to their remote control application (MirAle), allowing for remote monitoring and control capabilities. Without these steps, the AC cannot be managed digitally.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+The image does not display an explicit error code, but it contains a critical **pre-connection status indicator/warning** presented as an "i" (information) icon:
+
+**Status Indicator/Warning:**
+"Please make sure that Wi-Fi and Location is enabled in your smart phone."
+
+**Troubleshooting Explanation:**
+This is a required prerequisite check for device discovery. If the user attempts to proceed to the next pairing steps without adhering to this requirement, the application will likely fail to detect the new device or proceed with network configuration.
+
+*   **User Action for Troubleshooting:** If the user cannot select the device or if the application hangs/fails after selecting "Air Conditioner," they must immediately exit the app briefly and verify that both the phone's Wi-Fi radio is active and connected to the correct network, and that the Location/GPS services are switched **ON**. Location services are frequently required for security and local network discovery protocols during smart device pairing.

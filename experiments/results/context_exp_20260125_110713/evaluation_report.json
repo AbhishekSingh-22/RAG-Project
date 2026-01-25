@@ -1,0 +1,62 @@
+[
+  {
+    "image_name": "page_2_img_1",
+    "query": "How do I use the feature shown in page 2 img 1?",
+    "scores": {
+      "tight": {
+        "helpfulness_score": 5,
+        "specificity_score": 5,
+        "actionability_score": 5,
+        "reasoning": "The description is extremely helpful as it directly addresses the user's 'how-to' question with clear, numbered steps under the 'What ACTION should the user take?' section. The specificity is high because it analyzes functional indicators (like the 'Center the QR...' prompt and the back button) and interprets them within the context of an IoT/smart device setup process. Crucially, the description is highly actionable, providing not only the primary instructions but also detailed troubleshooting steps (checking lighting, focus, code damage) that a user would need if the automated process fails."
+      },
+      "context": {
+        "helpfulness_score": 5,
+        "specificity_score": 5,
+        "actionability_score": 5,
+        "reasoning": "This description is excellent. It fully answers the 'how-to' query by providing mandatory, sequential steps for device pairing. It is extremely specific, naming the application (MirAle), the device (Panasonic AC), and the technology (Matter, QR code, manual code length). The action steps are clearly delineated, and the troubleshooting section provides critical, actionable fallback options (like the manual code and physical location of the QR code) if the primary method fails."
+      },
+      "full_page": {
+        "helpfulness_score": 5,
+        "specificity_score": 5,
+        "actionability_score": 5,
+        "reasoning": "The description is exceptionally helpful because it correctly identifies the feature (device onboarding) and provides a full, step-by-step guide on how to use it. It is highly specific, naming the application (MirAIe), the device (Panasonic AC), and technical requirements (11- or 21-digit code). The entire document is structured around actionable steps and troubleshooting advice, making it immediately useful for the user."
+      }
+    }
+  },
+  {
+    "image_name": "page_4_img_2",
+    "query": "How do I use the feature shown in page 4 img 2?",
+    "scores": {
+      "tight": {
+        "helpfulness_score": 5,
+        "specificity_score": 5,
+        "actionability_score": 5,
+        "reasoning": "The description is extremely helpful and tailored exactly to the user's 'how-to' query. The 'What ACTION should the user take?' section provides direct, mandatory, step-by-step instructions (check prerequisites, select device type) necessary to use the feature shown. The description is highly specific, referencing screen elements like 'Air Conditioner (Highlighted)' and the prerequisite text ('Please make sure that Wi-Fi and Location is enabled'). The clear separation of purpose, action, and troubleshooting makes the entire guide highly actionable, providing the user with everything needed to proceed and troubleshoot common failures."
+      },
+      "context": {
+        "helpfulness_score": 5,
+        "specificity_score": 5,
+        "actionability_score": 5,
+        "reasoning": "The user asks how to use the feature shown. The retrieved description provides a perfect, detailed, step-by-step instructional guide on initiating the device pairing process (which is the likely feature shown in the image). It is extremely helpful, highly specific (mentioning the MirAle app, Panasonic AC, and specific UI elements like the blue plus sign), and provides sequential, actionable steps, including troubleshooting prerequisites."
+      },
+      "full_page": {
+        "helpfulness_score": 5,
+        "specificity_score": 5,
+        "actionability_score": 5,
+        "reasoning": "This document is an exceptionally strong image description for a RAG system. It directly answers the user's 'how-to' question by providing two distinct, highly actionable, step-by-step procedures for using the feature (AC onboarding). It is highly specific, referencing brand names (Panasonic, MirAle), specific controls ('SMART' button, 'SE' status), and technical requirements (2.4GHz frequency restriction). The structure is designed to guide the user through the process and includes useful troubleshooting context."
+      }
+    }
+  },
+  {
+    "image_name": "page_2_img_3",
+    "query": "How do I use the feature shown in page 2 img 3?",
+    "scores": {
+      "context": {
+        "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 7.144674351s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 7\n}\n]"
+      },
+      "full_page": {
+        "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 6.649985159s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 6\n}\n]"
+      }
+    }
+  }
+]

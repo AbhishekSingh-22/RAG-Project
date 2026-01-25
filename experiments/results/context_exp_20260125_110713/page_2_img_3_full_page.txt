@@ -1,0 +1,37 @@
+This document serves as a technical support guide for setting up a new smart home device using the Matter protocol.
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose is to provide clear, actionable steps for integrating a new Matter-certified device (specifically a Panasonic Air Conditioner) into the user’s smart home ecosystem application, the **MirAIe Application**. It outlines the initial navigation steps and provides two distinct methods for secure device pairing.
+
+### 2. What ACTION should the user take?
+
+The user must follow a two-step process to initiate and complete the device pairing:
+
+**Step 1: Initiate Addition**
+*   Open the MirAIe application dashboard.
+*   Locate and click the **"+"** (plus) icon to begin the device addition process.
+
+**Step 2: Complete Pairing (Choose one of the following methods)**
+
+*   **Method A: Scan QR Code:** Center the device’s unique QR code (found on the physical unit or its packaging) within the camera frame provided by the application.
+*   **Method B: Enter Setup Code Manually:** Locate the 11-digit or 21-digit Manual Pairing Code (also found on the device/packaging) and type it into the dedicated input field, then press the **"Connect"** button.
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the problem of **device discovery and secure connectivity** for smart home products operating on the Matter standard.
+
+*   **Interoperability:** It explains how devices from different manufacturers (e.g., a Panasonic AC) can be added to a centralized smart home app (MirAIe) using a universal, standardized setup process (Matter).
+*   **Failed Setup Redundancy:** It provides a crucial backup method (manual code entry) in case the primary method (QR code scanning) fails due to issues like poor lighting, camera malfunction, or a damaged/obscured QR code sticker.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+The guide does not display active error codes, but it highlights specific required inputs that serve as troubleshooting indicators:
+
+| Status Indicator / Requirement | User Troubleshooting Context |
+| :--- | :--- |
+| **QR Code Location** | If the initial scan fails, the user must verify they are aiming the camera at the specific QR Code Sticker found on the **AC unit** or the **packaging**, as these contain the necessary Matter credential data. |
+| **Manual Pairing Code Format (11 or 21 digits)** | If the user attempts to enter the setup code manually, the application requires exactly 11 or 21 digits. If the user enters a code of the wrong length or an incorrect format, the app will typically reject the entry or disable the "Connect" button. The user must double-check the physical sticker to ensure the correct number of digits is input. |
+| **"Add Matter device using setup code" Screen** | This screen functions as a built-in troubleshooting alternative. If the QR scan fails, the user is immediately routed to the manual entry method, ensuring setup can proceed without interruption. |

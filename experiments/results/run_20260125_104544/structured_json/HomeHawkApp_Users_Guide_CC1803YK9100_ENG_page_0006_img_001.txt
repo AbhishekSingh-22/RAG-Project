@@ -1,0 +1,12 @@
+{
+    "type": "diagram",
+    "title": "What is the HomeHawk?",
+    "key_text": [
+        "Overview",
+        "The Panasonic Home Monitoring Camera is a wireless network of devices that help you monitor your home. Its easy-to-use app allows you to stay in charge even when away from home."
+    ],
+    "actionable_elements": [
+        "Woman interacting with a mobile device"
+    ],
+    "status_indicators": []
+}

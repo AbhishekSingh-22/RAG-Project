@@ -1,0 +1,43 @@
+This image is a technical illustration presenting an **Overview** of the Panasonic HomeHawk system within a residential setting. The visual style is a clean, simplified diagram with a white background.
+
+## Layout and Structure:
+
+The image is organized into three main sections:
+1.  **Header Area:** Contains the title and section heading.
+2.  **Main Illustration Area:** Occupies the center and majority of the space, featuring a cross-section diagram of a two-story house filled with monitoring devices.
+3.  **Caption Area:** Located at the bottom, providing descriptive text.
+
+## Header Area:
+
+The top section features prominent black text separated by thick horizontal gray/black rule lines:
+
+*   **Title:** "**What is the HomeHawk?**" in large, bold, black sans-serif font.
+*   **Section Heading:** "**Overview**" in a slightly smaller, bold, black sans-serif font, underlined by a thick gray line segment positioned just below the main title lines.
+
+## Main Illustration Area:
+
+The central element is a stylized, cross-section diagram of a two-story, multi-room house structure.
+
+**House Interior:**
+The house is divided into multiple rooms indicated by interior walls and floor/ceiling colors (pale yellow/cream for walls, light blue, light green, and light brown for floors). A small portion of the exterior, showing green foliage and a low wooden fence, is visible on the left.
+
+**Monitoring Devices and Icons:**
+Several devices, each enclosed in a white circle with a thin blue border, are strategically placed throughout the interior and exterior. Each device icon is accompanied by three concentric, orange, curved lines, symbolizing wireless signal transmission.
+
+Devices visible include:
+
+1.  **Upstairs Left (Nursery/Play Area):** A tall, black, cylindrical security camera device is shown mounted high, seemingly monitoring a small blue silhouette of a child standing on a light blue floor area.
+2.  **Upstairs Right (Bedroom):** Another tall, black, rectangular security camera device is shown mounted high near a simple white bed with a light blue pillow.
+3.  **Exterior Right (Wall Mount):** A white, weatherproof-looking camera unit (possibly for outdoor use) is mounted on the exterior wall near the top right corner.
+4.  **Downstairs Center (Hub/Main Unit):** A tall, white, rectangular tower-like device is positioned on a white counter/desk. A female silhouette, holding a smartphone and looking at it, stands next to this unit, suggesting interaction or remote monitoring.
+5.  **Downstairs Center-Right (Floor Lamp Sensor):** A black object resembling a slender floor lamp is depicted, with the signal emanating from its base or stand.
+6.  **Downstairs Right (Window Sensor):** A small, horizontal, white rectangular device is shown near a window frame.
+7.  **Exterior Left (Outdoor Unit):** A slim, low-profile, horizontal white device is positioned near the exterior fence line, overlooking the yard.
+
+The arrangement clearly illustrates that the system components cover various areas inside and outside the home, connected wirelessly.
+
+## Caption Area:
+
+At the very bottom, there is a block of black text that serves as the caption explaining the purpose of the illustration:
+
+> **The Panasonic Home Monitoring Camera is a wireless network of devices that help you monitor your home. Its easy-to-use app allows you to stay in charge even when away from home.**

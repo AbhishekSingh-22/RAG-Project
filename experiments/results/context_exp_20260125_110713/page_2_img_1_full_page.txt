@@ -1,0 +1,30 @@
+This guide is a technical instruction manual designed to facilitate the digital integration of a smart device into a home network and application ecosystem.
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The primary purpose is to provide a standardized, step-by-step tutorial for **onboarding a new Matter-Certified smart air conditioner (Panasonic AC) into the controlling application (MirAIe)**. It ensures the user understands the Matter standard requirements (QR code or pairing code) and the two acceptable methods for establishing the initial connection between the physical device and the software platform.
+
+### 2. What ACTION should the user take?
+
+The user must follow a three-stage process to connect their new device:
+
+1.  **Initiation:** Click the "**+**" icon (Add Device) within the MirAIe application dashboard to begin the pairing process.
+2.  **Selection of Method:** Choose one of the two supported pairing methods:
+    *   **Method A (Scan QR Code):** Use the in-app camera function to center and capture the Matter QR code found on the AC unit or its packaging.
+    *   **Method B (Manual Input):** Locate the 11-digit or 21-digit pairing code on the device/packaging and manually enter it into the "Add Matter device using setup code" field, then click the **Connect** button.
+3.  **Completion:** Follow any subsequent prompts within the application to finalize the device connection and setup.
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the problem of **initial device connectivity and integration**. A user installing a new smart AC needs to link it to their smart home system so they can remotely monitor, control, and automate its functions. Without this pairing process, the physical device is useless in the context of the smart application. This guide resolves the confusion of *how* to connect a Matter-certified device to a specific manufacturer's app.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+The guide does not display explicit error codes (e.g., "Error 500"). However, it provides implicit troubleshooting guidance by outlining mandatory requirements and alternative solutions:
+
+*   **Pairing Code Requirement:** The text explicitly notes that the manual pairing code must be an **11- or 21-digit code**. If a user attempts to enter a code of the wrong length, the application will likely reject the entry, indicating a code error or invalid input.
+*   **Alternative Methods:** The inclusion of two methods (QR Scan and Manual Code) is the primary troubleshooting mechanism provided here.
+    *   **Troubleshooting Failure to Scan:** If the user is having trouble scanning the QR code (e.g., poor lighting, smudged code, or device too far away), they should immediately transition to **Method B (Manual Code Entry)** as the backup solution.
+    *   **Troubleshooting Connectivity Failure:** If the connection fails after entering the code and clicking "Connect," the user should verify they copied the 11- or 21-digit code correctly from the physical device or packaging before attempting to reconnect.
