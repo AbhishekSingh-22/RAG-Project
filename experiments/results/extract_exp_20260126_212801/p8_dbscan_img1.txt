@@ -1,0 +1,31 @@
+This diagram serves as a technical walkthrough for integrating a smart device ecosystem with a voice assistant platform.
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose of this guide is to provide the required sequence of steps for **enabling the Panasonic MirAIe Smart Home skill** within the Amazon Alexa application. This integration allows the user to establish a communication link between their Panasonic devices (specifically the Smart Air Conditioner) and the Amazon voice control ecosystem.
+
+### 2. What ACTION should the user take?
+
+The user must perform two primary actions:
+
+1.  **Search and Select:** Open the Amazon Alexa application, navigate to the skills section, and use the search function to locate the specific skill using the query `panasonic miraie`. Once located, the user must select the correct skill entry ("Panasonic MirAIe").
+2.  **Enable and Link Account:** Tap the **"ENABLE TO USE"** button. This action will initiate the crucial **Account linking required** process, where the user must provide their existing Panasonic MirAIe app username and password on the subsequent Panasonic Identity Server login page to authorize Alexa access to their smart devices.
+
+### 3. What PROBLEM does this help solve?
+
+This instructional guide solves the problem of **device non-recognition and lack of voice control** for the Panasonic Smart Air Conditioner.
+
+Specifically, it bridges the gap between the proprietary Panasonic Smart Home infrastructure and the universal Amazon Alexa platform, enabling the user to control device functions (e.g., changing temperature, turning the unit on/off, adjusting fan speed) using spoken commands rather than manually through the phone application.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+While there are no explicit numeric error codes (e.g., 404, 503) displayed, the screens provide critical status indicators necessary for successful troubleshooting:
+
+| Status Indicator / Feature | Meaning | User Troubleshooting Action |
+| :--- | :--- | :--- |
+| **"Account linking required"** | The connection between Alexa and the Panasonic server is incomplete; the skill is enabled but not authorized to see or control the user's devices. | **Critical Step Missed:** The user must successfully log in using their credentials for the Panasonic MirAIe account on the prompt that appears *after* tapping "ENABLE TO USE." If linking fails, the user must verify their Panasonic username and password are correct. |
+| **No "Panasonic MirAIe" in search results** (Implicit) | The Alexa App could not find the skill based on the search term, or the skill may not be available in the user’s geographic region. | **Verification:** Double-check the spelling (`panasonic miraie`). If the spelling is correct, confirm the user’s Amazon account region supports this specific skill. |
+| **Example Commands Listed** (e.g., "Alexa, turn on my AC.") | These confirm the successful function and syntax the user should employ once linking is complete. | **Post-Setup Confirmation:** If the skill is enabled but these commands don't work, it suggests that the *account linking* failed or the Smart AC device itself is not properly configured within the original Panasonic MirAIe app. |
+| **"ENABLE TO USE" Button is Present** (vs. "DISABLE SKILL") | This indicates the current status is that the skill is not yet active on the user's account. | **Next Step Confirmation:** If the user sees a button labeled "DISABLE SKILL," it means the skill is already enabled and the troubleshooting focus should shift to device setup or account linking integrity. |

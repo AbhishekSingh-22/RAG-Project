@@ -1,0 +1,38 @@
+This guide outlines the critical steps required for cross-platform integration between a smart home device manufacturer (Panasonic) and a voice assistant platform (Amazon Alexa).
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose of this guide is to provide the **mandatory configuration steps** necessary to activate the "Panasonic MirAle" skill within the Amazon Alexa ecosystem. This skill acts as a bridge, allowing the user to control their physical Panasonic Smart Air Conditioner (AC) and other compatible Panasonic devices using Alexa voice commands.
+
+### 2. What ACTION should the user take?
+
+The user must execute a two-part sequence of actions to enable voice control:
+
+**Action 1: Skill Location and Initiation (Step 1)**
+1. Open the Amazon Alexa mobile application.
+2. Navigate to the Skills section (or use the search bar).
+3. Search specifically for the skill named "**Panasonic MirAle**."
+4. Select the correct skill from the search results.
+
+**Action 2: Enabling and Account Linking (Step 2)**
+1. On the skill details page, press the large, prominent button labeled "**ENABLE TO USE**."
+2. The user will be redirected to an external authentication page (the **Panasonic Identity Server page**).
+3. The user must provide their existing **Panasonic MirAle app username and password** to securely link their Panasonic account data with the Amazon Alexa account.
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the problem of **inability to control smart hardware via voice commands.**
+
+The user's Panasonic Smart AC is not natively visible to Amazon Alexa until the connection (the skill) is established. By following these steps, the user enables seamless **hands-free, voice-activated control** of device functions (e.g., turning the AC on/off, setting temperature, changing fan speed).
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+No numerical error codes are present, but the visual indicators and text provide key troubleshooting context:
+
+| Status Indicator/Text | Troubleshooting Implications for the User |
+| :--- | :--- |
+| **"Account linking required"** | This is the most crucial indicator. If the user enables the skill but cannot control the AC, the linking process failed. The user must retry Step 2, ensuring they input the *correct* username and password associated with their Panasonic MirAle account when redirected to the Identity Server page. Incorrect credentials prevent device discovery. |
+| **"Start By Saying..." Examples** | These examples confirm the *expected function* of the skill. If voice commands like *"Alexa, turn on my AC"* do not work after setup, the user should assume either the skill failed to link, or the specific AC device was not successfully discovered by Alexa. |
+| **Confirmation Text (Bottom)** | *“Your Panasonic Smart Air conditioner will now appear under devices in Amazon Alexa App.”* This is the **success indicator**. If the AC does not appear in the Alexa device list after completing all steps, the user must assume the entire integration process failed and should restart the guide or contact Panasonic/Amazon support. |

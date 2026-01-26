@@ -1,0 +1,32 @@
+This image depicts a critical stage in the setup process for connecting a Panasonic Air Conditioner (AC) to a user's home Wi-Fi network using a mobile application.
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose of this guide is to establish a connection between the user’s mobile device, the Panasonic AC unit, and the user’s home Wi-Fi network to enable smart functions (remote control, monitoring, etc.). It serves as a step-by-step instructional wizard for pairing the hardware and providing the necessary network credentials.
+
+### 2. What ACTION should the user take?
+
+The process requires a combination of physical action, mobile operating system adjustment, and app input:
+
+| Step | Action | Context |
+| :--- | :--- | :--- |
+| **Physical (Setup Mode)** | Press and hold the **SMART** button (with the Wi-Fi icon) on the AC remote for **5 seconds**. | This forces the AC into network setup/pairing mode. |
+| **App Confirmation** | Click the **Continue** button in the mobile app once the AC is in setup mode. | Confirms the physical step is complete. |
+| **Network (OS Specific)** | **Android:** Choose the AC unit from the device list in the app. **iOS:** Go to the device’s main Wi-Fi settings and manually connect to the temporary access point broadcast by the AC (named with the prefix **“PANASONIC”**). | This connects the mobile device directly to the AC for configuration data transfer. |
+| **App Input (Credentials)** | Enter the home Wi-Fi network's **Wi-Fi Name (SSID)** and **Password**. | This provides the AC with the information it needs to connect permanently to the home network/internet. |
+| **Final Step** | Review the troubleshooting checklist (especially the 2.4GHz requirement) and click **Next**. | Initiates the final pairing sequence. |
+
+### 3. What PROBLEM does this help solve?
+
+This setup wizard solves the problem of **initial network configuration and provisioning** for the smart AC unit. Without these steps, the AC cannot connect to the internet or the cloud server, meaning the user cannot utilize the remote features offered by the mobile app.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+| Indicator/Status Message | Troubleshooting Context (What it means & what to do) |
+| :--- | :--- |
+| **Blinking Wi-Fi icon and “SE” text on AC display** | **SUCCESS INDICATOR:** This confirms that the AC unit has successfully entered network setup mode. If these symbols do not appear after holding the SMART button for 5 seconds, the user must retry the physical step, ensuring the button is held for the full duration and the remote has fresh batteries. |
+| **"Your device is on 2.4GHz Wi-Fi network since it does not support 5GHz Wi-Fi band."** | **CRITICAL LIMITATION/COMMON ERROR SOURCE:** This is the most crucial troubleshooting warning. If the setup fails, the user must confirm that their home Wi-Fi router is broadcasting a **2.4GHz signal**. If the router is only broadcasting a 5GHz signal (or the user is trying to connect the AC to the 5GHz network band), the setup will fail immediately, regardless of correct password input. The user may need to check their router settings to enable or confirm the 2.4GHz band. |
+| **"Wi-Fi credentials are correct."** | **USER INPUT VALIDATION:** If the device fails to connect, the user should first assume they mistyped the Wi-Fi password (case sensitivity is often an issue) and attempt re-entry. |
+| **"Wi-Fi Router Settings are correct."** | **ADVANCED TROUBLESHOOTING:** This often links to external documentation. If 2.4GHz is confirmed and the password is correct, the next issue might involve security protocols (e.g., WPA2 vs WEP), MAC filtering, or router firewall settings that are blocking the new device. |

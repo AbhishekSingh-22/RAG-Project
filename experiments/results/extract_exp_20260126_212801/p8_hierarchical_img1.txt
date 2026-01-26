@@ -1,0 +1,31 @@
+This guide provides technical instructions for integrating a Panasonic Smart Air Conditioner with the Amazon Alexa voice control ecosystem via the necessary intermediary skill, Panasonic MirAIe.
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose of this guide is to provide a step-by-step tutorial for the user to establish **account linking** between their Amazon Alexa account and their Panasonic MirAIe account. This integration is essential for enabling voice commands (via Alexa) to control the functions (like setting temperature) of their Panasonic Smart Air Conditioner.
+
+### 2. What ACTION should the user take?
+
+The user must perform the following sequenced actions:
+
+1.  **Search:** Open the Amazon Alexa application and use the search function to locate the "Panasonic MirAIe" skill.
+2.  **Select & Initiate:** Click on the "Panasonic MirAIe" skill result, which will take them to the skill details page (Screen 2).
+3.  **Enable:** Tap the large blue button labeled **"ENABLE TO USE."**
+4.  **Authenticate (Account Linking):** After clicking "ENABLE TO USE," the user will be redirected to the "Panasonic Identity Server page" where they must input the **username and password** associated with their separate Panasonic MirAIe application account.
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the problem of **lack of voice control** for a smart appliance. Specifically, it resolves the procedural barrier required to bridge two distinct smart home ecosystems (Amazon Alexa and Panasonic's proprietary IoT platform, MirAIe), thereby enabling hands-free, remote operation of the air conditioner.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+While there are no numeric error codes displayed, the screens contain crucial status indicators for user troubleshooting:
+
+| Indicator/Status Text | Location | User Troubleshooting/Context |
+| :--- | :--- | :--- |
+| **"Search Results" showing "Panasonic MirAIe"** | Screen 1 | **Status:** Success confirmation. This confirms the user is in the correct section of the Alexa app (Skills store) and the skill is available for their region/account. |
+| **Example Command ("Alexa, set my AC temperature...")** | Screen 1 | **Context:** Confirms the primary function of the skill. If the user was trying to control a Panasonic TV, they would know immediately they selected the wrong skill. |
+| **"ENABLE TO USE" button** | Screen 2 | **Status:** Ready state. The skill is discovered but not yet active. The user must press this button to move to the authorization phase. |
+| **"Account linking required"** | Screen 2 (Below the enable button) | **Prerequisite Warning:** This is a crucial functional requirement. It informs the user that pressing "ENABLE TO USE" will immediately lead to a sign-in screen. The user must have their Panasonic MirAIe app credentials readily available to complete the setup. If they do not have these credentials or haven't set up the Panasonic app yet, they must complete those prerequisites before proceeding. |

@@ -1,0 +1,27 @@
+This image serves as a step-by-step instructional guide for linking a new smart appliance to the MirAIe mobile application.
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose of this guide is to initiate the **onboarding and pairing process** for a specific smart appliance (a Panasonic Non-Matter Air Conditioner) within the MirAIe Application. It guides the user from the application's main dashboard to the device selection screen, which is the prerequisite step before the actual network connection configuration begins.
+
+### 2. What ACTION should the user take?
+
+The user should take the following sequential actions:
+
+1.  **Initiate Addition:** In the main app dashboard (Screen 1), locate and tap the **“+” icon** (Add device).
+2.  **Verify Prerequisites:** Before proceeding to the next screen, the user must ensure that **Wi-Fi and Location Services are enabled** on their smartphone, as indicated by the informational banner.
+3.  **Select Device Type:** On the "Select device" screen (Screen 2), the user must navigate the list of appliances and **select "Air Conditioner"** to proceed with the AC pairing flow.
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the fundamental setup problem of **integrating a new physical smart home appliance** into the user's digital ecosystem. Specifically, it resolves the confusion regarding *where* and *how* to start the process of enabling smart control (remote access, scheduling, mode management) of the Air Conditioner through the MirAIe application.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+The guide does not display formal error codes, but it includes a critical **prerequisite status indicator/warning** that directly impacts troubleshooting:
+
+| Indicator/Status | Context/Location | Troubleshooting Significance |
+| :--- | :--- | :--- |
+| **"Please make sure that Wi-Fi and Location is enabled in your smart phone."** | Informational banner on the "Select device" screen. | This is the *most common point of failure* for smart device setup. If the user attempts to proceed with pairing after selecting the device type, but the connection fails, the first troubleshooting step is always to verify these settings. **Action:** The user must confirm that the smartphone is connected to the required local Wi-Fi network (often 2.4 GHz) and that the phone’s GPS/Location services are toggled **ON**, as these are typically needed for Bluetooth or local network discovery during initial pairing. |

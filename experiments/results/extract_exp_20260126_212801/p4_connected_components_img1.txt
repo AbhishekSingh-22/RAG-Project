@@ -1,0 +1,27 @@
+This image provides a two-step instructional guide for the initial stage of connecting a smart appliance (a Panasonic Non-Matter Air Conditioner) to a specific IoT application (MirAIe).
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose of this guide is to initiate the device onboarding and pairing process. It shows the user exactly how to navigate the MirAIe application dashboard to begin adding a new smart home appliance, specifically a Panasonic Air Conditioner, so it can be controlled remotely.
+
+### 2. What ACTION should the user take?
+
+The user must perform two primary actions followed by a prerequisite check:
+
+1.  **Initiate Pairing:** Click or tap the large **'+' (plus)** icon located on the main application dashboard (as shown in Step 1).
+2.  **Select Device Type:** On the subsequent "Select device" screen, scroll if necessary and select **"Air Conditioner"** under the "Appliances" category (as shown in Step 2).
+3.  **Prerequisite Check:** Before selecting the device, the user should ensure that **Wi-Fi** and **Location (GPS)** services are enabled on their smartphone, as advised by the on-screen prompt.
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the foundational problem of **initial device registration and setup**. A user who has just installed a new smart Air Conditioner and wants to control it via the MirAIe app uses this guide to bridge the gap between having a connected physical device and having that device appear and function within the mobile application.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+There are no explicit error codes displayed, but there is a crucial **status indicator/warning** presented on the "Select device" screen that aids in troubleshooting:
+
+| Indicator/Message | Location | Troubleshooting Context |
+| :--- | :--- | :--- |
+| **"Please make sure that Wi-Fi and Location is enabled in your smart phone."** | Top of the "Select device" screen (Step 2). | This acts as a preventative troubleshooting step. If the user cannot find their Air Conditioner later in the setup process, or if the app fails to recognize a nearby device, the first step is to confirm that both the smartphone's Wi-Fi is connected to the appropriate network (usually 2.4 GHz) and that **Location services are actively turned on**. Location services are often required by IoT apps to scan for and connect to setup-ready devices via localized signals (like Bluetooth or temporary setup Wi-Fi). |

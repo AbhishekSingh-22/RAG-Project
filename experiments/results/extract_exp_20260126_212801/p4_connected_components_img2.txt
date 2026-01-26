@@ -1,0 +1,29 @@
+This image provides a workflow for users attempting to integrate a new smart appliance into a centralized control application.
+
+## Analysis from a Technical Support Perspective
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose is to provide a clear, initial step-by-step instructional guide (an onboarding workflow) for users adding a specific type of device—a Panasonic Non-Matter Air Conditioner—to the **MirAle Application**. This guide initiates the process of device discovery and pairing within the smart home ecosystem.
+
+### 2. What ACTION should the user take?
+
+The user must take the following sequential actions:
+
+1.  **Initiate Device Addition:** Locate and click the **"+"** (plus) icon on the bottom right of the MirAle application dashboard (Step 1).
+2.  **Select Appliance Type:** On the subsequent "Select device" screen, the user must choose the specific appliance category, which is **"Air Conditioner"** (Step 2).
+3.  **Prerequisite Check:** Before proceeding with the connection, the user must ensure that **Wi-Fi and Location services are enabled** on their smartphone, as instructed by the informational banner in Step 2.
+
+### 3. What PROBLEM does this help solve?
+
+This workflow solves the primary user problem of **how to initiate connectivity** for a new smart appliance. The user possesses a physical device (the AC) and needs to register it electronically within the smart home control application (MirAle) so they can monitor and operate it remotely. This guide solves the uncertainty of navigation by pointing the user directly to the necessary buttons and menus.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+There are no formal error codes displayed in these steps. However, there is a critical status indicator presented as a prerequisite warning:
+
+**Indicator/Warning:** "Please make sure that Wi-Fi and Location is enabled in your smart phone."
+
+**Troubleshooting Context:** This informational prompt serves as a critical pre-setup troubleshooting step. If the user completes Steps 1 and 2 but the application fails to discover or connect to the new Air Conditioner in subsequent steps, the first action for technical troubleshooting should be:
+
+*   **Check Phone Settings:** The user must confirm that their smartphone has both **Wi-Fi** (required for app communication and likely network transfer of configuration data) and **Location services** (frequently required by smart device apps for local Bluetooth or network discovery during the initial pairing process) active. If either is disabled, the pairing process will fail, and enabling them is the required fix.

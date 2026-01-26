@@ -1,0 +1,32 @@
+This image serves as a guided technical walkthrough for device setup.
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The primary purpose of this multi-step guide is to initiate the **onboarding process** (adding and connecting) of a new Panasonic Non-Matter Air Conditioner to the user's smart home management system via the MirAIe mobile application. It details the precise navigation required to start the device pairing sequence.
+
+### 2. What ACTION should the user take?
+
+The user must perform three key actions, two in the application and one critical prerequisite action:
+
+1.  **On the Dashboard (Step 1):** Click or tap the **plus (+) icon** located in the bottom right corner of the application dashboard to start the "Add a device" function.
+2.  **Prerequisite Check (Step 2 Information):** Before proceeding, the user must ensure that **Wi-Fi connectivity** and **Location services (GPS)** are actively enabled on the smart phone being used for the setup.
+3.  **Select Device Type (Step 2):** From the "Select device" menu, the user must choose the **"Air Conditioner"** option under the "Appliances" category.
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the problem of **initial device connectivity confusion.** Specifically, it provides the required navigation path for a user who has just installed a new smart appliance and needs to know where in the mobile application to begin the essential configuration steps necessary to link the physical Air Conditioner unit to their digital account and home network.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+No explicit error codes are shown, but a crucial status indicator/troubleshooting note is present in Step 2:
+
+**Indicator/Status Note:** "Please make sure that Wi-Fi and Location is enabled in your smart phone."
+
+**Troubleshooting Context:** This note is a mandatory prerequisite for successful device discovery.
+
+*   If the user proceeds without enabling **Wi-Fi**, the phone cannot communicate with the AC unit or the home network required for setup. The app will likely fail to scan for devices or configure the network settings.
+*   If the user proceeds without enabling **Location** (often required by modern operating systems like Android/iOS for apps to scan local Bluetooth/Wi-Fi networks for nearby devices), the application will fail to detect the AC unit during the pairing phase.
+
+The user must verify these system settings are active on their phone if the subsequent steps of the device pairing process fail immediately after selecting "Air Conditioner."
