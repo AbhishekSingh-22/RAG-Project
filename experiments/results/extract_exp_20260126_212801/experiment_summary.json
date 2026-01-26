@@ -1,0 +1,266 @@
+[
+  {
+    "image_name": "p4_dbscan_img1",
+    "strategies": {
+      "dbscan": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p4_dbscan_img1.txt",
+        "output_preview": "This image serves as a guided technical walkthroug"
+      }
+    }
+  },
+  {
+    "image_name": "p4_dbscan_img2",
+    "strategies": {
+      "dbscan": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p4_dbscan_img2.txt",
+        "output_preview": "This image serves as a technical procedural guide "
+      }
+    }
+  },
+  {
+    "image_name": "p4_hierarchical_img1",
+    "strategies": {
+      "hierarchical": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p4_hierarchical_img1.txt",
+        "output_preview": "This document provides technical instructions for "
+      }
+    }
+  },
+  {
+    "image_name": "p4_hierarchical_img2",
+    "strategies": {
+      "hierarchical": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p4_hierarchical_img2.txt",
+        "output_preview": "This image displays elements of a smart device con"
+      }
+    }
+  },
+  {
+    "image_name": "p4_hierarchical_img3",
+    "strategies": {
+      "hierarchical": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p4_hierarchical_img3.txt",
+        "output_preview": "This image represents the core dashboard and devic"
+      }
+    }
+  },
+  {
+    "image_name": "p4_hierarchical_img5",
+    "strategies": {
+      "hierarchical": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p4_hierarchical_img5.txt",
+        "output_preview": "This image serves as a technical walkthrough for d"
+      }
+    }
+  },
+  {
+    "image_name": "p4_connected_components_img1",
+    "strategies": {
+      "connected_components": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p4_connected_components_img1.txt",
+        "output_preview": "This image provides a two-step instructional guide"
+      }
+    }
+  },
+  {
+    "image_name": "p4_connected_components_img2",
+    "strategies": {
+      "connected_components": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p4_connected_components_img2.txt",
+        "output_preview": "This image provides a workflow for users attemptin"
+      }
+    }
+  },
+  {
+    "image_name": "p4_iou_img5",
+    "strategies": {
+      "iou": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p4_iou_img5.txt",
+        "output_preview": "This image serves as a step-by-step instructional "
+      }
+    }
+  },
+  {
+    "image_name": "p5_dbscan_img1",
+    "strategies": {
+      "dbscan": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p5_dbscan_img1.txt",
+        "output_preview": "This image depicts a critical stage in the setup p"
+      }
+    }
+  },
+  {
+    "image_name": "p5_dbscan_img2",
+    "strategies": {
+      "dbscan": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p5_dbscan_img2.txt",
+        "output_preview": "This image depicts a critical stage in the setup p"
+      }
+    }
+  },
+  {
+    "image_name": "p5_dbscan_img5",
+    "strategies": {
+      "dbscan": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p5_dbscan_img5.txt",
+        "output_preview": "This analysis interprets the functionality of the "
+      }
+    }
+  },
+  {
+    "image_name": "p5_hierarchical_img1",
+    "strategies": {
+      "hierarchical": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p5_hierarchical_img1.txt",
+        "output_preview": "This analysis interprets the image as two related "
+      }
+    }
+  },
+  {
+    "image_name": "p5_hierarchical_img2",
+    "strategies": {
+      "hierarchical": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p5_hierarchical_img2.txt",
+        "output_preview": "This analysis interprets the provided installation"
+      }
+    }
+  },
+  {
+    "image_name": "p5_connected_components_img1",
+    "strategies": {
+      "connected_components": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p5_connected_components_img1.txt",
+        "output_preview": "This analysis interprets the provided images as cr"
+      }
+    }
+  },
+  {
+    "image_name": "p5_connected_components_img3",
+    "strategies": {
+      "connected_components": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p5_connected_components_img3.txt",
+        "output_preview": "This image depicts two stages within a smart devic"
+      }
+    }
+  },
+  {
+    "image_name": "p5_iou_img1",
+    "strategies": {
+      "iou": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p5_iou_img1.txt",
+        "output_preview": "This guide outlines the critical steps for connect"
+      }
+    }
+  },
+  {
+    "image_name": "p5_iou_img4",
+    "strategies": {
+      "iou": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p5_iou_img4.txt",
+        "output_preview": "This image displays two common states within a sma"
+      }
+    }
+  },
+  {
+    "image_name": "p8_dbscan_img1",
+    "strategies": {
+      "dbscan": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p8_dbscan_img1.txt",
+        "output_preview": "This diagram serves as a technical walkthrough for"
+      }
+    }
+  },
+  {
+    "image_name": "p8_dbscan_img3",
+    "strategies": {
+      "dbscan": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p8_dbscan_img3.txt",
+        "output_preview": "This guide outlines the critical steps required fo"
+      }
+    }
+  },
+  {
+    "image_name": "p8_hierarchical_img1",
+    "strategies": {
+      "hierarchical": {
+        "status": "success",
+        "output_file": "experiments\\results\\extract_exp_20260126_212801\\p8_hierarchical_img1.txt",
+        "output_preview": "This guide provides technical instructions for int"
+      }
+    }
+  },
+  {
+    "image_name": "p8_hierarchical_img2",
+    "strategies": {
+      "hierarchical": {
+        "status": "failed",
+        "error": "'output'"
+      }
+    }
+  },
+  {
+    "image_name": "p8_hierarchical_img3",
+    "strategies": {
+      "hierarchical": {
+        "status": "failed",
+        "error": "'output'"
+      }
+    }
+  },
+  {
+    "image_name": "p8_hierarchical_img4",
+    "strategies": {
+      "hierarchical": {
+        "status": "failed",
+        "error": "'output'"
+      }
+    }
+  },
+  {
+    "image_name": "p8_connected_components_img1",
+    "strategies": {
+      "connected_components": {
+        "status": "failed",
+        "error": "'output'"
+      }
+    }
+  },
+  {
+    "image_name": "p8_connected_components_img2",
+    "strategies": {
+      "connected_components": {
+        "status": "failed",
+        "error": "'output'"
+      }
+    }
+  },
+  {
+    "image_name": "p8_iou_img33",
+    "strategies": {
+      "iou": {
+        "status": "failed",
+        "error": "'output'"
+      }
+    }
+  }
+]

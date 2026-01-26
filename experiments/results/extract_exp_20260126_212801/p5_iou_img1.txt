@@ -1,0 +1,40 @@
+This guide outlines the critical steps for connecting a smart air conditioning (AC) unit to a home Wi-Fi network using a mobile application.
+
+---
+
+## Technical Support Analysis
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The primary purpose of these screens is to guide the user through the **Wi-Fi provisioning and pairing process** for a new smart Air Conditioner. This involves two steps:
+1.  Putting the physical AC unit into a connectable Setup Mode.
+2.  Gathering the user's home Wi-Fi credentials (SSID and Password) so the mobile app can transfer them to the AC unit, allowing it to connect to the internet.
+
+### 2. What ACTION should the user take?
+
+The user must complete a physical action and subsequent digital inputs:
+
+| Screen | Required Action |
+| :--- | :--- |
+| **Setup Device (Screen 3)** | **Physical Action:** Press and hold the **"SMART" button** on the AC remote control for **5 seconds** to initiate setup mode. |
+| | **App Action:** Once the AC confirms setup mode (blinking Wi-Fi icon), tap **"Continue"**. |
+| **Select Wi-Fi Network (Screen 5)** | **Input:** Select the correct Wi-Fi network name (**SSID**) from the dropdown menu. |
+| | **Input:** Enter the corresponding Wi-Fi **Password**. |
+| | **App Action:** Tap **"Next"** to finalize the setup process. |
+
+### 3. What PROBLEM does this help solve?
+
+This process solves the core problem of **Network Connectivity for a new IoT device**. Specifically, it solves:
+
+*   **Credential Transfer:** It provides the mechanism for securely passing the necessary Wi-Fi username and password from the user's smartphone to the AC unit, which has no independent input interface (like a keyboard).
+*   **Troubleshooting Prevention:** The informational box on Screen 5 pre-emptively addresses common connectivity issues, minimizing the chance of setup failure by reminding the user about 2.4GHz compatibility.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+| Indicator/Status | Meaning | Troubleshooting Action (if necessary) |
+| :--- | :--- | :--- |
+| **Blinking Wi-Fi Indicator on AC / "SE" text on AC display** | **Status Success:** The AC unit is correctly in Setup Mode and is ready to receive network credentials. | If this status does not appear after pressing the SMART button, repeat the button press and hold procedure. |
+| **"Device found!"** | **Status Success:** The mobile application has successfully detected the AC unit and is ready to proceed with credential input. | If the app stalls before this message appears, check step 4 instructions regarding Android (choosing AC) vs. iOS (connecting to a temporary "PANASONIC" network). |
+| **Check: Device on 2.4GHz Wi-Fi network** | **Critical Limitation:** The AC unit only supports the older, slower 2.4GHz Wi-Fi band and will not connect to 5GHz bands. | If the connection fails, the user must access their router settings and ensure the network they selected is operating in the **2.4GHz** band, or temporarily disable 5GHz during setup. |
+| **Check: Wi-Fi credentials are correct** | **Pre-emptive Warning:** Connection failures are often due to typos in the password. | If setup fails, re-enter the password carefully (using the eye icon to view characters if necessary). |
+| **Check: Wi-Fi Router Settings** | **Advanced Warning:** Issues like MAC address filtering or strict firewalls can block the device. | If credentials are confirmed correct but the device won't connect, the user must check their router's security settings for restrictions. |

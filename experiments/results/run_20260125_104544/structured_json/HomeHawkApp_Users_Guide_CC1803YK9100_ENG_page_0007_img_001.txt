@@ -1,0 +1,31 @@
+{
+    "type": "other",
+    "title": "The maximum number of camera devices for each type are listed below.",
+    "key_text": [
+        "Note:",
+        "Availability and release dates of devices and bundles may vary by region.",
+        "Device appearance may vary by region.",
+        "Devices for use with access points (KX-HNB700, KX-HNB705)",
+        "Access point (KX-HNB700, KX-HNB705)",
+        "Overview: Access point (KX-HNB700, KX-HNB705)",
+        "Setup: Front door camera and outdoor camera setup (overview)",
+        "Features: Access point features (overview)",
+        "Front door camera (KX-HNC700, KX-HNC705)",
+        "Overview: Front door camera (KX-HNC700, KX-HNC705)",
+        "Registration: Registering front door cameras and outdoor cameras",
+        "Features: Front door camera and outdoor camera features (overview)",
+        "Outdoor camera (KX-HNC710, KX-HNC715)",
+        "Overview: Outdoor camera (KX-HNC710, KX-HNC715)",
+        "Registration: Registering front door cameras and outdoor cameras",
+        "Features: Front door camera and outdoor camera features (overview)",
+        "Maximum number of devices that can be registered",
+        "The maximum number of devices that can be registered to each type of device are listed below.",
+        "Number of devices that can be registered to an access point:",
+        "Front door cameras and outdoor cameras*1: 16",
+        "Mobile devices: 8",
+        "Number of devices that can be registered to a mobile device:",
+        "Access points: 4"
+    ],
+    "actionable_elements": [],
+    "status_indicators": []
+}

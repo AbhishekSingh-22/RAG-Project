@@ -1,0 +1,62 @@
+[
+  {
+    "image_name": "page_2_img_1",
+    "strategies": {
+      "tight": {
+        "status": "success",
+        "output_file": "experiments\\results\\context_exp_20260125_110713\\page_2_img_1_tight.txt",
+        "output_preview": "This image displays a critical step in the setup p"
+      },
+      "context": {
+        "status": "success",
+        "output_file": "experiments\\results\\context_exp_20260125_110713\\page_2_img_1_context.txt",
+        "output_preview": "As a Technical Support Expert, here is an interpre"
+      },
+      "full_page": {
+        "status": "success",
+        "output_file": "experiments\\results\\context_exp_20260125_110713\\page_2_img_1_full_page.txt",
+        "output_preview": "This guide is a technical instruction manual desig"
+      }
+    }
+  },
+  {
+    "image_name": "page_4_img_2",
+    "strategies": {
+      "tight": {
+        "status": "success",
+        "output_file": "experiments\\results\\context_exp_20260125_110713\\page_4_img_2_tight.txt",
+        "output_preview": "This screen is a functional part of a mobile appli"
+      },
+      "context": {
+        "status": "success",
+        "output_file": "experiments\\results\\context_exp_20260125_110713\\page_4_img_2_context.txt",
+        "output_preview": "This diagram functions as a specific instructional"
+      },
+      "full_page": {
+        "status": "success",
+        "output_file": "experiments\\results\\context_exp_20260125_110713\\page_4_img_2_full_page.txt",
+        "output_preview": "This document serves as a technical instruction ma"
+      }
+    }
+  },
+  {
+    "image_name": "page_2_img_3",
+    "strategies": {
+      "tight": {
+        "status": "failed",
+        "output_file": null,
+        "output_preview": ""
+      },
+      "context": {
+        "status": "success",
+        "output_file": "experiments\\results\\context_exp_20260125_110713\\page_2_img_3_context.txt",
+        "output_preview": "This document serves as a technical interpretation"
+      },
+      "full_page": {
+        "status": "success",
+        "output_file": "experiments\\results\\context_exp_20260125_110713\\page_2_img_3_full_page.txt",
+        "output_preview": "This document serves as a technical support guide "
+      }
+    }
+  }
+]

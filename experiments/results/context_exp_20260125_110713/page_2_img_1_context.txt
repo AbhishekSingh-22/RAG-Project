@@ -1,0 +1,31 @@
+As a Technical Support Expert, here is an interpretation of the image based on its functional context and actionable steps:
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose of this guide is to provide a mandatory, step-by-step onboarding process for connecting a newly installed **Panasonic Matter Certified Air Conditioner** to the **MirAle Application**. It facilitates the initial pairing (provisioning) required to enable smart control and remote management of the AC unit via the mobile app.
+
+### 2. What ACTION should the user take?
+
+The user must perform the following actions sequentially:
+
+1.  **Locate Pairing Information:** The user must first locate the **QR Code Sticker** on the physical AC unit itself, or on the product packaging. (They must also note that the **11- or 21-digit Manual Pairing Code** is available as a fallback.)
+2.  **Initiate Pairing in App (Step 1):** Open the MirAle Application, navigate to the dashboard (home screen), and click the **"+"** icon to start the "Add Device" workflow.
+3.  **Scan the Code (Step 2a):** Select the "Scan QR code" option. The user must then point their mobile device camera at the physical QR code sticker, ensuring the code is centered within the on-screen guidelines for successful scanning.
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the problem of **device connectivity and control setup (provisioning)**.
+
+The user’s problem is that they have a new smart appliance (the AC unit) that they cannot control remotely. This setup guide provides the official, approved method—using the Matter pairing standard via QR code—to register the device with the user's account in the MirAle app, thus solving the inability to manage the AC unit via their smartphone.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+The image does not show explicit error codes, but it provides key status information and implicit troubleshooting instructions:
+
+| Indicator/Status | Troubleshooting Context |
+| :--- | :--- |
+| **"Scan QR code" Screen** | This status indicates the phone camera is active and waiting for a readable code. If the scan fails, the user should ensure adequate lighting and confirm the code is centered and undamaged. |
+| **Location of Manual Pairing Code (Preamble Text)** | If the QR code scan fails, the pre-instruction text serves as a critical troubleshooting fallback. The user is informed that the **11- or 21-digit Manual Pairing Code** is available as an alternative method. The user should be prepared to manually input this long code if the camera scanning process is unsuccessful or the QR code is obscured. |
+| **Location of QR Code (Preamble Text)** | If the user cannot find the code, the guide clarifies that the QR Code Sticker is found **on the AC Unit** (hardware) or possibly on the **packaging**. This guides the user to the correct physical location for troubleshooting the missing setup data. |

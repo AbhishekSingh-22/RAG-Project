@@ -1,0 +1,27 @@
+This image serves as a technical procedural guide for adding a new smart appliance to the MirAIe application.
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose of this two-step diagram is to provide a clear, instructional path for **onboarding/pairing a new Panasonic Non-Matter Air Conditioner** to the user’s centralized smart home control application (MirAIe). It guides the user from the app dashboard to the specific device selection menu.
+
+### 2. What ACTION should the user take?
+
+The user must take the following sequential actions:
+
+1.  **Locate the Add Function:** Click the **'+' (Add)** button (visible near the bottom right of the main app dashboard in Step 1).
+2.  **Verify Prerequisites:** Before proceeding to device selection, the user must ensure that **Wi-Fi and Location services** are enabled on their smartphone, as indicated by the informational note in Step 2.
+3.  **Select Device Type:** On the "Select device" screen, the user must navigate the list and tap the **"Air Conditioner"** option under the Appliances category.
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the problem of **initial device connectivity and registration.** Specifically, it addresses the steps required for a user to successfully link their physical Panasonic Air Conditioner to the digital control platform (the MirAIe application), enabling remote control, monitoring, and automation features.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+There are **no explicit error codes** displayed in this guide. However, there is one critical status indicator/informational warning that is essential for troubleshooting:
+
+| Indicator/Status | Location | Troubleshooting Context |
+| :--- | :--- | :--- |
+| **Informational Warning (i):** "Please make sure that Wi-Fi and Location is enabled in your smart phone." | Top of the "Select device" screen (Step 2). | This is a crucial prerequisite. If the user cannot find the Air Conditioner during the subsequent pairing steps, or if the process fails to start, the first troubleshooting step is to **verify that both the phone’s Wi-Fi connection and its GPS/Location services are actively turned on.** The pairing process often relies on location services to identify local networks and devices. |

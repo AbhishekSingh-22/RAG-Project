@@ -1,0 +1,40 @@
+This image displays two common states within a smart home or Internet of Things (IoT) application, likely for setting up or managing connected Panasonic Air Conditioning (AC) units.
+
+As a Technical Support Expert, here is the interpretation focusing on functionality and troubleshooting:
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The overall purpose is device discovery and connectivity management for Panasonic AC units.
+
+*   **Left Panel (Discovery Screen):** To display a list of smart AC units detected by the application, confirm their Wi-Fi status, and allow the user to refresh the search.
+*   **Right Panel (Status Screen):** To indicate that an active background process (likely connecting, updating, or syncing data with the remote server/cloud service) is currently taking place.
+
+### 2. What ACTION should the user take?
+
+**Based on the Left Panel:**
+
+*   **Select a Device:** The user should tap on one of the listed devices (e.g., "Panasonic AC (PANASONIC_703F42)") to initiate configuration, pairing, or management controls.
+*   **Refresh Scan:** If the user expects to see more AC units or if a listed unit is missing, they should tap **"Scan again"** to retry the device discovery process.
+
+**Based on the Right Panel:**
+
+*   **Wait:** The user should take no action and wait for the spinning animation to resolve. This screen indicates an automated process is running.
+
+### 3. What PROBLEM does this help solve?
+
+This interface helps solve crucial connection and management problems:
+
+*   **Confirmation of Device Readiness:** It confirms that the physical AC units are powered on, their smart modules are active, and they are visible to the control application.
+*   **Facilitating Pairing:** It provides the mechanism for selecting a discovered device to begin the pairing process (e.g., entering Wi-Fi credentials or confirming registration).
+*   **Diagnosing Connectivity (Cloud):** The right panel helps solve the problem of uncertainty during asynchronous operations by visually confirming that the application is actively attempting to establish communication with the necessary Panasonic cloud infrastructure.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+| Indicator / Status | Location | Meaning (Good Status) | Troubleshooting Steps (If it fails or is missing) |
+| :--- | :--- | :--- | :--- |
+| **AC Icon with Wi-Fi Symbol** | Left Panel | The physical device (AC unit) is successfully detected and its onboard Wi-Fi adapter is active and visible to the app/network. | **If expected devices are missing:** 1. Ensure the AC unit is powered on. 2. Verify the AC unit is in pairing mode (if setup is new). 3. Tap **"Scan again"**. 4. Check Wi-Fi signal strength near the AC unit. |
+| **"Scan again" Button** | Left Panel | An actionable step to force a refresh of the device list. | If tapping this repeatedly does not find a device, the issue is likely with the device's physical status or network isolation, not the app's discovery feature. |
+| **Spinning Arcs around Cloud Icon** | Right Panel | The application is busy communicating with or fetching data from the remote server/cloud service. This is a *pending* status. | **If the spinning lasts longer than 30-60 seconds (Timeout):** 1. Check the local Internet connection (Wi-Fi router health). 2. Restart the mobile application. 3. Check for external service outages (e.g., search for "Panasonic smart home status"). |
+| **Cloud Icon (Static)** | Right Panel | Represents the connection endpoint—the remote server or internet service required to control the AC unit remotely. | **If this screen resolved to an error (not pictured):** If the cloud icon displayed an "X" or exclamation mark, it signifies a failure to connect to the Internet/Cloud service. The user must troubleshoot their home internet connection or router settings. |

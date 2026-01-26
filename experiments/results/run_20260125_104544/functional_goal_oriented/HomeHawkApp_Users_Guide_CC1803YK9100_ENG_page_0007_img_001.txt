@@ -1,0 +1,45 @@
+Here is the technical support analysis of the provided screen/diagram from a user's perspective:
+
+---
+
+## Technical Support Analysis
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The primary purpose of this screen is to serve as a **compatibility and configuration reference guide** for setting up a wireless security system that involves **Access Points (KX-HNB700, KX-HNB705)** and various **Camera Devices (Front Door and Outdoor)**.
+
+It details:
+*   **Required Architecture:** It explicitly states that front door and outdoor cameras **must be connected to an access point** to function.
+*   **Device Identification:** It lists the specific model numbers for the access points and the associated cameras.
+*   **System Capacity Limits:** It specifies the **maximum number of devices** that can be registered to the system (e.g., 16 cameras per access point, 8 mobile devices, 4 access points per mobile device).
+
+### 2. What ACTION should the user take?
+
+The user needs to take action based on the goal they are trying to achieve:
+
+| Goal | Required Action Based on Content |
+| :--- | :--- |
+| **Initial Setup/Installation** | The user must ensure they have the correct **Access Point (KX-HNB700/KX-HNB705)**, as this acts as the hub connecting the cameras. They should then refer to the "Setup: Front door camera and outdoor camera setup (overview)" link/section associated with the Access Point for the registration process. |
+| **Adding Devices** | The user must verify that the total number of cameras being added **does not exceed 16** per access point, and the total number of mobile viewing devices **does not exceed 8**. |
+| **Troubleshooting Connectivity** | If cameras fail to connect, the user must first check if the total device count per access point has been exceeded (limit is 16 cameras). |
+| **General Information** | The user can click on the listed "Overview," "Setup," "Registration," or "Features" links/sections (implied by the text structure) to get detailed instructions for the specific device model they own. |
+
+### 3. What PROBLEM does this help solve?
+
+This information primarily solves **system design, capacity planning, and initial setup compatibility problems**:
+
+*   **Incompatibility Issues:** It prevents the user from attempting to connect cameras directly to a mobile device or network without the necessary central Access Point.
+*   **Overloading the System:** It solves the problem of devices failing to register due to exceeding the hardware's processing or wireless channel capacity (by clearly stating the **16 camera limit** per AP).
+*   **Identification Errors:** It ensures the user is looking up documentation for the correct model numbers when setting up or troubleshooting specific cameras (e.g., using KX-HNC700 setup instructions for a KX-HNC710 camera).
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+This screen **does not display real-time error codes or status indicators.**
+
+It provides **preemptive limits** that, if exceeded, will *cause* errors during the registration process. The user should troubleshoot by checking these limits if they encounter a "Device Limit Reached" or "Registration Failed" message:
+
+| Limit (Implied Error Trigger) | User Troubleshooting Step |
+| :--- | :--- |
+| **Access Point is Required** | If a camera shows "Offline" or cannot be added, confirm it is properly paired and communicating through the designated KX-HNB700/705 Access Point. |
+| **Max Cameras per AP: 16** | If the user is trying to add the 17th camera to a single access point, they must either stop adding devices or introduce a new access point (up to 4 APs total per mobile device viewing station). |
+| **Max Mobile Devices per AP: 8** | If too many phones/tablets are trying to view the system simultaneously, performance issues or connection failures may occur. The user should limit connections to 8 mobile devices. |

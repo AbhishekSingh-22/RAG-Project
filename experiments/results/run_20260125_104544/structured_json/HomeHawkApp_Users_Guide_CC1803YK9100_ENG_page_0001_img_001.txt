@@ -1,0 +1,10 @@
+{
+    "type": "other",
+    "title": "User's Guide",
+    "key_text": [
+        "Panasonic\u00ae",
+        "Text entity: en_us_201005"
+    ],
+    "actionable_elements": [],
+    "status_indicators": []
+}

@@ -1,0 +1,32 @@
+This image serves as a technical walkthrough for device integration within a smart home application ecosystem (MirAIe).
+
+## 1. What is the PURPOSE of this screen/diagram?
+
+The primary purpose of this multi-step diagram is to guide the user through the **initial onboarding process** required to pair a new Panasonic Non-Matter Air Conditioner with the MirAIe mobile application. This process establishes the connection necessary for remote control and monitoring of the appliance.
+
+## 2. What ACTION should the user take?
+
+The user must take the following sequenced actions:
+
+1.  **Preparation (Prerequisite):** Before initiating the app steps, the user must verify that **Wi-Fi and Location services are enabled** on their smartphone.
+2.  **Step 1 (Initiate Pairing):** Navigate to the main dashboard of the MirAIe application and tap the **“+” icon** (Add Device button) to begin the setup workflow.
+3.  **Step 2 (Select Device Type):** On the "Select device" screen, scroll through the list of appliances and select **"Air Conditioner."**
+
+## 3. What PROBLEM does this help solve?
+
+This guide solves the problem of **device non-connectivity and lack of remote control**. Specifically, it addresses the steps necessary to register a physical smart air conditioner within the corresponding controlling application, allowing the user to manage settings, schedules, and operational modes via their smartphone.
+
+## 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+While no formal error codes are displayed, there is a critical status indicator presented as a **prerequisite warning:**
+
+**Status Indicator/Warning:** "Please make sure that Wi-Fi and Location is enabled in your smart phone."
+
+**Troubleshooting Context:**
+
+This indicator defines the minimum necessary conditions for the application to proceed with device discovery and pairing. If the user selects "Air Conditioner" but the application fails to find the device or stalls on the next setup screen, the first troubleshooting step is to confirm the status of the phone's services:
+
+*   **Wi-Fi Status:** Must be **ON**. This ensures the smartphone can communicate with the local network (typically 2.4 GHz, though not specified here) that the new AC unit will join.
+*   **Location Status (GPS):** Must be **ON**. Many modern IoT setup protocols (especially those using Bluetooth or localized Wi-Fi pairing) require Location services to be active, even if the user is not actively requesting GPS mapping data. Turning on Location is a mandatory status for successful setup.
+
+Failure to meet these prerequisite statuses is a common cause of connection failure during smart device setup.

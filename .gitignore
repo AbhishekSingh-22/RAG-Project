@@ -3,5 +3,7 @@ venv/
 
 .env
 temp_extraction/
+temp_extraction_*/
+temp_*/
 
 .vscode/

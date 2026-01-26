@@ -6,4 +6,10 @@
 - Pdf is not only text. More of a graphical visual documentation, which means basic pdf loading fails there, for that I have to switch either to unstructuredPDFLoader or PyPDFium2Loader 
     - Reference -> [Medium blog](https://medium.com/@sangitapokhrel911/different-methods-to-read-pdf-files-in-langchain-5d547206bcef)
 
-# Markdown files
+# DBSCAN
+- Pros: No need to specify the number of clusters, robust to noise, handles variable group sizes and shapes.
+- Cons: Sensitive to the distance (eps) parameter, may merge nearby but unrelated blocks if eps is too large.
+
+# Hierarchial Clustering (Agglomerative)
+- Pros: Produces a dendrogram for visual threshold selection, flexible for different document layouts, can use various linkage criteria (single, complete, average).
+- Cons: Requires a distance threshold to cut the tree, can be computationally expensive for many blocks, may over-cluster if threshold is not well chosen.

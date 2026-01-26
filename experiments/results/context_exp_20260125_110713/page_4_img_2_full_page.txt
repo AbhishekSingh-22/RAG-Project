@@ -1,0 +1,42 @@
+This document serves as a technical instruction manual detailing the process for onboarding a Panasonic Air Conditioner (AC) into a smart home application environment. It addresses two distinct scenarios: Matter Certified devices and proprietary Non-Matter devices.
+
+---
+
+## Technical Interpretation
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose is to provide a comprehensive, step-by-step guide for the initial setup and network pairing (onboarding) of Panasonic Air Conditioners. It outlines two specific procedures depending on the AC's compatibility standard:
+
+1.  **Connecting a Matter Certified AC** to a third-party Matter Ecosystem Application.
+2.  **Connecting a Non-Matter AC** to the proprietary **MirAle Application**.
+
+### 2. What ACTION should the user take?
+
+The user must first identify which category their Air Conditioner falls into (Matter Certified or Non-Matter) and follow the corresponding steps:
+
+**If the AC is Matter Certified (Procedure A):**
+1.  **Verification:** Check the Ecosystem Application to ensure it supports the "Matter Room Air Conditioner" device type.
+2.  **Device Setup:** Power the AC OFF, then back ON.
+3.  **Activate Setup Mode:** Press the "SMART" button on the remote control until the WiFi Indicator on the AC begins blinking.
+4.  **App Onboarding:** Follow the specific setup instructions provided within the Ecosystem Application. *(Crucial Note: Ensure the connection is on the 2.4GHz frequency band.)*
+
+**If the AC is Non-Matter (using the MirAle App) (Procedure B):**
+1.  **Enable Prerequisites:** Ensure Wi-Fi and Location services are enabled on the smartphone.
+2.  **Initiate Pairing:** Click the **+** (plus) icon located on the app dashboard (home screen) to add a new device.
+3.  **Select Device Type:** On the "Select device" screen, scroll to the "Appliances" category and select **Air Conditioner**.
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the technical problem of **initial device pairing (onboarding)**. Specifically, it resolves issues where a user is unable to:
+*   Link a physical Panasonic AC unit to a digital control application (MirAle or a Matter ecosystem app).
+*   Put the AC unit into the correct network configuration (setup mode) required for wireless detection and provisioning.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+| Indicator/Status | Type | Meaning for the User | Troubleshooting Action (if pairing fails) |
+| :--- | :--- | :--- | :--- |
+| **"SE" displayed on AC** | Status Indicator | The Air Conditioner has successfully entered **Set-up mode** and is ready to be discovered by the companion app. | This is a successful step. Proceed to the app to find the device. |
+| **WiFi Indicator blinking** | Status Indicator | Confirms the AC’s setup mode is active and the device is broadcasting its network pairing signal. | If the light stops blinking prematurely, repeat the power cycle and "SMART" button press. |
+| **(only 2.4GHz frequency allowed)** | Connectivity Restriction | The device will only pair if the user's smartphone is connected to the 2.4GHz band of their home Wi-Fi network. | If pairing fails, temporarily disable the 5GHz band on the router or ensure the smartphone is explicitly connected to the 2.4GHz network name. |
+| **"Please make sure that Wi-Fi and Location is enabled in your smart phone"** | Prerequisite Warning | The app requires access to the phone's wireless networking and location data to complete the pairing process (a common requirement for Bluetooth/Wi-Fi provisioning). | If the user cannot proceed to the next step in the app, they must check their phone's settings and grant these permissions to the MirAle application. |

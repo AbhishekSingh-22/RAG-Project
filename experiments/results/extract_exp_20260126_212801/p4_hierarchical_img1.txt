@@ -1,0 +1,27 @@
+This document provides technical instructions for the initial setup and pairing process of a Panasonic Air Conditioner with the MirAle smart home application.
+
+---
+
+### 1. What is the PURPOSE of this screen/diagram?
+
+The purpose of this guide is to provide a step-by-step visual instruction set for the user to successfully initiate the **device registration and pairing process** for a new Panasonic Non-Matter Air Conditioner within the MirAle application. It directs the user from the main app dashboard to the specific device selection menu.
+
+### 2. What ACTION should the user take?
+
+The user must take the following specific actions in sequence:
+
+1.  **Initiate Pairing:** Click on the **"+"** icon located on the main app dashboard (Step 1).
+2.  **Verify Prerequisites:** Before proceeding, the user must ensure that **Wi-Fi** and **Location services** (GPS/Location Access) are actively enabled on their smartphone.
+3.  **Select Device Type:** Navigate to the "Select device" screen and tap on the option labeled **"Air Conditioner"** under the "Appliances" list (Step 2).
+
+### 3. What PROBLEM does this help solve?
+
+This guide solves the problem of **initial device onboarding and connectivity**. Specifically, it addresses the user’s need to register a newly acquired Panasonic Air Conditioner with the smart home application so they can gain remote control capabilities, monitor status, and utilize smart features provided by the MirAle platform.
+
+### 4. Explain any error codes or status indicators in terms of user troubleshooting.
+
+The screen does not display any explicit error codes, but it does show a crucial **prerequisite status indicator/warning** that is key for troubleshooting:
+
+| Indicator/Status | Meaning | Troubleshooting Guidance |
+| :--- | :--- | :--- |
+| **"Please make sure that Wi-Fi and Location is enabled in your smart phone"** (Information Icon) | This indicates that two essential phone functions (Wi-Fi connectivity and GPS/Location services) are mandatory for the device pairing process to begin successfully. | **If setup fails or the device list does not load:** Verify your smartphone settings. Ensure both Wi-Fi is actively connected to your home network, and the phone's Location (GPS) setting is turned on. Many smart device protocols (like Bluetooth or local network scanning) require location permission to function correctly, even if you are only using Wi-Fi. |
